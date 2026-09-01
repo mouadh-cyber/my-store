@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<script>
+// Netlify SPA fallback - ensure hash routes work
+if (!window.location.hash) {
+  window.location.hash = '#/';
+}
+</script>
+<title>SINISTER EXCLUSIVE - Premium Men's Fashion</title>
+<meta name="description" content="Discover premium men's clothing at SINISTER EXCLUSIVE. Shop the latest in men's fashion with exclusive designs and premium quality.">
+<meta property="og:title" content="SINISTER EXCLUSIVE - Premium Men's Fashion">
+<meta property="og:description" content="Discover premium men's clothing with exclusive designs and premium quality.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        'serif': ['"Playfair Display"', 'serif'],
+        'sans': ['Inter', 'sans-serif'],
+      },
+      colors: {
+        'brand': {
+          50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
+          400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
+          800: '#27272a', 900: '#18181b', 950: '#09090b',
+        },
+        'accent': { gold: '#c9a961', goldLight: '#d4b97a', goldDark: '#b8963f' }
+      }
+    }
+  }
+}
+</script>
+<style>
+* { -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter', sans-serif; background: #09090b; color: #fafafa; }
+.font-serif { font-family: 'Playfair Display', serif; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #18181b; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.animate-fadeIn { animation: fadeIn 0.6s ease forwards; }
+.animate-fadeInUp { animation: fadeInUp 0.7s ease forwards; }
+.animate-scaleIn { animation: scaleIn 0.3s ease forwards; }
+.stagger-1 { animation-delay: 0.1s; opacity: 0; }
+.stagger-2 { animation-delay: 0.2s; opacity: 0; }
+.stagger-3 { animation-delay: 0.3s; opacity: 0; }
+.stagger-4 { animation-delay: 0.4s; opacity: 0; }
+.product-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.product-card:hover { transform: translateY(-8px); }
+.product-card:hover .product-image { transform: scale(1.08); }
+.product-card:hover .product-overlay { opacity: 1; }
+.product-image { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.product-overlay { opacity: 0; transition: opacity 0.3s ease; }
+.btn-primary {
+  background: linear-gradient(135deg, #c9a961 0%, #b8963f 100%);
+  color: #09090b; font-weight: 600; transition: all 0.3s ease; letter-spacing: 0.05em;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d4b97a 0%, #c9a961 100%);
+  transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+}
+.btn-secondary {
+  background: transparent; border: 1px solid rgba(250, 250, 250, 0.3);
+  color: #fafafa; font-weight: 500; transition: all 0.3s ease; letter-spacing: 0.05em;
+}
+.btn-secondary:hover { border-color: #c9a961; color: #c9a961; background: rgba(201, 169, 97, 0.05); }
+.text-gold-gradient {
+  background: linear-gradient(135deg, #c9a961 0%, #e8d5a3 50%, #c9a961 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.form-input { background: #18181b; border: 1px solid #3f3f46; color: #fafafa; transition: all 0.2s ease; }
+.form-input:focus { outline: none; border-color: #c9a961; box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1); }
+.cart-sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.mobile-menu { transition: transform 0.3s ease; }
+.badge-new { background: linear-gradient(135deg, #c9a961, #b8963f); color: #09090b; }
+.img-zoom-container { overflow: hidden; }
+.img-zoom-container:hover img { transform: scale(1.1); }
+.img-zoom-container img { transition: transform 0.5s ease; }
+.admin-table th { background: #18181b; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; color: #a1a1aa; }
+.admin-table tr:hover td { background: #18181b; }
+.toast { animation: slideInRight 0.3s ease forwards; }
+.category-card { position: relative; overflow: hidden; transition: all 0.4s ease; }
+.category-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.3) 50%, transparent 100%);
+  z-index: 1; transition: all 0.4s ease;
+}
+.category-card:hover::before {
+  background: linear-gradient(to top, rgba(9,9,11,0.95) 0%, rgba(201,169,97,0.2) 60%, transparent 100%);
+}
+.category-card:hover img { transform: scale(1.1); }
+.category-card img { transition: transform 0.6s ease; }
+.size-btn {
+  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid #3f3f46; background: transparent; color: #fafafa;
+  font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s ease;
+}
+.size-btn:hover:not(:disabled) { border-color: #c9a961; }
+.size-btn.active { background: #c9a961; color: #09090b; border-color: #c9a961; }
+.size-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.color-swatch {
+  width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+  border: 2px solid transparent; transition: all 0.2s ease;
+}
+.color-swatch:hover { transform: scale(1.1); }
+.color-swatch.active { border-color: #c9a961; box-shadow: 0 0 0 2px #09090b, 0 0 0 4px #c9a961; }
+.status-new { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.status-confirmed { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.status-preparing { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.status-shipped { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.status-completed { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+.status-cancelled { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+.nav-link { position: relative; }
+.nav-link::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+  background: #c9a961; transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.section-divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, #c9a961, transparent); }
+.whatsapp-float {
+  position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
+  background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); z-index: 1000; transition: all 0.3s ease; cursor: pointer;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5); }
+.page-content { animation: fadeInUp 0.5s ease forwards; }
+.modal-backdrop { background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(4px); }
+.admin-sidebar-item.active { background: rgba(201, 169, 97, 0.1); border-right: 3px solid #c9a961; color: #c9a961; }
+.admin-sidebar-item:hover:not(.active) { background: rgba(255,255,255,0.05); }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="error-display" style="display:none;position:fixed;inset:0;z-index:99999;background:#09090b;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+  <h2 style="color:#f87171;font-size:24px;font-weight:bold;margin-bottom:16px;">⚠️ Something went wrong</h2>
+  <p id="error-message" style="color:#a1a1aa;margin-bottom:24px;max-width:500px;text-align:center;"></p>
+  <button onclick="location.reload()" style="background:#c9a961;color:#09090b;padding:10px 24px;border-radius:9999px;font-weight:600;cursor:pointer;border:none;">Reload Page</button>
+</div>
+<script>
+window.onerror = function(msg, url, line, col, error) {
+  var ed = document.getElementById('error-display');
+  var em = document.getElementById('error-message');
+  if (ed && em) { ed.style.display = 'flex'; em.textContent = msg + " (Line " + line + ")"; }
+  console.error("ERROR:", msg, "at line", line);
+};
+window.addEventListener('unhandledrejection', function(e) {
+  console.error("Unhandled promise:", e.reason);
+});
+</script>
+<div id="toast-container" class="fixed top-20 right-4 z-[9999] space-y-2"></div>
+<a id="whatsapp-float" class="whatsapp-float" href="#" target="_blank" title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div id="app"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = 'https://epkhtwhlufjzrzolhxhu.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_95uJKBk66j0Gnac6aUaW6A_4FHQE7Fn';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const DB = {
+  KEYS: { PRODUCTS: 'sinister_products', CATEGORIES: 'sinister_categories', ORDERS: 'sinister_orders', SETTINGS: 'sinister_settings', ADMIN: 'sinister_admin', SESSION: 'sinister_session', CART: 'sinister_cart' },
+  cache: { products: [], categories: [], orders: [], settings: {}, admin: null },
+  loaded: false,
+  ready: null,
+
+  async init() {
+    try {
+      const [productsRes, categoriesRes, ordersRes, settingsRes] = await Promise.all([
+        supabaseClient.from('products').select('*').order('id', { ascending: true }),
+        supabaseClient.from('categories').select('*').order('sort_order', { ascending: true }),
+        supabaseClient.from('orders').select('*').order('created_at', { ascending: false }),
+        supabaseClient.from('settings').select('*').eq('id', 1).maybeSingle()
+      ]);
+
+      if (productsRes.error) throw productsRes.error;
+      if (categoriesRes.error) throw categoriesRes.error;
+      if (ordersRes.error) throw ordersRes.error;
+      if (settingsRes.error) throw settingsRes.error;
+
+      this.cache.products = (productsRes.data || []).map(this.fromProduct);
+      this.cache.categories = (categoriesRes.data || []).map(this.fromCategory);
+      this.cache.orders = (ordersRes.data || []).map(this.fromOrder);
+      this.cache.settings = settingsRes.data ? this.fromSettings(settingsRes.data) : {};
+      this.loaded = true;
+      console.log('Supabase connected successfully');
+    } catch (error) {
+      console.error('Supabase initialization error:', error);
+      this.loaded = true;
+      showToast('Could not load database data', 'error');
+    }
+  },
+
+  get(key) {
+    switch (key) {
+      case this.KEYS.PRODUCTS: return this.cache.products;
+      case this.KEYS.CATEGORIES: return this.cache.categories;
+      case this.KEYS.ORDERS: return this.cache.orders;
+      case this.KEYS.SETTINGS: return this.cache.settings;
+      case this.KEYS.ADMIN: {
+        try { return JSON.parse(localStorage.getItem(this.KEYS.ADMIN) || 'null'); } catch { return null; }
+      }
+      default: {
+        try { const val = localStorage.getItem(key); return val ? JSON.parse(val) : null; } catch { return null; }
+      }
+    }
+  },
+
+  async set(key, data) {
+    try {
+      if (key === this.KEYS.PRODUCTS) {
+        this.cache.products = data;
+        const rows = data.map(this.toProduct);
+        if (rows.length) {
+          const { error } = await supabaseClient.from('products').upsert(rows, { onConflict: 'id' });
+          if (error) throw error;
+          const ids = rows.map(r => r.id);
+          const { data: current } = await supabaseClient.from('products').select('id');
+          const toDelete = (current || []).filter(r => !ids.includes(r.id)).map(r => r.id);
+          if (toDelete.length) {
+            const { error: deleteError } = await supabaseClient.from('products').delete().in('id', toDelete);
+            if (deleteError) throw deleteError;
+          }
+        } else {
+          const { error } = await supabaseClient.from('products').delete().neq('id', 0);
+          if (error) throw error;
+        }
+      } else if (key === this.KEYS.CATEGORIES) {
+        this.cache.categories = data;
+        const rows = data.map(this.toCategory);
+        if (rows.length) {
+          const { error } = await supabaseClient.from('categories').upsert(rows, { onConflict: 'id' });
+          if (error) throw error;
+          const ids = rows.map(r => r.id);
+          const { data: current } = await supabaseClient.from('categories').select('id');
+          const toDelete = (current || []).filter(r => !ids.includes(r.id)).map(r => r.id);
+          if (toDelete.length) {
+            const { error: deleteError } = await supabaseClient.from('categories').delete().in('id', toDelete);
+            if (deleteError) throw deleteError;
+          }
+        }
+      } else if (key === this.KEYS.ORDERS) {
+        this.cache.orders = data;
+        const rows = data.map(this.toOrder);
+        if (rows.length) {
+          const { error } = await supabaseClient.from('orders').upsert(rows, { onConflict: 'id' });
+          if (error) throw error;
+        }
+      } else if (key === this.KEYS.SETTINGS) {
+        this.cache.settings = data;
+        const { error } = await supabaseClient.from('settings').upsert(this.toSettings(data), { onConflict: 'id' });
+        if (error) throw error;
+      } else if (key === this.KEYS.ADMIN || key === this.KEYS.SESSION || key === this.KEYS.CART) {
+        localStorage.setItem(key, JSON.stringify(data));
+      }
+    } catch (error) {
+      console.error('Database save error:', error);
+      showToast('Database save failed: ' + (error.message || 'Unknown error'), 'error');
+      throw error;
+    }
+  },
+
+  fromProduct: r => ({
+    id: Number(r.id), name: r.name, description: r.description || '', price: Number(r.price || 0),
+    discountPrice: r.discount_price == null ? null : Number(r.discount_price), category: r.category || '',
+    sizes: r.sizes || [], colors: r.colors || [], stock: Number(r.stock || 0), images: r.images || [],
+    featured: !!r.featured, isNew: !!r.is_new, enabled: r.enabled !== false,
+    createdAt: r.created_at || new Date().toISOString()
+  }),
+  toProduct: p => ({
+    id: Number(p.id), name: p.name, description: p.description || null, price: Number(p.price || 0),
+    discount_price: p.discountPrice == null ? null : Number(p.discountPrice), category: p.category || null,
+    sizes: p.sizes || [], colors: p.colors || [], stock: Number(p.stock || 0), images: p.images || [],
+    featured: !!p.featured, is_new: !!p.isNew, enabled: p.enabled !== false,
+    created_at: p.createdAt || new Date().toISOString()
+  }),
+  fromCategory: r => ({ id: Number(r.id), name: r.name, slug: r.slug || '', description: r.description || '', image: '', order: Number(r.sort_order || 1) }),
+  toCategory: c => ({ id: Number(c.id), name: c.name, slug: c.slug || '', description: c.description || null, sort_order: Number(c.order || 1) }),
+  fromOrder: r => ({
+    id: r.id, customerName: r.customer_name || '', customerPhone: r.customer_phone || '', customerEmail: r.customer_email || '',
+    shippingAddress: r.shipping_address || '', notes: r.notes || '', items: r.items || [], subtotal: Number(r.subtotal || 0),
+    status: r.status || 'new', createdAt: r.created_at || new Date().toISOString()
+  }),
+  toOrder: o => ({
+    id: o.id, customer_name: o.customerName || '', customer_phone: o.customerPhone || '', customer_email: o.customerEmail || null,
+    shipping_address: o.shippingAddress || '', notes: o.notes || null, items: o.items || [], subtotal: Number(o.subtotal || 0),
+    status: o.status || 'new', created_at: o.createdAt || new Date().toISOString()
+  }),
+  fromSettings: r => ({
+    storeName: r.store_name || '', storeDescription: r.store_description || '', whatsapp: r.whatsapp || '', email: r.email || '',
+    instagram: r.instagram || '', instagramLink: r.instagram_link || '', tiktok: r.tiktok || '', tiktokLink: r.tiktok_link || '',
+    address: r.store_address || '', businessHours: r.business_hours || '', currencySymbol: r.currency_symbol || '$',
+    logo: r.logo || '', favicon: r.favicon || '', currency: r.currency || 'USD', facebook: '', facebookLink: ''
+  }),
+  toSettings: s => ({
+    id: 1, store_name: s.storeName || null, store_description: s.storeDescription || null, whatsapp: s.whatsapp || null,
+    email: s.email || null, instagram: s.instagram || null, instagram_link: s.instagramLink || null, tiktok: s.tiktok || null,
+    tiktok_link: s.tiktokLink || null, store_address: s.address || null, business_hours: s.businessHours || null,
+    currency_symbol: s.currencySymbol || '$', logo: s.logo || null, favicon: s.favicon || null
+  }),
+  seedAdmin() {
+    const admin = { username: 'admin', email: 'admin@sinister.com', password: this.hashPassword('admin123') };
+    localStorage.setItem(this.KEYS.ADMIN, JSON.stringify(admin));
+  },
+  hashPassword(pw) {
+    let hash = 0;
+    for (let i = 0; i < pw.length; i++) { const char = pw.charCodeAt(i); hash = ((hash << 5) - hash) + char; hash = hash & hash; }
+    return 'hash_' + Math.abs(hash).toString(16) + '_' + pw.length;
+  },
+  verifyPassword(input, stored) { return this.hashPassword(input) === stored; }
+};
+DB.ready = DB.init();
+DB.seedAdmin();
+
+const State = {
+  cart: JSON.parse(localStorage.getItem(DB.KEYS.CART) || '[]'),
+  isLoggedIn: !!localStorage.getItem(DB.KEYS.SESSION),
+  currentRoute: window.location.hash || '#/',
+  cartOpen: false,
+  mobileMenuOpen: false,
+  selectedSize: null,
+  selectedColor: null,
+  productQty: 1,
+  saveCart() { localStorage.setItem(DB.KEYS.CART, JSON.stringify(this.cart)); },
+  addToCart(product, size, color, quantity = 1) {
+    const existing = this.cart.find(item => item.id === product.id && item.size === size && item.color === color);
+    if (existing) { existing.quantity += quantity; }
+    else { this.cart.push({ id: product.id, name: product.name, price: product.discountPrice || product.price, originalPrice: product.price, size, color, quantity, image: product.images?.[0] || '' }); }
+    this.saveCart(); this.updateCartUI(); showToast('Added to cart', 'success');
+  },
+  removeFromCart(index) { this.cart.splice(index, 1); this.saveCart(); this.updateCartUI(); },
+  updateQuantity(index, delta) {
+    this.cart[index].quantity += delta;
+    if (this.cart[index].quantity <= 0) { this.removeFromCart(index); return; }
+    this.saveCart(); this.updateCartUI();
+  },
+  getCartTotal() { return this.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0); },
+  getCartCount() { return this.cart.reduce((sum, item) => sum + item.quantity, 0); },
+  clearCart() { this.cart = []; this.saveCart(); this.updateCartUI(); },
+  updateCartUI() { const countEl = document.getElementById('cart-count'); if (countEl) countEl.textContent = this.getCartCount(); },
+  login(username, password) {
+    const admin = DB.get(DB.KEYS.ADMIN);
+    if (admin && (admin.username === username || admin.email === username) && DB.verifyPassword(password, admin.password)) {
+      localStorage.setItem(DB.KEYS.SESSION, JSON.stringify({ user: admin.username, time: Date.now() }));
+      this.isLoggedIn = true; return true;
+    }
+    return false;
+  },
+  logout() { localStorage.removeItem(DB.KEYS.SESSION); this.isLoggedIn = false; navigate('#/'); }
+};
+
+function showToast(message, type = 'info') {
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  const colors = { success: 'bg-emerald-600', error: 'bg-red-600', info: 'bg-brand-700', warning: 'bg-amber-600' };
+  toast.className = `toast ${colors[type]} text-white px-5 py-3 rounded-lg shadow-lg font-medium text-sm`;
+  toast.textContent = message; container.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100%)'; toast.style.transition = 'all 0.3s ease'; setTimeout(() => toast.remove(), 300); }, 3000);
+}
+function navigate(hash) { window.location.hash = hash; }
+function formatPrice(price) { const settings = DB.get(DB.KEYS.SETTINGS) || {}; return (settings?.currencySymbol || '$') + price.toFixed(2); }
+function generateId() { return crypto.randomUUID(); }
+
+function parseRoute() {
+  const hash = window.location.hash || '#/';
+  const cleanHash = hash.replace('#', '');
+  const parts = cleanHash.split('/').filter(Boolean);
+  // Build full path (e.g., /admin/login, /product/123)
+  let fullPath = '/' + (parts[0] || '');
+  if (parts.length > 1) {
+    // For admin sub-routes like /admin/login, /admin/products
+    if (parts[0] === 'admin' && parts[1]) {
+      fullPath = '/admin/' + parts[1];
+    }
+  }
+  return { path: fullPath, params: parts.slice(1), fullParts: parts };
+}
+
+function renderCurrentPage() {
+  if (!DB.loaded) { DB.ready.then(() => renderCurrentPage()); return; }
+  try {
+    console.log("=== renderCurrentPage called ===");
+    console.log("Current hash:", window.location.hash);
+    
+    var hash = window.location.hash || '#/';
+    console.log("Hash value:", hash);
+    
+    // Force redirect to admin login if that's what's requested
+    if (hash.indexOf('/admin/login') !== -1) {
+      console.log("Detected admin login route");
+      var app = document.getElementById('app');
+      if (app) {
+        app.innerHTML = renderAdminLogin();
+        console.log("Admin login rendered");
+        return;
+      }
+    }
+    
+    var route = parseRoute();
+    console.log("Parsed route:", route.path, "params:", route.params);
+    
+    State.currentRoute = window.location.hash;
+    State.cartOpen = false; 
+    State.mobileMenuOpen = false;
+    
+    var app = document.getElementById('app');
+    if (!app) { console.error("App container not found"); return; }
+
+    // Handle admin routes explicitly
+    if (hash.indexOf('/admin') !== -1) {
+      console.log("Admin route detected");
+      
+      if (hash.indexOf('/admin/login') !== -1) {
+        console.log("Rendering admin login");
+        app.innerHTML = renderAdminLogin();
+        return;
+      }
+      
+      if (State.isLoggedIn) {
+        console.log("User is logged in, rendering admin");
+        app.innerHTML = renderAdminLayout(route.path, route.params);
+        setTimeout(function() { initAdminScripts(route.path, route.params); }, 10);
+      } else {
+        console.log("User not logged in, redirecting to login");
+        window.location.hash = '#/admin/login';
+      }
+      return;
+    }
+
+    // Storefront routes
+    console.log("Rendering storefront:", route.path);
+    app.innerHTML = renderStorefront(route.path, route.params);
+    
+    var settings = DB.get(DB.KEYS.SETTINGS) || {};
+    var waFloat = document.getElementById('whatsapp-float');
+    if (waFloat && settings.whatsapp) { waFloat.href = 'https://wa.me/' + settings.whatsapp; }
+    
+    setTimeout(function() { initPageScripts(route.path, route.params); }, 10);
+    console.log("Storefront rendered successfully");
+  } catch(e) {
+    console.error('Render error:', e);
+    console.error('Stack:', e.stack);
+    var ed = document.getElementById('error-display');
+    var em = document.getElementById('error-message');
+    if (ed && em) { ed.style.display = 'flex'; em.textContent = e.message; }
+  }
+}
+
+// Handle hash changes
+window.addEventListener('hashchange', function() {
+  console.log("Hash changed to:", window.location.hash);
+  renderCurrentPage();
+});
+
+// Also handle popstate
+window.addEventListener('popstate', function() {
+  console.log("Popstate, hash:", window.location.hash);
+  renderCurrentPage();
+});
+
+// Initial render with multiple attempts to ensure hash is ready
+var initAttempts = 0;
+function tryInit() {
+  initAttempts++;
+  console.log("Init attempt", initAttempts, "hash:", window.location.hash);
+  
+  if (!window.location.hash) {
+    window.location.hash = '#/';
+  }
+  
+  renderCurrentPage();
+  
+  // If admin/login was requested but app is empty, try again
+  if (window.location.hash.indexOf('/admin/login') !== -1) {
+    var app = document.getElementById('app');
+    if (app && app.innerHTML.trim().length < 50 && initAttempts < 3) {
+      setTimeout(tryInit, 200);
+    }
+  }
+}
+
+// Start initialization
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', tryInit);
+} else {
+  tryInit();
+}
+function renderStorefront(path, params) {
+  const settings = DB.get(DB.KEYS.SETTINGS) || {};
+  let pageContent = '';
+  switch(path) {
+    case '/': pageContent = renderHomePage(); break;
+    case '/shop': pageContent = renderShopPage(); break;
+    case '/product': pageContent = renderProductPage(params[0]); break;
+    case '/categories': pageContent = renderCategoriesPage(); break;
+    case '/category': pageContent = renderCategoryPage(params[0]); break;
+    case '/about': pageContent = renderAboutPage(); break;
+    case '/contact': pageContent = renderContactPage(); break;
+    default: pageContent = render404();
+  }
+  return renderHeader(settings) + `<main class="page-content">${pageContent}</main>` + renderFooter(settings) + renderOrderModal() + renderMobileMenu();
+}
+
+function renderHeader(settings) {
+  const route = parseRoute().path;
+  const isActive = (p) => route === p ? 'active text-gold-gradient' : '';
+  return `
+    <header class="sticky top-0 z-50 bg-brand-950/95 backdrop-blur-md border-b border-brand-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-brand-200 hover:text-accent-gold transition">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <a href="#/" class="flex items-center gap-3">
+            <img src="${settings?.logo}" alt="${settings?.storeName}" class="w-12 h-12 rounded-full object-cover border border-brand-700">
+            <span class="font-serif text-xl font-bold tracking-wider hidden sm:block">${settings?.storeName}</span>
+          </a>
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="#/" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/')}">Home</a>
+            <a href="#/shop" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/shop')}">Shop</a>
+            <a href="#/categories" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/categories')}">Categories</a>
+            <a href="#/about" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/about')}">About</a>
+            <a href="#/contact" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/contact')}">Contact</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <button onclick="openSearch()" class="p-2 text-brand-200 hover:text-accent-gold transition hidden sm:block">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>`;
+}
+
+function renderHomePage() {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  const featured = products.filter(p => p.featured && p.enabled).slice(0, 8);
+  const newArrivals = products.filter(p => p.isNew && p.enabled).slice(0, 4);
+  const settings = DB.get(DB.KEYS.SETTINGS) || {};
+  return `
+    <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950"></div>
+      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 50%, rgba(201,169,97,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(201,169,97,0.15) 0%, transparent 50%);"></div>
+      <div class="absolute inset-0" style="background-image: url('${settings?.logo}'); background-size: cover; background-position: center; opacity: 0.08;"></div>
+      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-6 animate-fadeInUp stagger-1">New Collection 2026</p>
+        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-2 leading-tight">Redefine Your <span class="text-gold-gradient">Style</span></h1>
+        <p class="text-brand-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto animate-fadeInUp stagger-3 leading-relaxed">${settings?.storeDescription}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-4">
+          <a href="#/shop" class="btn-primary px-10 py-4 rounded-full text-sm uppercase">Shop Now</a>
+          <a href="#/categories" class="btn-secondary px-10 py-4 rounded-full text-sm uppercase">View Collection</a>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+      </div>
+    </section>
+    <section class="bg-brand-900 py-6 border-y border-brand-800">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span class="text-brand-200">Follow us on Instagram for exclusive content & style inspiration</span>
+        <a href="${settings?.instagramLink || '#'}" target="_blank" class="text-accent-gold font-semibold hover:underline">@${settings?.instagram}</a>
+      </div>
+    </section>
+    <section class="py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Curated Selection</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Featured Products</h2>
+          <div class="section-divider mx-auto mb-4"></div>
+          <p class="text-brand-400 max-w-xl mx-auto">Discover our most coveted pieces, handpicked for the discerning gentleman.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">${featured.map(p => renderProductCard(p)).join('')}</div>
+        <div class="text-center mt-12"><a href="#/shop" class="btn-secondary px-8 py-3 rounded-full text-sm uppercase inline-block">View All Products</a></div>
+      </div>
+    </section>
+    ${newArrivals.length > 0 ? `
+    <section class="py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-14">
+          <div><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Fresh Drops</p><h2 class="font-serif text-4xl md:text-5xl font-bold">New Arrivals</h2></div>
+          <a href="#/shop" class="hidden md:block text-accent-gold hover:underline text-sm font-medium">View All →</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">${newArrivals.map(p => renderProductCard(p)).join('')}</div>
+      </div>
+    </section>` : ''}
+    <section class="py-20 px-4 bg-brand-900/50">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Browse By</p>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Categories</h2>
+          <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          ${categories.slice(0, 8).map((cat, i) => `
+            <a href="#/category/${cat.slug}" class="category-card h-48 md:h-56 rounded-xl bg-brand-800 flex items-end p-6 group cursor-pointer animate-fadeInUp" style="animation-delay: ${i * 0.05}s">
+              <div class="relative z-10">
+                <h3 class="font-serif text-xl md:text-2xl font-semibold mb-1 group-hover:text-accent-gold transition">${cat.name}</h3>
+                <p class="text-brand-400 text-sm">Shop Now →</p>
+              </div>
+            </a>`).join('')}
+        </div>
+      </div>
+    </section>
+    <section class="py-24 px-4 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-950"></div>
+      <div class="relative max-w-4xl mx-auto text-center">
+        <p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-6">Our Philosophy</p>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">Where <span class="text-gold-gradient">Boldness</span> Meets <span class="text-gold-gradient">Refinement</span></h2>
+        <p class="text-brand-300 text-lg leading-relaxed mb-10">SINISTER EXCLUSIVE embodies the modern gentleman — confident, sophisticated, and unapologetically unique. Each piece is crafted with meticulous attention to detail, using only the finest materials.</p>
+        <a href="#/about" class="btn-secondary px-10 py-4 rounded-full text-sm uppercase inline-block">Discover Our Story</a>
+      </div>
+    </section>`;
+}
+
+function renderProductCard(product) {
+  const price = product.discountPrice || product.price;
+  const hasDiscount = product.discountPrice;
+  const outOfStock = product.stock <= 0;
+  return `
+    <div class="product-card group cursor-pointer" onclick="navigate('#/product/${product.id}')">
+      <div class="relative aspect-[3/4] bg-brand-800 rounded-xl overflow-hidden mb-4">
+        <div class="product-image w-full h-full bg-gradient-to-br from-brand-700 to-brand-900 flex items-center justify-center">
+          ${product.images?.[0] ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">` : `
+            <div class="text-center p-6">
+              <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-600/50 flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+              </div>
+              <p class="text-brand-400 text-sm">${product.name}</p>
+            </div>`}
+        </div>
+        <div class="absolute top-3 left-3 flex flex-col gap-2">
+          ${product.isNew ? '<span class="badge-new text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">New</span>' : ''}
+          ${hasDiscount ? '<span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sale</span>' : ''}
+        </div>
+        <div class="product-overlay absolute inset-0 bg-black/40 flex items-center justify-center gap-3">
+          <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="btn-primary px-5 py-2.5 rounded-full text-xs uppercase ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>${outOfStock ? 'Out of Stock' : 'Order Now'}</button>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <p class="text-xs text-brand-500 uppercase tracking-wide">${product.category}</p>
+        <h3 class="font-medium text-brand-100 group-hover:text-accent-gold transition line-clamp-1">${product.name}</h3>
+        <div class="flex items-center gap-2">
+          <span class="text-accent-gold font-semibold">${formatPrice(price)}</span>
+          ${hasDiscount ? `<span class="text-brand-500 line-through text-sm">${formatPrice(product.price)}</span>` : ''}
+        </div>
+        <div class="flex gap-1.5 pt-1">${product.colors.slice(0, 4).map(c => `<span class="w-3.5 h-3.5 rounded-full border border-brand-600" style="background: ${c.hex}"></span>`).join('')}</div>
+      </div>
+    </div>`;
+}
+function renderShopPage() {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  const enabledProducts = products.filter(p => p.enabled);
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-10"><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-2">Collection</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Shop All Products</h1><p class="text-brand-400">${enabledProducts.length} products available</p></div>
+        <div class="flex flex-col lg:flex-row gap-8">
+          <aside class="lg:w-64 flex-shrink-0">
+            <div class="lg:sticky lg:top-24 space-y-8">
+              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Search</h3><input type="text" id="search-input" placeholder="Search products..." class="form-input w-full px-4 py-3 rounded-lg text-sm" oninput="filterProducts()"></div>
+              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Categories</h3><div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="filter-cat w-4 h-4 accent-accent-gold" value="all" checked onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">All Products</span></label>
+                ${categories.map(cat => `<label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="filter-cat w-4 h-4 accent-accent-gold" value="${cat.name}" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">${cat.name}</span></label>`).join('')}
+              </div></div>
+              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Price Range</h3><div class="space-y-2">
+                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="all" checked onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">All Prices</span></label>
+                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="0-50" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">Under $50</span></label>
+                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="50-100" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">$50 - $100</span></label>
+                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="100-200" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">$100 - $200</span></label>
+                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="200-9999" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">$200+</span></label>
+              </div></div>
+              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Availability</h3><label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" id="in-stock-only" class="w-4 h-4 accent-accent-gold" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">In Stock Only</span></label></div>
+            </div>
+          </aside>
+          <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-brand-800">
+              <p id="results-count" class="text-brand-400 text-sm">${enabledProducts.length} products</p>
+              <select id="sort-select" class="form-input px-4 py-2 rounded-lg text-sm w-full sm:w-auto" onchange="filterProducts()">
+                <option value="newest">Newest First</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="name">Name A-Z</option>
+              </select>
+            </div>
+            <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 gap-6">${enabledProducts.map(p => renderProductCard(p)).join('')}</div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderProductPage(productId) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const product = products.find(p => p.id == productId);
+  if (!product) { return `<div class="py-20 text-center"><h2 class="font-serif text-3xl mb-4">Product Not Found</h2><a href="#/shop" class="text-accent-gold hover:underline">Back to Shop</a></div>`; }
+  State.selectedSize = product.sizes[0]; State.selectedColor = product.colors[0]?.name; State.productQty = 1;
+  const related = products.filter(p => p.category === product.category && p.id !== product.id && p.enabled).slice(0, 4);
+  const price = product.discountPrice || product.price;
+  const hasDiscount = product.discountPrice;
+  const outOfStock = product.stock <= 0;
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <nav class="text-sm text-brand-400 mb-8"><a href="#/" class="hover:text-accent-gold transition">Home</a> / <a href="#/shop" class="hover:text-accent-gold transition">Shop</a> / <span class="text-brand-200">${product.name}</span></nav>
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div class="space-y-4">
+            <div class="aspect-[3/4] bg-brand-800 rounded-2xl overflow-hidden img-zoom-container">
+              ${product.images?.[0] ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-700 to-brand-900"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div>`}
+            </div>
+          </div>
+          <div class="lg:py-8">
+            <div class="flex items-center gap-3 mb-4">
+              ${product.isNew ? '<span class="badge-new text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">New</span>' : ''}
+              ${hasDiscount ? '<span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sale</span>' : ''}
+              <span class="text-brand-500 text-sm uppercase tracking-wide">${product.category}</span>
+            </div>
+            <h1 class="font-serif text-3xl md:text-4xl font-bold mb-4">${product.name}</h1>
+            <div class="flex items-center gap-4 mb-6"><span class="text-3xl font-bold text-accent-gold">${formatPrice(price)}</span>${hasDiscount ? `<span class="text-xl text-brand-500 line-through">${formatPrice(product.price)}</span>` : ''}</div>
+            <p class="text-brand-300 leading-relaxed mb-8">${product.description}</p>
+            <div class="mb-6"><span class="text-sm ${outOfStock ? 'text-red-400' : 'text-emerald-400'} font-medium">${outOfStock ? '● Out of Stock' : `● In Stock (${product.stock} available)`}</span></div>
+            <div class="mb-6">
+              <div class="flex items-center justify-between mb-3"><h3 class="font-semibold text-sm uppercase tracking-wide">Size</h3><button class="text-accent-gold text-sm hover:underline">Size Guide</button></div>
+              <div class="flex flex-wrap gap-2" id="size-selector">${product.sizes.map((size, i) => `<button class="size-btn ${i === 0 ? 'active' : ''}" data-size="${size}" onclick="selectSize(this, '${size}')">${size}</button>`).join('')}</div>
+            </div>
+            <div class="mb-8">
+              <h3 class="font-semibold text-sm uppercase tracking-wide mb-3">Color</h3>
+              <div class="flex gap-3" id="color-selector">${product.colors.map((color, i) => `<button class="color-swatch ${i === 0 ? 'active' : ''}" data-color="${color.name}" style="background: ${color.hex}" onclick="selectColor(this, '${color.name}')" title="${color.name}"></button>`).join('')}</div>
+              <p class="text-brand-400 text-sm mt-2" id="selected-color-name">${product.colors[0]?.name || ''}</p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="flex items-center border border-brand-700 rounded-lg">
+                  <button onclick="changeProductQty(-1)" class="w-12 h-12 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">−</button>
+                  <span id="product-qty" class="w-12 text-center font-medium">1</span>
+                  <button onclick="changeProductQty(1)" class="w-12 h-12 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">+</button>
+                </div>
+              </div>
+              <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="orderNowFromPage(${product.id})" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold flex-1 py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2 ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Order Now
+                </button>
+              </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-brand-800 grid grid-cols-2 gap-4">
+              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Free Shipping</div>
+              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M12 6v6l4 2"/></svg>Fast Delivery</div>
+              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Quality Guaranteed</div>
+              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>24/7 Support</div>
+            </div>
+          </div>
+        </div>
+        ${related.length > 0 ? `<div class="mt-20"><h2 class="font-serif text-3xl font-bold mb-8">You May Also Like</h2><div class="grid grid-cols-2 md:grid-cols-4 gap-6">${related.map(p => renderProductCard(p)).join('')}</div></div>` : ''}
+      </div>
+    </section>`;
+}
+
+function renderCategoriesPage() {
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14"><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Browse</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Shop by Category</h1><div class="section-divider mx-auto mb-4"></div><p class="text-brand-400 max-w-xl mx-auto">Explore our curated collections designed for every occasion.</p></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          ${categories.map((cat, i) => { const count = products.filter(p => p.category === cat.name && p.enabled).length; return `
+            <a href="#/category/${cat.slug}" class="category-card h-64 rounded-2xl bg-brand-800 flex items-end p-6 group cursor-pointer animate-fadeInUp" style="animation-delay: ${i * 0.05}s">
+              <div class="relative z-10"><p class="text-accent-gold text-sm mb-1">${count} Products</p><h3 class="font-serif text-2xl font-semibold mb-2 group-hover:text-accent-gold transition">${cat.name}</h3><p class="text-brand-400 text-sm">${cat.description}</p><p class="mt-3 text-sm text-brand-300 group-hover:text-accent-gold transition">Shop Collection →</p></div>
+            </a>`; }).join('')}
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderCategoryPage(slug) {
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  const category = categories.find(c => c.slug === slug);
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  if (!category) { return `<div class="py-20 text-center"><h2 class="font-serif text-3xl mb-4">Category Not Found</h2><a href="#/categories" class="text-accent-gold hover:underline">All Categories</a></div>`; }
+  const categoryProducts = products.filter(p => p.category === category.name && p.enabled);
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <nav class="text-sm text-brand-400 mb-8"><a href="#/" class="hover:text-accent-gold transition">Home</a> / <a href="#/categories" class="hover:text-accent-gold transition">Categories</a> / <span class="text-brand-200">${category.name}</span></nav>
+        <div class="mb-10"><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-2">Category</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-2">${category.name}</h1><p class="text-brand-400">${category.description} · ${categoryProducts.length} products</p></div>
+        ${categoryProducts.length > 0 ? `<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">${categoryProducts.map(p => renderProductCard(p)).join('')}</div>` : `<div class="text-center py-20"><p class="text-brand-400 mb-4">No products in this category yet.</p><a href="#/shop" class="btn-secondary px-6 py-3 rounded-full text-sm uppercase inline-block">Browse All Products</a></div>`}
+      </div>
+    </section>`;
+}
+
+function renderAboutPage() {
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16"><p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-4">Our Story</p><h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">About <span class="text-gold-gradient">SINISTER EXCLUSIVE</span></h1><div class="section-divider mx-auto"></div></div>
+        <div class="space-y-8 text-brand-300 leading-relaxed">
+          <p class="text-xl text-brand-200 leading-relaxed">SINISTER EXCLUSIVE was born from a simple belief: true style is not about following trends—it's about setting them. We create premium menswear for the modern gentleman who values quality, craftsmanship, and individuality.</p>
+          <div class="grid md:grid-cols-2 gap-8 py-8">
+            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Premium Quality</h3><p>Every garment is crafted from the finest materials, sourced from trusted suppliers worldwide. We never compromise on quality.</p></div>
+            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Exclusive Designs</h3><p>Our pieces are designed in-house, ensuring exclusivity. You won't find our designs anywhere else.</p></div>
+            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Built to Last</h3><p>Timeless designs and superior construction mean our pieces become wardrobe staples for years to come.</p></div>
+            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Customer First</h3><p>We're committed to exceptional service. From browsing to delivery, your satisfaction is our priority.</p></div>
+          </div>
+          <div class="text-center py-8"><h2 class="font-serif text-3xl font-bold mb-4 text-brand-100">Our Mission</h2><p class="text-lg text-brand-300 max-w-2xl mx-auto">To empower men worldwide with clothing that exudes confidence, sophistication, and individuality. Every piece tells a story—make yours unforgettable.</p></div>
+        </div>
+      </div>
+    </section>`;
+}
+function renderContactPage() {
+  const settings = DB.get(DB.KEYS.SETTINGS) || {};
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16"><p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-4">Get In Touch</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Contact Us</h1><div class="section-divider mx-auto mb-4"></div><p class="text-brand-400 max-w-xl mx-auto">Have questions? We'd love to hear from you. Reach out through any of the channels below.</p></div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <a href="https://wa.me/${settings?.whatsapp}" target="_blank" class="flex items-center gap-4 p-6 bg-brand-900 rounded-2xl border border-brand-800 hover:border-accent-gold/50 transition group">
+              <div class="w-14 h-14 bg-[#25D366]/20 rounded-xl flex items-center justify-center flex-shrink-0"><svg width="28" height="28" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+              <div><h3 class="font-semibold text-brand-100 group-hover:text-accent-gold transition">WhatsApp</h3><p class="text-brand-400 text-sm">Quick chat with our team</p></div>
+            </a>
+            <a href="mailto:${settings?.email}" class="flex items-center gap-4 p-6 bg-brand-900 rounded-2xl border border-brand-800 hover:border-accent-gold/50 transition group">
+              <div class="w-14 h-14 bg-accent-gold/10 rounded-xl flex items-center justify-center flex-shrink-0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><h3 class="font-semibold text-brand-100 group-hover:text-accent-gold transition">Email</h3><p class="text-brand-400 text-sm">${settings?.email}</p></div>
+            </a>
+            <a href="${settings?.instagramLink}" target="_blank" class="flex items-center gap-4 p-6 bg-brand-900 rounded-2xl border border-brand-800 hover:border-accent-gold/50 transition group">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+              <div><h3 class="font-semibold text-brand-100 group-hover:text-accent-gold transition">Instagram</h3><p class="text-brand-400 text-sm">@${settings?.instagram}</p></div>
+            </a>
+          </div>
+          <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800">
+            <h3 class="font-serif text-2xl font-bold mb-6">Store Information</h3>
+            <div class="space-y-6">
+              <div><p class="text-accent-gold text-sm uppercase tracking-wide mb-1">Address</p><p class="text-brand-200">${settings?.address || 'Coming Soon'}</p></div>
+              <div><p class="text-accent-gold text-sm uppercase tracking-wide mb-1">Business Hours</p><p class="text-brand-200">${settings?.businessHours || 'Contact us for hours'}</p></div>
+              <div><p class="text-accent-gold text-sm uppercase tracking-wide mb-1">Email</p><p class="text-brand-200">${settings?.email}</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderOrderModal() {
+  return `
+    <div id="order-modal-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden" onclick="closeOrderModal()"></div>
+    <div id="order-modal-box" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+      <div class="bg-brand-950 border border-brand-800 rounded-2xl w-full max-w-md p-6 relative animate-scaleIn">
+        <button onclick="closeOrderModal()" class="absolute top-4 right-4 p-2 hover:bg-brand-800 rounded-lg transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        <h2 class="font-serif text-2xl font-bold mb-1">Complete Your Order</h2>
+        <p id="order-modal-product" class="text-brand-400 text-sm mb-6"></p>
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div><label class="block text-sm font-medium text-brand-300 mb-2">First Name *</label><input type="text" id="order-first-name" class="form-input w-full px-4 py-3 rounded-lg" placeholder="John"></div>
+            <div><label class="block text-sm font-medium text-brand-300 mb-2">Last Name *</label><input type="text" id="order-last-name" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Doe"></div>
+          </div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Phone Number *</label><input type="tel" id="order-phone" class="form-input w-full px-4 py-3 rounded-lg" placeholder="+1 234 567 890"></div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Delivery Address *</label><textarea id="order-address" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="Where should we send your order?"></textarea></div>
+        </div>
+        <button onclick="submitOrderModal()" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold w-full py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2 mt-6">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send Order via WhatsApp
+        </button>
+      </div>
+    </div>`;
+}
+
+function render404() {
+  return `<div class="py-20 text-center"><h1 class="font-serif text-6xl font-bold text-gold-gradient mb-4">404</h1><p class="text-brand-400 mb-8">Page not found</p><a href="#/" class="btn-primary px-8 py-3 rounded-full text-sm uppercase inline-block">Go Home</a></div>`;
+}
+
+function renderFooter(settings) {
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  return `
+    <footer class="bg-brand-950 border-t border-brand-800 mt-20">
+      <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid md:grid-cols-4 gap-10">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-3 mb-6"><img src="${settings?.logo}" alt="${settings?.storeName}" class="w-12 h-12 rounded-full object-cover border border-brand-700"><span class="font-serif text-lg font-bold tracking-wider">${settings?.storeName}</span></div>
+            <p class="text-brand-400 text-sm leading-relaxed mb-6">${settings?.storeDescription}</p>
+            <div class="flex gap-3">
+              <a href="${settings?.instagramLink || '#'}" target="_blank" class="w-10 h-10 bg-brand-800 rounded-full flex items-center justify-center hover:bg-accent-gold hover:text-brand-950 transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+              <a href="https://wa.me/${settings?.whatsapp}" target="_blank" class="w-10 h-10 bg-brand-800 rounded-full flex items-center justify-center hover:bg-[#25D366] hover:text-white transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+              <a href="mailto:${settings?.email}" class="w-10 h-10 bg-brand-800 rounded-full flex items-center justify-center hover:bg-accent-gold hover:text-brand-950 transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            </div>
+          </div>
+          <div><h4 class="font-semibold text-brand-100 mb-4 uppercase tracking-wide text-sm">Quick Links</h4><ul class="space-y-3 text-sm"><li><a href="#/" class="text-brand-400 hover:text-accent-gold transition">Home</a></li><li><a href="#/shop" class="text-brand-400 hover:text-accent-gold transition">Shop All</a></li><li><a href="#/categories" class="text-brand-400 hover:text-accent-gold transition">Categories</a></li><li><a href="#/about" class="text-brand-400 hover:text-accent-gold transition">About Us</a></li><li><a href="#/contact" class="text-brand-400 hover:text-accent-gold transition">Contact</a></li></ul></div>
+          <div><h4 class="font-semibold text-brand-100 mb-4 uppercase tracking-wide text-sm">Categories</h4><ul class="space-y-3 text-sm">${categories.slice(0, 6).map(cat => `<li><a href="#/category/${cat.slug}" class="text-brand-400 hover:text-accent-gold transition">${cat.name}</a></li>`).join('')}</ul></div>
+          <div><h4 class="font-semibold text-brand-100 mb-4 uppercase tracking-wide text-sm">Contact</h4><ul class="space-y-3 text-sm text-brand-400"><li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${settings?.address || 'Contact us'}</li><li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>${settings?.email}</li><li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>${settings?.businessHours || 'Contact us'}</li></ul></div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-brand-800 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-brand-500 text-sm">© 2026 ${settings?.storeName}. All rights reserved.</p>
+          <p class="text-brand-500 text-sm">Crafted with precision for the modern gentleman.</p>
+        </div>
+      </div>
+    </footer>`;
+}
+
+function renderCartSidebar() {
+  const items = State.cart;
+  const subtotal = State.getCartTotal();
+  return `
+    <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 ${State.cartOpen ? '' : 'hidden'}" onclick="toggleCart()"></div>
+    <div id="cart-sidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full max-w-md bg-brand-950 z-50 shadow-2xl flex flex-col ${State.cartOpen ? '' : 'translate-x-full'}">
+      <div class="flex items-center justify-between p-6 border-b border-brand-800">
+        <h2 class="font-serif text-xl font-bold">Your Cart (${State.getCartCount()})</h2>
+        <button onclick="toggleCart()" class="p-2 hover:bg-brand-800 rounded-lg transition"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <div class="flex-1 overflow-y-auto p-6">
+        ${items.length === 0 ? `<div class="text-center py-12"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5" class="mx-auto mb-4 opacity-50"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p class="text-brand-400">Your cart is empty</p><a href="#/shop" onclick="toggleCart()" class="btn-primary px-6 py-2 rounded-full text-xs uppercase inline-block mt-4">Start Shopping</a></div>` : items.map((item, index) => `
+          <div class="flex gap-3 mb-4 pb-4 border-b border-brand-800">
+            <div class="w-16 h-20 bg-brand-800 rounded-lg flex-shrink-0 flex items-center justify-center">${item.image ? `<img src="${item.image}" class="w-full h-full object-cover rounded-lg">` : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`}</div>
+            <div class="flex-1 min-w-0">
+              <h4 class="font-medium text-sm text-brand-100 truncate">${item.name}</h4>
+              <p class="text-xs text-brand-400 mt-0.5">${item.size} / ${item.color}</p>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex items-center border border-brand-700 rounded">
+                  <button onclick="State.updateQuantity(${index}, -1); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="w-6 h-6 flex items-center justify-center text-brand-300 hover:text-accent-gold text-xs">−</button>
+                  <span class="w-6 text-center text-xs">${item.quantity}</span>
+                  <button onclick="State.updateQuantity(${index}, 1); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="w-6 h-6 flex items-center justify-center text-brand-300 hover:text-accent-gold text-xs">+</button>
+                </div>
+                <span class="text-accent-gold font-semibold text-sm">${formatPrice(item.price * item.quantity)}</span>
+              </div>
+            </div>
+            <button onclick="State.removeFromCart(${index}); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="text-brand-500 hover:text-red-400 p-1 self-start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+          </div>`).join('')}
+      </div>
+      ${items.length > 0 ? `<div class="p-6 border-t border-brand-800">
+        <div class="flex justify-between mb-4"><span class="text-brand-300">Total</span><span class="text-xl font-bold text-accent-gold">${formatPrice(subtotal)}</span></div>
+        <button onclick="navigate('#/checkout'); toggleCart();" class="btn-primary w-full py-3 rounded-full text-sm uppercase font-semibold mb-2">Checkout</button>
+        <button onclick="sendCartViaWhatsApp()" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white w-full py-3 rounded-full text-sm uppercase font-semibold transition">Order via WhatsApp</button>
+      </div>` : ''}
+    </div>`;
+}
+
+function renderMobileMenu() {
+  const route = parseRoute().path;
+  const isActive = (p) => route === p ? 'text-accent-gold' : '';
+  return `
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 ${State.mobileMenuOpen ? '' : 'hidden'}" onclick="toggleMobileMenu()"></div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-72 bg-brand-950 z-50 shadow-2xl ${State.mobileMenuOpen ? '' : '-translate-x-full'}">
+      <div class="p-6 border-b border-brand-800 flex items-center justify-between">
+        <span class="font-serif text-lg font-bold">Menu</span>
+        <button onclick="toggleMobileMenu()" class="p-2 hover:bg-brand-800 rounded-lg transition"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      </div>
+      <nav class="p-4 space-y-1">
+        <a href="#/" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/')}">Home</a>
+        <a href="#/shop" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/shop')}">Shop</a>
+        <a href="#/categories" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/categories')}">Categories</a>
+        <a href="#/about" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/about')}">About</a>
+        <a href="#/contact" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/contact')}">Contact</a>
+        <div class="pt-4 mt-4 border-t border-brand-800">
+          <a href="#/admin/login" class="block px-4 py-3 rounded-lg text-brand-500 hover:text-accent-gold transition text-sm">Admin Dashboard</a>
+        </div>
+      </nav>
+    </div>`;
+}
+function initPageScripts(path, params) {
+  // Any page-specific initialization
+}
+
+function toggleCart() {
+  State.cartOpen = !State.cartOpen;
+  const overlay = document.getElementById('cart-overlay');
+  const sidebar = document.getElementById('cart-sidebar');
+  if (overlay) overlay.classList.toggle('hidden');
+  if (sidebar) sidebar.classList.toggle('translate-x-full');
+}
+
+function toggleMobileMenu() {
+  State.mobileMenuOpen = !State.mobileMenuOpen;
+  const overlay = document.getElementById('mobile-overlay');
+  const menu = document.getElementById('mobile-menu');
+  if (overlay) overlay.classList.toggle('hidden');
+  if (menu) menu.classList.toggle('-translate-x-full');
+}
+
+function selectSize(btn, size) {
+  State.selectedSize = size;
+  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function selectColor(btn, color) {
+  State.selectedColor = color;
+  document.querySelectorAll('.color-swatch').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const nameEl = document.getElementById('selected-color-name');
+  if (nameEl) nameEl.textContent = color;
+}
+
+function changeProductQty(delta) {
+  State.productQty = Math.max(1, State.productQty + delta);
+  const el = document.getElementById('product-qty');
+  if (el) el.textContent = State.productQty;
+}
+
+function quickAddToCart(productId) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const product = products.find(p => p.id === productId);
+  if (product) {
+    State.addToCart(product, product.sizes[0], product.colors[0]?.name || 'Default', 1);
+  }
+}
+
+function addToCartFromPage(productId) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const product = products.find(p => p.id === productId);
+  if (product && State.selectedSize && State.selectedColor) {
+    State.addToCart(product, State.selectedSize, State.selectedColor, State.productQty);
+  }
+}
+
+function orderViaWhatsApp(productId) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const product = products.find(p => p.id === productId);
+  const settings = DB.get(DB.KEYS.SETTINGS) || {};
+  if (!product || !settings?.whatsapp) return;
+  const price = product.discountPrice || product.price;
+  const message = `Hello! I'm interested in ordering:\n\n📦 Product: ${product.name}\n📏 Size: ${State.selectedSize || product.sizes[0]}\n🎨 Color: ${State.selectedColor || product.colors[0]?.name}\n🔢 Quantity: ${State.productQty}\n💰 Price: ${formatPrice(price * State.productQty)}\n\nPlease confirm availability. Thank you!`;
+  window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function sendCartViaWhatsApp() {
+  const settings = DB.get(DB.KEYS.SETTINGS) || {};
+  if (!settings?.whatsapp || State.cart.length === 0) return;
+  let message = `Hello! I'd like to place an order:\n\n`;
+  State.cart.forEach((item, i) => {
+    message += `${i+1}. ${item.name}\n   Size: ${item.size} | Color: ${item.color}\n   Qty: ${item.quantity} | ${formatPrice(item.price * item.quantity)}\n\n`;
+  });
+  message += `💰 TOTAL: ${formatPrice(State.getCartTotal())}\n\nPlease confirm and send payment details. Thank you!`;
+  window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function placeOrder() {
+  const name = document.getElementById('customer-name')?.value.trim();
+  const phone = document.getElementById('customer-phone')?.value.trim();
+  const email = document.getElementById('customer-email')?.value.trim();
+  const address = document.getElementById('customer-address')?.value.trim();
+  const notes = document.getElementById('customer-notes')?.value.trim();
+  const settings = DB.get(DB.KEYS.SETTINGS) || {};
+
+  if (!name || !phone || !address) {
+    showToast('Please fill in all required fields', 'error');
+    return;
+  }
+
+  const order = {
+    id: generateId(),
+    customerName: name, customerPhone: phone, customerEmail: email,
+    shippingAddress: address, notes: notes,
+    items: [...State.cart], subtotal: State.getCartTotal(),
+    status: 'new', createdAt: new Date().toISOString()
+  };
+
+  const orders = DB.get(DB.KEYS.ORDERS) || [];
+  orders.unshift(order);
+  DB.set(DB.KEYS.ORDERS, orders);
+
+  // Send WhatsApp
+  if (settings?.whatsapp) {
+    let message = `🛍️ NEW ORDER - ${order.id.slice(0,8)}\n\n👤 Customer: ${name}\n📱 Phone: ${phone}\n${email ? `📧 Email: ${email}\n` : ''}📍 Address: ${address}\n\n📦 Items:\n`;
+    State.cart.forEach((item, i) => {
+      message += `${i+1}. ${item.name} (${item.size}/${item.color}) × ${item.quantity} = ${formatPrice(item.price * item.quantity)}\n`;
+    });
+    message += `\n💰 TOTAL: ${formatPrice(State.getCartTotal())}`;
+    if (notes) message += `\n\n📝 Notes: ${notes}`;
+    window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
+  State.clearCart();
+  showToast('Order placed successfully!', 'success');
+  setTimeout(() => navigate('#/'), 1500);
+}
+
+function filterProducts() {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  let filtered = products.filter(p => p.enabled);
+  
+  const searchTerm = document.getElementById('search-input')?.value.toLowerCase() || '';
+  if (searchTerm) filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm) || p.category.toLowerCase().includes(searchTerm));
+  
+  const selectedCats = Array.from(document.querySelectorAll('.filter-cat:checked')).map(c => c.value);
+  if (selectedCats.length > 0 && !selectedCats.includes('all')) {
+    filtered = filtered.filter(p => selectedCats.includes(p.category));
+  }
+  
+  const priceFilter = document.querySelector('input[name="price-filter"]:checked')?.value || 'all';
+  if (priceFilter !== 'all') {
+    const [min, max] = priceFilter.split('-').map(Number);
+    filtered = filtered.filter(p => { const price = p.discountPrice || p.price; return price >= min && price <= max; });
+  }
+  
+  const inStockOnly = document.getElementById('in-stock-only')?.checked;
+  if (inStockOnly) filtered = filtered.filter(p => p.stock > 0);
+  
+  const sortBy = document.getElementById('sort-select')?.value || 'newest';
+  switch(sortBy) {
+    case 'price-low': filtered.sort((a,b) => (a.discountPrice||a.price) - (b.discountPrice||b.price)); break;
+    case 'price-high': filtered.sort((a,b) => (b.discountPrice||b.price) - (a.discountPrice||a.price)); break;
+    case 'name': filtered.sort((a,b) => a.name.localeCompare(b.name)); break;
+    default: filtered.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
+  }
+  
+  const grid = document.getElementById('products-grid');
+  const count = document.getElementById('results-count');
+  if (grid) grid.innerHTML = filtered.length > 0 ? filtered.map(p => renderProductCard(p)).join('') : '<p class="col-span-full text-center text-brand-400 py-12">No products found matching your criteria.</p>';
+  if (count) count.textContent = `${filtered.length} products`;
+}
+
+function openSearch() {
+  showToast('Use the search bar on the Shop page', 'info');
+  navigate('#/shop');
+}
+
+// ==================== ADMIN DASHBOARD ====================
+let adminCurrentTab = 'products';
+
+function renderAdminLogin() {
+  return `
+    <div class="min-h-screen flex items-center justify-center px-4" style="background: linear-gradient(135deg, #09090b 0%, #18181b 100%);">
+      <div class="w-full max-w-md">
+        <div class="text-center mb-8">
+          <img src="${(DB.get(DB.KEYS.SETTINGS) || {}).logo || ''}" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-accent-gold/30 object-cover">
+          <h1 class="font-serif text-3xl font-bold mb-2">Admin Dashboard</h1>
+          <p class="text-brand-400 text-sm">${(DB.get(DB.KEYS.SETTINGS) || {}).storeName || ''}</p>
+        </div>
+        <div class="bg-brand-900 rounded-2xl border border-brand-800 p-8">
+          <form onsubmit="handleAdminLogin(event)">
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-brand-300 mb-2">Username or Email</label>
+              <input type="text" id="admin-username" class="form-input w-full px-4 py-3 rounded-lg" placeholder="admin" required>
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-brand-300 mb-2">Password</label>
+              <input type="password" id="admin-password" class="form-input w-full px-4 py-3 rounded-lg" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-primary w-full py-3 rounded-full text-sm uppercase font-semibold">Sign In</button>
+          </form>
+          <p class="text-center text-brand-500 text-xs mt-6">Default: admin / admin123</p>
+          <div class="mt-4 text-center"><a href="#/" class="text-accent-gold text-sm hover:underline">← Back to Store</a></div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function handleAdminLogin(e) {
+  e.preventDefault();
+  const username = document.getElementById('admin-username').value;
+  const password = document.getElementById('admin-password').value;
+  if (State.login(username, password)) {
+    showToast('Welcome back!', 'success');
+    navigate('#/admin');
+  } else {
+    showToast('Invalid credentials', 'error');
+  }
+}
+
+function renderAdminLayout(path, params) {
+  const tab = params[0] || 'products';
+  adminCurrentTab = tab;
+  return `
+    <div class="min-h-screen flex bg-brand-950">
+      <aside class="w-64 bg-brand-900 border-r border-brand-800 flex-shrink-0 hidden lg:block">
+        <div class="p-6 border-b border-brand-800">
+          <a href="#/" class="flex items-center gap-3">
+            <img src="${(DB.get(DB.KEYS.SETTINGS) || {}).logo || ''}" class="w-10 h-10 rounded-full object-cover border border-brand-700">
+            <div><p class="font-serif font-bold text-sm">${DB.get(DB.KEYS.SETTINGS)?.storeName}</p><p class="text-xs text-brand-500">Admin Panel</p></div>
+          </a>
+        </div>
+        <nav class="p-4 space-y-1">
+          ${renderAdminNavItem('products', '📦', 'Products')}
+          ${renderAdminNavItem('categories', '📁', 'Categories')}
+          ${renderAdminNavItem('orders', '🛒', 'Orders')}
+          ${renderAdminNavItem('settings', '⚙️', 'Settings')}
+        </nav>
+        <div class="absolute bottom-0 left-0 w-64 p-4 border-t border-brand-800">
+          <button onclick="State.logout()" class="w-full text-left px-4 py-3 rounded-lg text-brand-300 hover:bg-brand-800 hover:text-red-400 transition text-sm">🚪 Logout</button>
+        </div>
+      </aside>
+      <div class="flex-1 flex flex-col min-w-0">
+        <header class="bg-brand-900 border-b border-brand-800 px-6 py-4 flex items-center justify-between lg:hidden">
+          <span class="font-semibold">Admin Dashboard</span>
+          <button onclick="State.logout()" class="text-sm text-red-400 hover:underline">Logout</button>
+        </header>
+        <div class="lg:hidden flex overflow-x-auto border-b border-brand-800 bg-brand-900 p-2 gap-1">
+          <a href="#/admin/products" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='products'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Products</a>
+          <a href="#/admin/categories" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='categories'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Categories</a>
+          <a href="#/admin/orders" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='orders'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Orders</a>
+          <a href="#/admin/settings" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='settings'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Settings</a>
+        </div>
+        <main class="flex-1 p-6 overflow-auto">${renderAdminContent(tab, params.slice(1))}</main>
+      </div>
+    </div>`;
+}
+
+function renderAdminNavItem(tab, icon, label) {
+  const isActive = adminCurrentTab === tab;
+  return `<a href="#/admin/${tab}" class="admin-sidebar-item ${isActive ? 'active' : ''} flex items-center gap-3 px-4 py-3 rounded-lg text-brand-300 transition text-sm"><span>${icon}</span>${label}</a>`;
+}
+
+function renderAdminContent(tab, params) {
+  switch(tab) {
+    case 'products': return renderAdminProducts();
+    case 'categories': return renderAdminCategories();
+    case 'orders': return renderAdminOrders();
+    case 'settings': return renderAdminSettings();
+    default: return renderAdminProducts();
+  }
+}
+
+function renderAdminProducts() {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  return `
+    <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div><h1 class="font-serif text-2xl font-bold">Products</h1><p class="text-brand-400 text-sm mt-1">${products.length} total products</p></div>
+      <button onclick="openProductModal()" class="btn-primary px-6 py-2.5 rounded-full text-sm uppercase font-semibold inline-flex items-center gap-2"><span>+</span> Add Product</button>
+    </div>
+    <div class="bg-brand-900 rounded-2xl border border-brand-800 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full admin-table">
+          <thead><tr><th class="text-left px-6 py-4">Product</th><th class="text-left px-6 py-4">Category</th><th class="text-left px-6 py-4">Price</th><th class="text-left px-6 py-4">Stock</th><th class="text-left px-6 py-4">Status</th><th class="text-left px-6 py-4">Actions</th></tr></thead>
+          <tbody>
+            ${products.length === 0 ? `<tr><td colspan="6" class="px-6 py-12 text-center text-brand-400">No products yet. Click "Add Product" to get started.</td></tr>` : products.map(p => `
+              <tr class="border-t border-brand-800">
+                <td class="px-6 py-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-brand-800 rounded-lg flex items-center justify-center flex-shrink-0">${p.images?.[0] ? `<img src="${p.images[0]}" class="w-full h-full object-cover rounded-lg">` : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`}</div>
+                    <div><p class="font-medium text-brand-100">${p.name}</p><div class="flex gap-1 mt-1">${p.isNew?'<span class="text-xs bg-accent-gold/20 text-accent-gold px-2 py-0.5 rounded">NEW</span>':''}${p.featured?'<span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded ml-1">FEATURED</span>':''}</div></div>
+                  </div>
+                </td>
+                <td class="px-6 py-4 text-brand-300 text-sm">${p.category}</td>
+                <td class="px-6 py-4"><span class="text-accent-gold font-medium">${formatPrice(p.discountPrice||p.price)}</span>${p.discountPrice?`<span class="text-brand-500 line-through text-xs ml-2">${formatPrice(p.price)}</span>`:''}</td>
+                <td class="px-6 py-4 text-sm ${p.stock>0?'text-emerald-400':'text-red-400'}">${p.stock}</td>
+                <td class="px-6 py-4"><span class="text-xs px-2 py-1 rounded-full ${p.enabled?'bg-emerald-500/15 text-emerald-400':'bg-red-500/15 text-red-400'}">${p.enabled?'Enabled':'Disabled'}</span></td>
+                <td class="px-6 py-4">
+                  <div class="flex gap-2">
+                    <button onclick="editProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-accent-gold transition" title="Edit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button onclick="duplicateProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-blue-400 transition" title="Duplicate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+                    <button onclick="toggleProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-amber-400 transition" title="${p.enabled?'Disable':'Enable'}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+                    <button onclick="deleteProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-red-400 transition" title="Delete"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
+                  </div>
+                </td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="modal-backdrop absolute inset-0" onclick="closeProductModal()"></div>
+      <div class="relative bg-brand-900 rounded-2xl border border-brand-800 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-brand-900 border-b border-brand-800 px-6 py-4 flex items-center justify-between">
+          <h2 id="modal-title" class="font-serif text-xl font-bold">Add Product</h2>
+          <button onclick="closeProductModal()" class="p-2 hover:bg-brand-800 rounded-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <form id="product-form" class="p-6 space-y-4" onsubmit="saveProduct(event)">
+          <input type="hidden" id="product-id">
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Product Name *</label><input type="text" id="pf-name" class="form-input w-full px-4 py-3 rounded-lg" required></div>
+          <div class="grid grid-cols-2 gap-4">
+            <div><label class="block text-sm font-medium text-brand-300 mb-2">Category *</label><select id="pf-category" class="form-input w-full px-4 py-3 rounded-lg" required>${categories.map(c=>`<option value="${c.name}">${c.name}</option>`).join('')}</select></div>
+            <div><label class="block text-sm font-medium text-brand-300 mb-2">Stock *</label><input type="number" id="pf-stock" class="form-input w-full px-4 py-3 rounded-lg" min="0" value="10" required></div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div><label class="block text-sm font-medium text-brand-300 mb-2">Price *</label><input type="number" id="pf-price" class="form-input w-full px-4 py-3 rounded-lg" step="0.01" min="0" required></div>
+            <div><label class="block text-sm font-medium text-brand-300 mb-2">Discount Price</label><input type="number" id="pf-discount" class="form-input w-full px-4 py-3 rounded-lg" step="0.01" min="0" placeholder="Optional"></div>
+          </div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Description</label><textarea id="pf-description" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none"></textarea></div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Sizes (comma separated) *</label><input type="text" id="pf-sizes" class="form-input w-full px-4 py-3 rounded-lg" placeholder="S, M, L, XL, XXL" required></div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Colors (format: Name:#hex, Name:#hex) *</label><input type="text" id="pf-colors" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Black:#09090b, White:#fafafa" required></div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Image URLs (one per line)</label><textarea id="pf-images" rows="2" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="https://..."></textarea></div>
+          <div class="flex gap-6">
+            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-new" class="w-4 h-4 accent-accent-gold"><span class="text-sm text-brand-300">Mark as New</span></label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-featured" class="w-4 h-4 accent-accent-gold"><span class="text-sm text-brand-300">Featured</span></label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-enabled" class="w-4 h-4 accent-accent-gold" checked><span class="text-sm text-brand-300">Enabled</span></label>
+          </div>
+          <div class="flex gap-3 pt-4">
+            <button type="submit" class="btn-primary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Save Product</button>
+            <button type="button" onclick="closeProductModal()" class="btn-secondary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>`;
+}
+
+function openProductModal() {
+  document.getElementById('modal-title').textContent = 'Add Product';
+  document.getElementById('product-form').reset();
+  document.getElementById('product-id').value = '';
+  document.getElementById('pf-enabled').checked = true;
+  document.getElementById('product-modal').classList.remove('hidden');
+}
+
+function closeProductModal() { document.getElementById('product-modal').classList.add('hidden'); }
+
+function editProduct(id) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('modal-title').textContent = 'Edit Product';
+  document.getElementById('product-id').value = p.id;
+  document.getElementById('pf-name').value = p.name;
+  document.getElementById('pf-category').value = p.category;
+  document.getElementById('pf-stock').value = p.stock;
+  document.getElementById('pf-price').value = p.price;
+  document.getElementById('pf-discount').value = p.discountPrice || '';
+  document.getElementById('pf-description').value = p.description || '';
+  document.getElementById('pf-sizes').value = p.sizes.join(', ');
+  document.getElementById('pf-colors').value = p.colors.map(c => `${c.name}:${c.hex}`).join(', ');
+  document.getElementById('pf-images').value = (p.images || []).join('\n');
+  document.getElementById('pf-new').checked = p.isNew;
+  document.getElementById('pf-featured').checked = p.featured;
+  document.getElementById('pf-enabled').checked = p.enabled;
+  document.getElementById('product-modal').classList.remove('hidden');
+}
+
+function saveProduct(e) {
+  e.preventDefault();
+  const id = document.getElementById('product-id').value;
+  const colorsInput = document.getElementById('pf-colors').value;
+  const colors = colorsInput.split(',').map(c => {
+    const [name, hex] = c.trim().split(':');
+    return { name: name?.trim() || 'Color', hex: hex?.trim() || '#000000' };
+  }).filter(c => c.name && c.hex);
+  
+  const productData = {
+    name: document.getElementById('pf-name').value,
+    category: document.getElementById('pf-category').value,
+    stock: parseInt(document.getElementById('pf-stock').value),
+    price: parseFloat(document.getElementById('pf-price').value),
+    discountPrice: document.getElementById('pf-discount').value ? parseFloat(document.getElementById('pf-discount').value) : null,
+    description: document.getElementById('pf-description').value,
+    sizes: document.getElementById('pf-sizes').value.split(',').map(s => s.trim()).filter(Boolean),
+    colors: colors,
+    images: document.getElementById('pf-images').value.split('\n').map(i => i.trim()).filter(Boolean),
+    isNew: document.getElementById('pf-new').checked,
+    featured: document.getElementById('pf-featured').checked,
+    enabled: document.getElementById('pf-enabled').checked
+  };
+
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  if (id) {
+    const idx = products.findIndex(p => p.id === parseInt(id));
+    if (idx !== -1) products[idx] = { ...products[idx], ...productData };
+    showToast('Product updated', 'success');
+  } else {
+    products.push({ id: Date.now(), ...productData, createdAt: new Date().toISOString() });
+    showToast('Product added', 'success');
+  }
+  DB.set(DB.KEYS.PRODUCTS, products);
+  closeProductModal();
+  renderCurrentPage();
+}
+
+function duplicateProduct(id) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  products.push({ ...JSON.parse(JSON.stringify(p)), id: Date.now(), name: p.name + ' (Copy)', createdAt: new Date().toISOString() });
+  DB.set(DB.KEYS.PRODUCTS, products);
+  showToast('Product duplicated', 'success');
+  renderCurrentPage();
+}
+
+function toggleProduct(id) {
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  p.enabled = !p.enabled;
+  DB.set(DB.KEYS.PRODUCTS, products);
+  showToast(`Product ${p.enabled ? 'enabled' : 'disabled'}`, 'info');
+  renderCurrentPage();
+}
+
+function deleteProduct(id) {
+  if (!confirm('Are you sure you want to delete this product?')) return;
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  DB.set(DB.KEYS.PRODUCTS, products.filter(p => p.id !== id));
+  showToast('Product deleted', 'success');
+  renderCurrentPage();
+}
+
+function renderAdminCategories() {
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  const products = DB.get(DB.KEYS.PRODUCTS) || [];
+  return `
+    <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div><h1 class="font-serif text-2xl font-bold">Categories</h1><p class="text-brand-400 text-sm mt-1">${categories.length} categories</p></div>
+      <button onclick="openCategoryModal()" class="btn-primary px-6 py-2.5 rounded-full text-sm uppercase font-semibold inline-flex items-center gap-2"><span>+</span> Add Category</button>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      ${categories.map(cat => {
+        const count = products.filter(p => p.category === cat.name).length;
+        return `
+          <div class="bg-brand-900 rounded-2xl border border-brand-800 p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div><h3 class="font-semibold text-lg">${cat.name}</h3><p class="text-brand-400 text-sm mt-1">${cat.description}</p><p class="text-accent-gold text-sm mt-2">${count} products</p></div>
+              <div class="flex gap-1">
+                <button onclick="editCategory(${cat.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-accent-gold transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                <button onclick="deleteCategory(${cat.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-red-400 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
+              </div>
+            </div>
+            <p class="text-xs text-brand-500">Slug: ${cat.slug} · Order: ${cat.order}</p>
+          </div>`;
+      }).join('')}
+    </div>
+    <div id="category-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="modal-backdrop absolute inset-0" onclick="closeCategoryModal()"></div>
+      <div class="relative bg-brand-900 rounded-2xl border border-brand-800 w-full max-w-md">
+        <div class="border-b border-brand-800 px-6 py-4 flex items-center justify-between">
+          <h2 id="cat-modal-title" class="font-serif text-xl font-bold">Add Category</h2>
+          <button onclick="closeCategoryModal()" class="p-2 hover:bg-brand-800 rounded-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <form id="category-form" class="p-6 space-y-4" onsubmit="saveCategory(event)">
+          <input type="hidden" id="cat-id">
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Name *</label><input type="text" id="cat-name" class="form-input w-full px-4 py-3 rounded-lg" required></div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Description</label><input type="text" id="cat-desc" class="form-input w-full px-4 py-3 rounded-lg"></div>
+          <div><label class="block text-sm font-medium text-brand-300 mb-2">Order</label><input type="number" id="cat-order" class="form-input w-full px-4 py-3 rounded-lg" value="1"></div>
+          <div class="flex gap-3 pt-2">
+            <button type="submit" class="btn-primary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Save</button>
+            <button type="button" onclick="closeCategoryModal()" class="btn-secondary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>`;
+}
+
+function openCategoryModal() {
+  document.getElementById('cat-modal-title').textContent = 'Add Category';
+  document.getElementById('category-form').reset();
+  document.getElementById('cat-id').value = '';
+  document.getElementById('cat-order').value = '1';
+  document.getElementById('category-modal').classList.remove('hidden');
+}
+function closeCategoryModal() { document.getElementById('category-modal').classList.add('hidden'); }
+
+function editCategory(id) {
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  const cat = categories.find(c => c.id === id);
+  if (!cat) return;
+  document.getElementById('cat-modal-title').textContent = 'Edit Category';
+  document.getElementById('cat-id').value = cat.id;
+  document.getElementById('cat-name').value = cat.name;
+  document.getElementById('cat-desc').value = cat.description;
+  document.getElementById('cat-order').value = cat.order;
+  document.getElementById('category-modal').classList.remove('hidden');
+}
+
+function saveCategory(e) {
+  e.preventDefault();
+  const id = document.getElementById('cat-id').value;
+  const name = document.getElementById('cat-name').value;
+  const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const catData = { name, slug, description: document.getElementById('cat-desc').value, order: parseInt(document.getElementById('cat-order').value) || 1, image: '' };
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  if (id) {
+    const idx = categories.findIndex(c => c.id === parseInt(id));
+    if (idx !== -1) categories[idx] = { ...categories[idx], ...catData };
+    showToast('Category updated', 'success');
+  } else {
+    categories.push({ id: Date.now(), ...catData });
+    showToast('Category added', 'success');
+  }
+  DB.set(DB.KEYS.CATEGORIES, categories);
+  closeCategoryModal();
+  renderCurrentPage();
+}
+
+function deleteCategory(id) {
+  if (!confirm('Delete this category? Products will not be deleted.')) return;
+  const categories = DB.get(DB.KEYS.CATEGORIES) || [];
+  DB.set(DB.KEYS.CATEGORIES, categories.filter(c => c.id !== id));
+  showToast('Category deleted', 'success');
+  renderCurrentPage();
+}
+
+function renderAdminOrders() {
+  const orders = DB.get(DB.KEYS.ORDERS) || [];
+  const statuses = ['new', 'confirmed', 'preparing', 'shipped', 'completed', 'cancelled'];
+  return `
+    <div class="mb-6"><h1 class="font-serif text-2xl font-bold">Orders</h1><p class="text-brand-400 text-sm mt-1">${orders.length} total orders</p></div>
+    <div class="bg-brand-900 rounded-2xl border border-brand-800 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full admin-table">
+          <thead><tr><th class="text-left px-6 py-4">Order ID</th><th class="text-left px-6 py-4">Customer</th><th class="text-left px-6 py-4">Items</th><th class="text-left px-6 py-4">Total</th><th class="text-left px-6 py-4">Date</th><th class="text-left px-6 py-4">Status</th><th class="text-left px-6 py-4">Actions</th></tr></thead>
+          <tbody>
+            ${orders.length === 0 ? `<tr><td colspan="7" class="px-6 py-12 text-center text-brand-400">No orders yet. Orders placed via WhatsApp will appear here.</td></tr>` : orders.map(order => `
+              <tr class="border-t border-brand-800">
+                <td class="px-6 py-4 font-mono text-xs text-brand-300">#${order.id.slice(0, 8)}</td>
+                <td class="px-6 py-4"><p class="font-medium text-brand-100">${order.customerName}</p><p class="text-xs text-brand-400">${order.customerPhone}</p></td>
+                <td class="px-6 py-4 text-sm text-brand-300">${order.items.length} item(s)</td>
+                <td class="px-6 py-4 text-accent-gold font-semibold">${formatPrice(order.subtotal)}</td>
+                <td class="px-6 py-4 text-sm text-brand-400">${new Date(order.createdAt).toLocaleDateString()}</td>
+                <td class="px-6 py-4">
+                  <select onchange="updateOrderStatus('${order.id}', this.value)" class="form-input px-2 py-1 rounded text-xs status-${order.status}">
+                    ${statuses.map(s => `<option value="${s}" ${order.status===s?'selected':''} class="bg-brand-900">${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
+                  </select>
+                </td>
+                <td class="px-6 py-4">
+                  <button onclick="viewOrderDetails('${order.id}')" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-accent-gold transition" title="View Details"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="order-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div class="modal-backdrop absolute inset-0" onclick="closeOrderModal()"></div>
+      <div id="order-modal-content" class="relative bg-brand-900 rounded-2xl border border-brand-800 w-full max-w-lg max-h-[90vh] overflow-y-auto"></div>
+    </div>`;
+}
+
+function updateOrderStatus(orderId, status) {
+  const orders = DB.get(DB.KEYS.ORDERS) || [];
+  const order = orders.find(o => o.id === orderId);
+  if (order) { order.status = status; DB.set(DB.KEYS.ORDERS, orders); showToast('Status updated', 'success'); }
+}
+
+function viewOrderDetails(orderId) {
+  const orders = DB.get(DB.KEYS.ORDERS) || [];
+  const order = orders.find(o => o.id === orderId);
+  if (!order) return;
+  const content = document.getElementById('order-modal-content');
+  content.innerHTML = `
+    <div class="border-b border-brand-800 px-6 py-4 flex items-center justify-between">
+      <h2 class="font-serif text-xl font-bold">Order #${order.id.slice(0, 8)}</h2>
+      <button onclick="closeOrderModal()" class="p-2 hover:bg-brand-800 rounded-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="p-6 space-y-6">
+      <div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Customer</h3><p class="font-medium">${order.customerName}</p><p class="text-brand-400 text-sm">${order.customerPhone}</p>${order.customerEmail?`<p class="text-brand-400 text-sm">${order.customerEmail}</p>`:''}</div>
+      <div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Shipping Address</h3><p class="text-brand-300">${order.shippingAddress}</p></div>
+      <div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Items</h3><div class="space-y-2">${order.items.map(item => `<div class="flex justify-between text-sm py-2 border-b border-brand-800"><span>${item.name} (${item.size}/${item.color}) × ${item.quantity}</span><span class="text-accent-gold">${formatPrice(item.price * item.quantity)}</span></div>`).join('')}</div></div>
+      ${order.notes?`<div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Notes</h3><p class="text-brand-300">${order.notes}</p></div>`:''}
+      <div class="pt-4 border-t border-brand-800 flex justify-between text-lg font-bold"><span>Total</span><span class="text-accent-gold">${formatPrice(order.subtotal)}</span></div>
+    </div>`;
+  document.getElementById('order-modal').classList.remove('hidden');
+}
+function closeOrderModal() { document.getElementById('order-modal').classList.add('hidden'); }
+
+function renderAdminSettings() {
+  const s = DB.get(DB.KEYS.SETTINGS) || {};
+  return `
+    <div class="mb-6"><h1 class="font-serif text-2xl font-bold">Settings</h1><p class="text-brand-400 text-sm mt-1">Manage your store information</p></div>
+    <form id="settings-form" class="bg-brand-900 rounded-2xl border border-brand-800 p-6 space-y-6" onsubmit="saveSettings(event)">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="md:col-span-2"><h3 class="font-semibold text-accent-gold uppercase tracking-wide text-sm border-b border-brand-800 pb-2">Store Information</h3></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Store Name</label><input type="text" id="set-storeName" class="form-input w-full px-4 py-3 rounded-lg" value="${s.storeName||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Currency Symbol</label><input type="text" id="set-currencySymbol" class="form-input w-full px-4 py-3 rounded-lg" value="${s.currencySymbol||'$'}"></div>
+        <div class="md:col-span-2"><label class="block text-sm font-medium text-brand-300 mb-2">Store Description</label><textarea id="set-storeDescription" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none">${s.storeDescription||''}</textarea></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Logo URL</label><input type="text" id="set-logo" class="form-input w-full px-4 py-3 rounded-lg" value="${s.logo||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Address</label><input type="text" id="set-address" class="form-input w-full px-4 py-3 rounded-lg" value="${s.address||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Business Hours</label><input type="text" id="set-businessHours" class="form-input w-full px-4 py-3 rounded-lg" value="${s.businessHours||''}"></div>
+        
+        <div class="md:col-span-2 mt-4"><h3 class="font-semibold text-accent-gold uppercase tracking-wide text-sm border-b border-brand-800 pb-2">Contact Information</h3></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">WhatsApp Number</label><input type="text" id="set-whatsapp" class="form-input w-full px-4 py-3 rounded-lg" value="${s.whatsapp||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Email</label><input type="email" id="set-email" class="form-input w-full px-4 py-3 rounded-lg" value="${s.email||''}"></div>
+        
+        <div class="md:col-span-2 mt-4"><h3 class="font-semibold text-accent-gold uppercase tracking-wide text-sm border-b border-brand-800 pb-2">Social Media</h3></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Instagram Username</label><input type="text" id="set-instagram" class="form-input w-full px-4 py-3 rounded-lg" value="${s.instagram||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">Instagram Link</label><input type="text" id="set-instagramLink" class="form-input w-full px-4 py-3 rounded-lg" value="${s.instagramLink||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">TikTok Username</label><input type="text" id="set-tiktok" class="form-input w-full px-4 py-3 rounded-lg" value="${s.tiktok||''}"></div>
+        <div><label class="block text-sm font-medium text-brand-300 mb-2">TikTok Link</label><input type="text" id="set-tiktokLink" class="form-input w-full px-4 py-3 rounded-lg" value="${s.tiktokLink||''}"></div>
+      </div>
+      <div class="pt-4"><button type="submit" class="btn-primary px-8 py-3 rounded-full text-sm uppercase font-semibold">Save Settings</button></div>
+    </form>`;
+}
+
+function saveSettings(e) {
+  e.preventDefault();
+  const settings = {
+    storeName: document.getElementById('set-storeName').value,
+    currencySymbol: document.getElementById('set-currencySymbol').value,
+    storeDescription: document.getElementById('set-storeDescription').value,
+    logo: document.getElementById('set-logo').value,
+    address: document.getElementById('set-address').value,
+    businessHours: document.getElementById('set-businessHours').value,
+    whatsapp: document.getElementById('set-whatsapp').value,
+    email: document.getElementById('set-email').value,
+    instagram: document.getElementById('set-instagram').value,
+    instagramLink: document.getElementById('set-instagramLink').value,
+    tiktok: document.getElementById('set-tiktok').value,
+    tiktokLink: document.getElementById('set-tiktokLink').value,
+    currency: 'USD', favicon: '', facebook: '', facebookLink: ''
+  };
+  DB.set(DB.KEYS.SETTINGS, settings);
+  showToast('Settings saved successfully', 'success');
+}
+
+function initAdminScripts(path, params) {
+  // Admin-specific initialization
+}
+
+// Initialize - ensure hash is present
+if (!window.location.hash) {
+  window.location.hash = '#/';
+}
+// Small delay to ensure hash is processed
+setTimeout(function() {
+  DB.ready.then(function() {
+    try {
+      renderCurrentPage();
+    } catch(e) {
+    console.error("Initial render failed:", e);
+    var ed = document.getElementById('error-display');
+    var em = document.getElementById('error-message');
+      if (ed && em) { ed.style.display = 'flex'; em.textContent = e.message; }
+    }
+  });
+}, 50);
+
+// Also handle direct hash access on load
+window.addEventListener('load', function() {
+  if (window.location.hash && window.location.hash !== '#/') {
+    setTimeout(function() { renderCurrentPage(); }, 100);
+  }
+});
+</script>
+</body>
+</html>
