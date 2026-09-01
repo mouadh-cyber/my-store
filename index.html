@@ -308,7 +308,7 @@ const DB = {
     id: 1, store_name: s.storeName || null, store_description: s.storeDescription || null, whatsapp: s.whatsapp || null,
     email: s.email || null, instagram: s.instagram || null, instagram_link: s.instagramLink || null, tiktok: s.tiktok || null,
     tiktok_link: s.tiktokLink || null, store_address: s.address || null, business_hours: s.businessHours || null,
-    currency_symbol: s.currencySymbol || '$', logo: s.logo || null, favicon: s.favicon || null
+    currency_symbol: s.currencySymbol || '$'
   }),
   seedAdmin() {
     const admin = { username: 'admin', email: 'admin@sinister.com', password: this.hashPassword('admin123') };
@@ -508,9 +508,11 @@ function renderStorefront(path, params) {
     case '/category': pageContent = renderCategoryPage(params[0]); break;
     case '/about': pageContent = renderAboutPage(); break;
     case '/contact': pageContent = renderContactPage(); break;
+    case '/cart': pageContent = renderCartPage(); break;
+    case '/checkout': pageContent = renderCheckoutPage(); break;
     default: pageContent = render404();
   }
-  return renderHeader(settings) + `<main class="page-content">${pageContent}</main>` + renderFooter(settings) + renderOrderModal() + renderMobileMenu();
+  return renderHeader(settings) + `<main class="page-content">${pageContent}</main>` + renderFooter(settings) + renderCartSidebar() + renderMobileMenu();
 }
 
 function renderHeader(settings) {
@@ -537,6 +539,10 @@ function renderHeader(settings) {
           <div class="flex items-center gap-4">
             <button onclick="openSearch()" class="p-2 text-brand-200 hover:text-accent-gold transition hidden sm:block">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <button onclick="toggleCart()" class="relative p-2 text-brand-200 hover:text-accent-gold transition">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-accent-gold text-brand-950 text-xs font-bold rounded-full flex items-center justify-center">${State.getCartCount()}</span>
             </button>
           </div>
         </div>
@@ -587,16 +593,6 @@ function renderHomePage() {
         <div class="text-center mt-12"><a href="#/shop" class="btn-secondary px-8 py-3 rounded-full text-sm uppercase inline-block">View All Products</a></div>
       </div>
     </section>
-    ${newArrivals.length > 0 ? `
-    <section class="py-20 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-end justify-between mb-14">
-          <div><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Fresh Drops</p><h2 class="font-serif text-4xl md:text-5xl font-bold">New Arrivals</h2></div>
-          <a href="#/shop" class="hidden md:block text-accent-gold hover:underline text-sm font-medium">View All →</a>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">${newArrivals.map(p => renderProductCard(p)).join('')}</div>
-      </div>
-    </section>` : ''}
     <section class="py-20 px-4 bg-brand-900/50">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-14">
@@ -615,6 +611,16 @@ function renderHomePage() {
         </div>
       </div>
     </section>
+    ${newArrivals.length > 0 ? `
+    <section class="py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-end justify-between mb-14">
+          <div><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Fresh Drops</p><h2 class="font-serif text-4xl md:text-5xl font-bold">New Arrivals</h2></div>
+          <a href="#/shop" class="hidden md:block text-accent-gold hover:underline text-sm font-medium">View All →</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">${newArrivals.map(p => renderProductCard(p)).join('')}</div>
+      </div>
+    </section>` : ''}
     <section class="py-24 px-4 relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-950"></div>
       <div class="relative max-w-4xl mx-auto text-center">
@@ -647,7 +653,7 @@ function renderProductCard(product) {
           ${hasDiscount ? '<span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sale</span>' : ''}
         </div>
         <div class="product-overlay absolute inset-0 bg-black/40 flex items-center justify-center gap-3">
-          <button onclick="event.stopPropagation(); openOrderModal(${product.id})" class="btn-primary px-5 py-2.5 rounded-full text-xs uppercase ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>${outOfStock ? 'Out of Stock' : 'Order Now'}</button>
+          <button onclick="event.stopPropagation(); quickAddToCart(${product.id})" class="btn-primary px-5 py-2.5 rounded-full text-xs uppercase ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>${outOfStock ? 'Out of Stock' : 'Add to Cart'}</button>
         </div>
       </div>
       <div class="space-y-2">
@@ -748,9 +754,10 @@ function renderProductPage(productId) {
                 </div>
               </div>
               <div class="flex flex-col sm:flex-row gap-3">
-                <button onclick="orderNowFromPage(${product.id})" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold flex-1 py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2 ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>
+                <button onclick="addToCartFromPage(${product.id})" class="btn-primary flex-1 py-4 rounded-full text-sm uppercase font-semibold ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>Add to Cart</button>
+                <button onclick="orderViaWhatsApp(${product.id})" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold flex-1 py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                  Order Now
+                  Order via WhatsApp
                 </button>
               </div>
             </div>
@@ -852,28 +859,97 @@ function renderContactPage() {
     </section>`;
 }
 
-function renderOrderModal() {
+function renderCartPage() {
+  const items = State.cart;
+  const subtotal = State.getCartTotal();
+  if (items.length === 0) {
+    return `<section class="py-20 px-4"><div class="max-w-2xl mx-auto text-center"><div class="w-20 h-20 mx-auto mb-6 bg-brand-800 rounded-full flex items-center justify-center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h1 class="font-serif text-3xl font-bold mb-4">Your Cart is Empty</h1><p class="text-brand-400 mb-8">Looks like you haven't added anything yet. Start shopping to fill your cart with premium pieces.</p><a href="#/shop" class="btn-primary px-8 py-3 rounded-full text-sm uppercase inline-block">Start Shopping</a></div></section>`;
+  }
   return `
-    <div id="order-modal-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden" onclick="closeOrderModal()"></div>
-    <div id="order-modal-box" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
-      <div class="bg-brand-950 border border-brand-800 rounded-2xl w-full max-w-md p-6 relative animate-scaleIn">
-        <button onclick="closeOrderModal()" class="absolute top-4 right-4 p-2 hover:bg-brand-800 rounded-lg transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-        <h2 class="font-serif text-2xl font-bold mb-1">Complete Your Order</h2>
-        <p id="order-modal-product" class="text-brand-400 text-sm mb-6"></p>
-        <div class="space-y-4">
-          <div class="grid grid-cols-2 gap-3">
-            <div><label class="block text-sm font-medium text-brand-300 mb-2">First Name *</label><input type="text" id="order-first-name" class="form-input w-full px-4 py-3 rounded-lg" placeholder="John"></div>
-            <div><label class="block text-sm font-medium text-brand-300 mb-2">Last Name *</label><input type="text" id="order-last-name" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Doe"></div>
+    <section class="py-12 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="font-serif text-4xl font-bold mb-10">Shopping Cart</h1>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2 space-y-4">
+            ${items.map((item, index) => `
+              <div class="flex gap-4 p-4 bg-brand-900 rounded-xl border border-brand-800">
+                <div class="w-24 h-32 bg-brand-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+                  ${item.image ? `<img src="${item.image}" class="w-full h-full object-cover rounded-lg">` : `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`}
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="flex justify-between items-start">
+                    <div><h3 class="font-medium text-brand-100 truncate">${item.name}</h3><p class="text-sm text-brand-400 mt-1">Size: ${item.size} · Color: ${item.color}</p></div>
+                    <button onclick="State.removeFromCart(${index}); renderCurrentPage();" class="text-brand-500 hover:text-red-400 transition p-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
+                  </div>
+                  <div class="flex items-center justify-between mt-4">
+                    <div class="flex items-center border border-brand-700 rounded-lg">
+                      <button onclick="State.updateQuantity(${index}, -1); renderCurrentPage();" class="w-8 h-8 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">−</button>
+                      <span class="w-8 text-center text-sm">${item.quantity}</span>
+                      <button onclick="State.updateQuantity(${index}, 1); renderCurrentPage();" class="w-8 h-8 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">+</button>
+                    </div>
+                    <span class="text-accent-gold font-semibold">${formatPrice(item.price * item.quantity)}</span>
+                  </div>
+                </div>
+              </div>`).join('')}
           </div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Phone Number *</label><input type="tel" id="order-phone" class="form-input w-full px-4 py-3 rounded-lg" placeholder="+1 234 567 890"></div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Delivery Address *</label><textarea id="order-address" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="Where should we send your order?"></textarea></div>
+          <div class="lg:col-span-1">
+            <div class="bg-brand-900 rounded-2xl border border-brand-800 p-6 lg:sticky lg:top-24">
+              <h3 class="font-serif text-xl font-bold mb-6">Order Summary</h3>
+              <div class="space-y-3 mb-6 pb-6 border-b border-brand-800">
+                <div class="flex justify-between text-brand-300"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
+                <div class="flex justify-between text-brand-300"><span>Shipping</span><span class="text-emerald-400">Free</span></div>
+              </div>
+              <div class="flex justify-between text-lg font-bold mb-6"><span>Total</span><span class="text-accent-gold">${formatPrice(subtotal)}</span></div>
+              <div class="space-y-3">
+                <button onclick="navigate('#/checkout')" class="btn-primary w-full py-4 rounded-full text-sm uppercase font-semibold">Proceed to Order</button>
+                <a href="#/shop" class="btn-secondary w-full py-4 rounded-full text-sm uppercase font-semibold text-center block">Continue Shopping</a>
+                <button onclick="sendCartViaWhatsApp()" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold w-full py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  Order via WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <button onclick="submitOrderModal()" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold w-full py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2 mt-6">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Send Order via WhatsApp
-        </button>
       </div>
-    </div>`;
+    </section>`;
+}
+
+function renderCheckoutPage() {
+  const items = State.cart;
+  const subtotal = State.getCartTotal();
+  if (items.length === 0) { navigate('#/cart'); return ''; }
+  return `
+    <section class="py-12 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-serif text-4xl font-bold mb-10">Checkout</h1>
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="bg-brand-900 rounded-2xl border border-brand-800 p-8">
+            <h2 class="font-serif text-xl font-bold mb-6">Your Information</h2>
+            <div class="space-y-4">
+              <div><label class="block text-sm font-medium text-brand-300 mb-2">Full Name *</label><input type="text" id="customer-name" class="form-input w-full px-4 py-3 rounded-lg" placeholder="John Doe"></div>
+              <div><label class="block text-sm font-medium text-brand-300 mb-2">WhatsApp Number *</label><input type="tel" id="customer-phone" class="form-input w-full px-4 py-3 rounded-lg" placeholder="+1 234 567 890"></div>
+              <div><label class="block text-sm font-medium text-brand-300 mb-2">Email</label><input type="email" id="customer-email" class="form-input w-full px-4 py-3 rounded-lg" placeholder="john@example.com"></div>
+              <div><label class="block text-sm font-medium text-brand-300 mb-2">Shipping Address *</label><textarea id="customer-address" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="Enter your full address"></textarea></div>
+              <div><label class="block text-sm font-medium text-brand-300 mb-2">Notes (Optional)</label><textarea id="customer-notes" rows="2" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="Any special instructions..."></textarea></div>
+            </div>
+          </div>
+          <div>
+            <div class="bg-brand-900 rounded-2xl border border-brand-800 p-6 mb-6">
+              <h3 class="font-serif text-xl font-bold mb-4">Order Items</h3>
+              <div class="space-y-3 mb-4">${items.map(item => `<div class="flex justify-between text-sm"><span class="text-brand-300 truncate flex-1">${item.name} (${item.size}/${item.color}) × ${item.quantity}</span><span class="text-brand-100 ml-4">${formatPrice(item.price * item.quantity)}</span></div>`).join('')}</div>
+              <div class="pt-4 border-t border-brand-800 space-y-2">
+                <div class="flex justify-between text-brand-300"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
+                <div class="flex justify-between text-brand-300"><span>Shipping</span><span class="text-emerald-400">Free</span></div>
+                <div class="flex justify-between text-lg font-bold pt-2 border-t border-brand-800"><span>Total</span><span class="text-accent-gold">${formatPrice(subtotal)}</span></div>
+              </div>
+            </div>
+            <button onclick="placeOrder()" class="btn-primary w-full py-4 rounded-full text-sm uppercase font-semibold mb-3">Place Order via WhatsApp</button>
+            <a href="#/cart" class="btn-secondary w-full py-4 rounded-full text-sm uppercase font-semibold text-center block">Back to Cart</a>
+          </div>
+        </div>
+      </div>
+    </section>`;
 }
 
 function render404() {
