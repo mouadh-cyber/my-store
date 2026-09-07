@@ -10,30 +10,28 @@ if (!window.location.hash) {
   window.location.hash = '#/';
 }
 </script>
-<title>SINISTER EXCLUSIVE - Premium Men's Fashion</title>
-<meta name="description" content="Discover premium men's clothing at SINISTER EXCLUSIVE. Shop the latest in men's fashion with exclusive designs and premium quality.">
-<meta property="og:title" content="SINISTER EXCLUSIVE - Premium Men's Fashion">
-<meta property="og:description" content="Discover premium men's clothing with exclusive designs and premium quality.">
+<title>SINISTER EXCLUSIVE — Premium Menswear</title>
+<meta name="description" content="SINISTER EXCLUSIVE — premium menswear, cut for the modern gentleman. Exclusive designs, considered materials.">
+<meta property="og:title" content="SINISTER EXCLUSIVE — Premium Menswear">
+<meta property="og:description" content="Premium menswear, cut for the modern gentleman.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        'serif': ['"Playfair Display"', 'serif'],
+        'serif': ['"Fraunces"', 'serif'],
         'sans': ['Inter', 'sans-serif'],
       },
       colors: {
-        'brand': {
-          50: '#fafafa', 100: '#f4f4f5', 200: '#e4e4e7', 300: '#d4d4d8',
-          400: '#a1a1aa', 500: '#71717a', 600: '#52525b', 700: '#3f3f46',
-          800: '#27272a', 900: '#18181b', 950: '#09090b',
-        },
-        'accent': { gold: '#c9a961', goldLight: '#d4b97a', goldDark: '#b8963f' }
+        paper: { DEFAULT: '#F6F3EC', 100: '#FFFFFF', 200: '#EFEAE0', 300: '#E2DACA' },
+        ink:   { DEFAULT: '#17140F', 700: '#332E24', 500: '#5C5548', 300: '#8A8271' },
+        line:  '#DAD1BC',
+        accent:{ DEFAULT: '#7A2036', dark: '#571526', light: '#9B3F53' },
       }
     }
   }
@@ -41,112 +39,88 @@ tailwind.config = {
 </script>
 <style>
 * { -webkit-font-smoothing: antialiased; }
-body { font-family: 'Inter', sans-serif; background: #09090b; color: #fafafa; }
-.font-serif { font-family: 'Playfair Display', serif; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #F6F3EC; color: #17140F; }
+.font-serif { font-family: 'Fraunces', serif; font-optical-sizing: auto; }
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: #18181b; }
-::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #52525b; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+::-webkit-scrollbar-track { background: #EFEAE0; }
+::-webkit-scrollbar-thumb { background: #C9BFA6; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #17140F; }
+
+@keyframes revealUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
-@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-.animate-fadeIn { animation: fadeIn 0.6s ease forwards; }
-.animate-fadeInUp { animation: fadeInUp 0.7s ease forwards; }
-.animate-scaleIn { animation: scaleIn 0.3s ease forwards; }
-.stagger-1 { animation-delay: 0.1s; opacity: 0; }
-.stagger-2 { animation-delay: 0.2s; opacity: 0; }
-.stagger-3 { animation-delay: 0.3s; opacity: 0; }
-.stagger-4 { animation-delay: 0.4s; opacity: 0; }
-.product-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-.product-card:hover { transform: translateY(-8px); }
-.product-card:hover .product-image { transform: scale(1.08); }
-.product-card:hover .product-overlay { opacity: 1; }
-.product-image { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-.product-overlay { opacity: 0; transition: opacity 0.3s ease; }
-.btn-primary {
-  background: linear-gradient(135deg, #c9a961 0%, #b8963f 100%);
-  color: #09090b; font-weight: 600; transition: all 0.3s ease; letter-spacing: 0.05em;
-}
-.btn-primary:hover {
-  background: linear-gradient(135deg, #d4b97a 0%, #c9a961 100%);
-  transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
-}
-.btn-secondary {
-  background: transparent; border: 1px solid rgba(250, 250, 250, 0.3);
-  color: #fafafa; font-weight: 500; transition: all 0.3s ease; letter-spacing: 0.05em;
-}
-.btn-secondary:hover { border-color: #c9a961; color: #c9a961; background: rgba(201, 169, 97, 0.05); }
-.text-gold-gradient {
-  background: linear-gradient(135deg, #c9a961 0%, #e8d5a3 50%, #c9a961 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.form-input { background: #18181b; border: 1px solid #3f3f46; color: #fafafa; transition: all 0.2s ease; }
-.form-input:focus { outline: none; border-color: #c9a961; box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1); }
+.hero-reveal > * { animation: revealUp 0.8s cubic-bezier(.2,.7,.2,1) both; }
+.hero-reveal > *:nth-child(1) { animation-delay: .05s; }
+.hero-reveal > *:nth-child(2) { animation-delay: .15s; }
+.hero-reveal > *:nth-child(3) { animation-delay: .25s; }
+.hero-reveal > *:nth-child(4) { animation-delay: .35s; }
+
+.product-card .product-frame { overflow: hidden; }
+.product-card .product-image { transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+.product-card:hover .product-image { transform: scale(1.045); }
+.product-card .quick-add { opacity: 0; transform: translateY(6px); transition: all .25s ease; }
+.product-card:hover .quick-add { opacity: 1; transform: translateY(0); }
+
+.btn-fill { background: #17140F; color: #F6F3EC; border: 1px solid #17140F; transition: all .25s ease; letter-spacing: .01em; }
+.btn-fill:hover { background: #F6F3EC; color: #17140F; }
+.btn-outline { background: transparent; color: #17140F; border: 1px solid #17140F; transition: all .25s ease; }
+.btn-outline:hover { background: #17140F; color: #F6F3EC; }
+.btn-accent { background: #7A2036; color: #F6F3EC; border: 1px solid #7A2036; transition: all .25s ease; }
+.btn-accent:hover { background: #571526; border-color: #571526; }
+
+.form-input { background: #FFFFFF; border: 1px solid #DAD1BC; color: #17140F; transition: all 0.2s ease; }
+.form-input:focus { outline: none; border-color: #17140F; }
+.form-input::placeholder { color: #8A8271; }
+
 .cart-sidebar { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 .mobile-menu { transition: transform 0.3s ease; }
-.badge-new { background: linear-gradient(135deg, #c9a961, #b8963f); color: #09090b; }
-.img-zoom-container { overflow: hidden; }
-.img-zoom-container:hover img { transform: scale(1.1); }
-.img-zoom-container img { transition: transform 0.5s ease; }
-.admin-table th { background: #18181b; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em; color: #a1a1aa; }
-.admin-table tr:hover td { background: #18181b; }
-.toast { animation: slideInRight 0.3s ease forwards; }
-.category-card { position: relative; overflow: hidden; transition: all 0.4s ease; }
-.category-card::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(9,9,11,0.9) 0%, rgba(9,9,11,0.3) 50%, transparent 100%);
-  z-index: 1; transition: all 0.4s ease;
-}
-.category-card:hover::before {
-  background: linear-gradient(to top, rgba(9,9,11,0.95) 0%, rgba(201,169,97,0.2) 60%, transparent 100%);
-}
-.category-card:hover img { transform: scale(1.1); }
-.category-card img { transition: transform 0.6s ease; }
-.size-btn {
-  width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-  border: 1px solid #3f3f46; background: transparent; color: #fafafa;
-  font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s ease;
-}
-.size-btn:hover:not(:disabled) { border-color: #c9a961; }
-.size-btn.active { background: #c9a961; color: #09090b; border-color: #c9a961; }
-.size-btn:disabled { opacity: 0.3; cursor: not-allowed; }
-.color-swatch {
-  width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
-  border: 2px solid transparent; transition: all 0.2s ease;
-}
-.color-swatch:hover { transform: scale(1.1); }
-.color-swatch.active { border-color: #c9a961; box-shadow: 0 0 0 2px #09090b, 0 0 0 4px #c9a961; }
-.status-new { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-.status-confirmed { background: rgba(16, 185, 129, 0.15); color: #34d399; }
-.status-preparing { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-.status-shipped { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
-.status-completed { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
-.status-cancelled { background: rgba(239, 68, 68, 0.15); color: #f87171; }
-.nav-link { position: relative; }
-.nav-link::after {
-  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
-  background: #c9a961; transition: width 0.3s ease;
-}
+
+.nav-link { position: relative; padding-bottom: 2px; }
+.nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #17140F; transition: width 0.25s ease; }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-.section-divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, #c9a961, transparent); }
+
+.size-chip { min-width: 46px; height: 42px; padding: 0 12px; display: flex; align-items: center; justify-content: center; border: 1px solid #DAD1BC; background: transparent; color: #17140F; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s ease; }
+.size-chip:hover:not(:disabled) { border-color: #17140F; }
+.size-chip.active { background: #17140F; color: #F6F3EC; border-color: #17140F; }
+.size-chip:disabled { opacity: 0.3; cursor: not-allowed; text-decoration: line-through; }
+
+.color-swatch { width: 26px; height: 26px; border-radius: 50%; cursor: pointer; border: 1px solid #DAD1BC; box-shadow: 0 0 0 2px transparent; transition: all 0.15s ease; }
+.color-swatch:hover { box-shadow: 0 0 0 2px #DAD1BC; }
+.color-swatch.active { box-shadow: 0 0 0 2px #17140F; }
+
+.status-new { background: #EFEAE0; color: #17140F; }
+.status-confirmed { background: rgba(122,32,54,0.1); color: #7A2036; }
+.status-preparing { background: #F1E7C9; color: #6B5A16; }
+.status-shipped { background: #E3E7EC; color: #3A4A63; }
+.status-completed { background: #E4EEE4; color: #2C5B32; }
+.status-cancelled { background: #F3E1E1; color: #8A2A2A; }
+
+.category-tile img { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+.category-tile:hover img { transform: scale(1.04); }
+
 .whatsapp-float {
-  position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px;
-  background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); z-index: 1000; transition: all 0.3s ease; cursor: pointer;
+  position: fixed; bottom: 24px; right: 24px; width: 52px; height: 52px;
+  background: #17140F; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 20px rgba(23,20,15,0.25); z-index: 1000; transition: all 0.25s ease; cursor: pointer;
 }
-.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5); }
-.page-content { animation: fadeInUp 0.5s ease forwards; }
-.modal-backdrop { background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(4px); }
-.admin-sidebar-item.active { background: rgba(201, 169, 97, 0.1); border-right: 3px solid #c9a961; color: #c9a961; }
-.admin-sidebar-item:hover:not(.active) { background: rgba(255,255,255,0.05); }
+.whatsapp-float:hover { background: #7A2036; transform: translateY(-2px); }
+.page-content { animation: revealUp 0.5s ease forwards; }
+.modal-backdrop { background: rgba(23,20,15, 0.55); }
+
+/* Admin (dashboard context — inverted, functional) */
+.admin-shell { background: #17140F; color: #F6F3EC; }
+.admin-table th { background: #211D16; font-weight: 500; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.08em; color: #A69C86; }
+.admin-table tr:hover td { background: #1E1B14; }
+.admin-sidebar-item.active { background: rgba(155,63,83,0.15); border-right: 2px solid #9B3F53; color: #E7C6CE; }
+.admin-sidebar-item:hover:not(.active) { background: rgba(255,255,255,0.04); }
+.toast { animation: slideInRight 0.3s ease forwards; }
 </style>
 </head>
 <body class="min-h-screen">
-<div id="error-display" style="display:none;position:fixed;inset:0;z-index:99999;background:#09090b;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
-  <h2 style="color:#f87171;font-size:24px;font-weight:bold;margin-bottom:16px;">⚠️ Something went wrong</h2>
-  <p id="error-message" style="color:#a1a1aa;margin-bottom:24px;max-width:500px;text-align:center;"></p>
-  <button onclick="location.reload()" style="background:#c9a961;color:#09090b;padding:10px 24px;border-radius:9999px;font-weight:600;cursor:pointer;border:none;">Reload Page</button>
+<div id="error-display" style="display:none;position:fixed;inset:0;z-index:99999;background:#17140F;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
+  <h2 style="color:#E7C6CE;font-size:22px;font-weight:600;margin-bottom:16px;font-family:'Fraunces',serif;">Something went wrong</h2>
+  <p id="error-message" style="color:#A69C86;margin-bottom:24px;max-width:500px;text-align:center;"></p>
+  <button onclick="location.reload()" style="background:#F6F3EC;color:#17140F;padding:10px 28px;font-weight:500;cursor:pointer;border:none;">Reload page</button>
 </div>
 <script>
 window.onerror = function(msg, url, line, col, error) {
@@ -161,7 +135,7 @@ window.addEventListener('unhandledrejection', function(e) {
 </script>
 <div id="toast-container" class="fixed top-20 right-4 z-[9999] space-y-2"></div>
 <a id="whatsapp-float" class="whatsapp-float" href="#" target="_blank" title="Chat on WhatsApp">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#F6F3EC"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <div id="app"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -364,8 +338,8 @@ const State = {
 function showToast(message, type = 'info') {
   const container = document.getElementById('toast-container');
   const toast = document.createElement('div');
-  const colors = { success: 'bg-emerald-600', error: 'bg-red-600', info: 'bg-brand-700', warning: 'bg-amber-600' };
-  toast.className = `toast ${colors[type]} text-white px-5 py-3 rounded-lg shadow-lg font-medium text-sm`;
+  const colors = { success: 'bg-ink', error: 'bg-accent', info: 'bg-ink-700', warning: 'bg-ink' };
+  toast.className = `toast ${colors[type]} text-paper px-5 py-3 text-sm font-medium border border-paper/10`;
   toast.textContent = message; container.appendChild(toast);
   setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100%)'; toast.style.transition = 'all 0.3s ease'; setTimeout(() => toast.remove(), 300); }, 3000);
 }
@@ -377,10 +351,8 @@ function parseRoute() {
   const hash = window.location.hash || '#/';
   const cleanHash = hash.replace('#', '');
   const parts = cleanHash.split('/').filter(Boolean);
-  // Build full path (e.g., /admin/login, /product/123)
   let fullPath = '/' + (parts[0] || '');
   if (parts.length > 1) {
-    // For admin sub-routes like /admin/login, /admin/products
     if (parts[0] === 'admin' && parts[1]) {
       fullPath = '/admin/' + parts[1];
     }
@@ -391,64 +363,39 @@ function parseRoute() {
 function renderCurrentPage() {
   if (!DB.loaded) { DB.ready.then(() => renderCurrentPage()); return; }
   try {
-    console.log("=== renderCurrentPage called ===");
-    console.log("Current hash:", window.location.hash);
-    
     var hash = window.location.hash || '#/';
-    console.log("Hash value:", hash);
-    
-    // Force redirect to admin login if that's what's requested
+
     if (hash.indexOf('/admin/login') !== -1) {
-      console.log("Detected admin login route");
       var app = document.getElementById('app');
-      if (app) {
-        app.innerHTML = renderAdminLogin();
-        console.log("Admin login rendered");
-        return;
-      }
+      if (app) { app.innerHTML = renderAdminLogin(); return; }
     }
-    
+
     var route = parseRoute();
-    console.log("Parsed route:", route.path, "params:", route.params);
-    
     State.currentRoute = window.location.hash;
-    State.cartOpen = false; 
+    State.cartOpen = false;
     State.mobileMenuOpen = false;
-    
+
     var app = document.getElementById('app');
     if (!app) { console.error("App container not found"); return; }
 
-    // Handle admin routes explicitly
     if (hash.indexOf('/admin') !== -1) {
-      console.log("Admin route detected");
-      
-      if (hash.indexOf('/admin/login') !== -1) {
-        console.log("Rendering admin login");
-        app.innerHTML = renderAdminLogin();
-        return;
-      }
-      
+      if (hash.indexOf('/admin/login') !== -1) { app.innerHTML = renderAdminLogin(); return; }
       if (State.isLoggedIn) {
-        console.log("User is logged in, rendering admin");
         app.innerHTML = renderAdminLayout(route.path, route.params);
         setTimeout(function() { initAdminScripts(route.path, route.params); }, 10);
       } else {
-        console.log("User not logged in, redirecting to login");
         window.location.hash = '#/admin/login';
       }
       return;
     }
 
-    // Storefront routes
-    console.log("Rendering storefront:", route.path);
     app.innerHTML = renderStorefront(route.path, route.params);
-    
+
     var settings = DB.get(DB.KEYS.SETTINGS) || {};
     var waFloat = document.getElementById('whatsapp-float');
     if (waFloat && settings.whatsapp) { waFloat.href = 'https://wa.me/' + settings.whatsapp; }
-    
+
     setTimeout(function() { initPageScripts(route.path, route.params); }, 10);
-    console.log("Storefront rendered successfully");
   } catch(e) {
     console.error('Render error:', e);
     console.error('Stack:', e.stack);
@@ -458,45 +405,21 @@ function renderCurrentPage() {
   }
 }
 
-// Handle hash changes
-window.addEventListener('hashchange', function() {
-  console.log("Hash changed to:", window.location.hash);
-  renderCurrentPage();
-});
+window.addEventListener('hashchange', function() { renderCurrentPage(); });
+window.addEventListener('popstate', function() { renderCurrentPage(); });
 
-// Also handle popstate
-window.addEventListener('popstate', function() {
-  console.log("Popstate, hash:", window.location.hash);
-  renderCurrentPage();
-});
-
-// Initial render with multiple attempts to ensure hash is ready
 var initAttempts = 0;
 function tryInit() {
   initAttempts++;
-  console.log("Init attempt", initAttempts, "hash:", window.location.hash);
-  
-  if (!window.location.hash) {
-    window.location.hash = '#/';
-  }
-  
+  if (!window.location.hash) { window.location.hash = '#/'; }
   renderCurrentPage();
-  
-  // If admin/login was requested but app is empty, try again
   if (window.location.hash.indexOf('/admin/login') !== -1) {
     var app = document.getElementById('app');
-    if (app && app.innerHTML.trim().length < 50 && initAttempts < 3) {
-      setTimeout(tryInit, 200);
-    }
+    if (app && app.innerHTML.trim().length < 50 && initAttempts < 3) { setTimeout(tryInit, 200); }
   }
 }
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', tryInit); } else { tryInit(); }
 
-// Start initialization
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', tryInit);
-} else {
-  tryInit();
-}
 function renderStorefront(path, params) {
   const settings = DB.get(DB.KEYS.SETTINGS) || {};
   let pageContent = '';
@@ -517,32 +440,32 @@ function renderStorefront(path, params) {
 
 function renderHeader(settings) {
   const route = parseRoute().path;
-  const isActive = (p) => route === p ? 'active text-gold-gradient' : '';
+  const isActive = (p) => route === p ? 'active font-medium' : '';
   return `
-    <header class="sticky top-0 z-50 bg-brand-950/95 backdrop-blur-md border-b border-brand-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-brand-200 hover:text-accent-gold transition">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-line">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8">
+        <div class="flex items-center justify-between h-[76px]">
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 -ml-2 text-ink">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="13" x2="21" y2="13"/><line x1="3" y1="19" x2="21" y2="19"/></svg>
           </button>
           <a href="#/" class="flex items-center gap-3">
-            <img src="${settings?.logo}" alt="${settings?.storeName}" class="w-12 h-12 rounded-full object-cover border border-brand-700">
-            <span class="font-serif text-xl font-bold tracking-wider hidden sm:block">${settings?.storeName}</span>
+            ${settings?.logo ? `<img src="${settings.logo}" alt="${settings?.storeName || ''}" class="w-10 h-10 object-cover">` : ''}
+            <span class="font-serif text-[22px] tracking-tight">${settings?.storeName || 'SINISTER EXCLUSIVE'}</span>
           </a>
-          <nav class="hidden lg:flex items-center gap-8">
-            <a href="#/" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/')}">Home</a>
-            <a href="#/shop" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/shop')}">Shop</a>
-            <a href="#/categories" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/categories')}">Categories</a>
-            <a href="#/about" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/about')}">About</a>
-            <a href="#/contact" class="nav-link text-sm font-medium tracking-wide text-brand-200 hover:text-accent-gold transition ${isActive('/contact')}">Contact</a>
+          <nav class="hidden lg:flex items-center gap-9">
+            <a href="#/" class="nav-link text-[13.5px] text-ink/80 hover:text-ink transition ${isActive('/')}">Home</a>
+            <a href="#/shop" class="nav-link text-[13.5px] text-ink/80 hover:text-ink transition ${isActive('/shop')}">Shop</a>
+            <a href="#/categories" class="nav-link text-[13.5px] text-ink/80 hover:text-ink transition ${isActive('/categories')}">Categories</a>
+            <a href="#/about" class="nav-link text-[13.5px] text-ink/80 hover:text-ink transition ${isActive('/about')}">About</a>
+            <a href="#/contact" class="nav-link text-[13.5px] text-ink/80 hover:text-ink transition ${isActive('/contact')}">Contact</a>
           </nav>
-          <div class="flex items-center gap-4">
-            <button onclick="openSearch()" class="p-2 text-brand-200 hover:text-accent-gold transition hidden sm:block">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <div class="flex items-center gap-5">
+            <button onclick="openSearch()" class="p-1.5 text-ink hidden sm:block">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
-            <button onclick="toggleCart()" class="relative p-2 text-brand-200 hover:text-accent-gold transition">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-              <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-accent-gold text-brand-950 text-xs font-bold rounded-full flex items-center justify-center">${State.getCartCount()}</span>
+            <button onclick="toggleCart()" class="relative p-1.5 text-ink">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span id="cart-count" class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent text-paper text-[10px] font-semibold rounded-full flex items-center justify-center">${State.getCartCount()}</span>
             </button>
           </div>
         </div>
@@ -557,77 +480,80 @@ function renderHomePage() {
   const newArrivals = products.filter(p => p.isNew && p.enabled).slice(0, 4);
   const settings = DB.get(DB.KEYS.SETTINGS) || {};
   return `
-    <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950"></div>
-      <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 50%, rgba(201,169,97,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(201,169,97,0.15) 0%, transparent 50%);"></div>
-      <div class="absolute inset-0" style="background-image: url('${settings?.logo}'); background-size: cover; background-position: center; opacity: 0.08;"></div>
-      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-6 animate-fadeInUp stagger-1">New Collection 2026</p>
-        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-2 leading-tight">Redefine Your <span class="text-gold-gradient">Style</span></h1>
-        <p class="text-brand-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto animate-fadeInUp stagger-3 leading-relaxed">${settings?.storeDescription}</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-4">
-          <a href="#/shop" class="btn-primary px-10 py-4 rounded-full text-sm uppercase">Shop Now</a>
-          <a href="#/categories" class="btn-secondary px-10 py-4 rounded-full text-sm uppercase">View Collection</a>
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 pt-10 md:pt-16 pb-16 md:pb-24">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 hero-reveal">
+          <p class="text-accent text-sm mb-5">Autumn/Winter 2026</p>
+          <h1 class="font-serif text-[13vw] sm:text-6xl lg:text-[4.2rem] leading-[0.98] font-normal mb-7 text-ink">Cut for the modern gentleman</h1>
+          <p class="text-ink/60 text-base md:text-lg max-w-md mb-9 leading-relaxed">${settings?.storeDescription || 'Considered menswear, exclusive designs, made to be worn for years — not just a season.'}</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#/shop" class="btn-fill px-9 py-4 text-sm inline-block">Shop the collection</a>
+            <a href="#/categories" class="btn-outline px-9 py-4 text-sm inline-block">Browse categories</a>
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="aspect-[4/5] bg-ink relative overflow-hidden">
+            ${featured[0]?.images?.[0] ? `<img src="${featured[0].images[0]}" class="w-full h-full object-cover opacity-90">` : `<div class="w-full h-full flex items-center justify-center"><span class="font-serif text-paper/30 text-2xl">SINISTER</span></div>`}
+            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ink/70 to-transparent">
+              <p class="text-paper text-xs tracking-wide">${featured[0] ? featured[0].name : 'New Collection'}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </section>
+
+    <section class="border-y border-line py-4">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-ink/70">
+        <span>Follow along for new drops and styling notes</span>
+        <a href="${settings?.instagramLink || '#'}" target="_blank" class="text-ink font-medium hover:text-accent transition">@${settings?.instagram || 'sinisterexclusive'}</a>
       </div>
     </section>
-    <section class="bg-brand-900 py-6 border-y border-brand-800">
-      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        <span class="text-brand-200">Follow us on Instagram for exclusive content & style inspiration</span>
-        <a href="${settings?.instagramLink || '#'}" target="_blank" class="text-accent-gold font-semibold hover:underline">@${settings?.instagram}</a>
+
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="flex items-end justify-between mb-10 md:mb-14 gap-6">
+        <h2 class="font-serif text-3xl md:text-4xl text-ink">Featured pieces</h2>
+        <a href="#/shop" class="nav-link text-sm text-ink/70 hover:text-ink hidden sm:block whitespace-nowrap">View all products</a>
       </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">${featured.map(p => renderProductCard(p)).join('')}</div>
     </section>
-    <section class="py-20 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-14">
-          <p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Curated Selection</p>
-          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Featured Products</h2>
-          <div class="section-divider mx-auto mb-4"></div>
-          <p class="text-brand-400 max-w-xl mx-auto">Discover our most coveted pieces, handpicked for the discerning gentleman.</p>
+
+    <section class="bg-ink py-16 md:py-24">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8">
+        <div class="flex items-end justify-between mb-10 md:mb-14 gap-6">
+          <h2 class="font-serif text-3xl md:text-4xl text-paper">Shop by category</h2>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">${featured.map(p => renderProductCard(p)).join('')}</div>
-        <div class="text-center mt-12"><a href="#/shop" class="btn-secondary px-8 py-3 rounded-full text-sm uppercase inline-block">View All Products</a></div>
-      </div>
-    </section>
-    <section class="py-20 px-4 bg-brand-900/50">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-14">
-          <p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Browse By</p>
-          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">Categories</h2>
-          <div class="section-divider mx-auto"></div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          ${categories.slice(0, 8).map((cat, i) => `
-            <a href="#/category/${cat.slug}" class="category-card h-48 md:h-56 rounded-xl bg-brand-800 flex items-end p-6 group cursor-pointer animate-fadeInUp" style="animation-delay: ${i * 0.05}s">
-              <div class="relative z-10">
-                <h3 class="font-serif text-xl md:text-2xl font-semibold mb-1 group-hover:text-accent-gold transition">${cat.name}</h3>
-                <p class="text-brand-400 text-sm">Shop Now →</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          ${categories.slice(0, 8).map((cat) => `
+            <a href="#/category/${cat.slug}" class="category-tile group block">
+              <div class="aspect-[3/4] bg-ink-700 overflow-hidden mb-4 border border-paper/10">
+                <div class="w-full h-full flex items-center justify-center">
+                  <span class="font-serif text-paper/20 text-lg">${cat.name}</span>
+                </div>
               </div>
+              <h3 class="font-serif text-lg text-paper group-hover:text-accent-light transition">${cat.name}</h3>
+              <p class="text-paper/40 text-xs mt-1">Shop now</p>
             </a>`).join('')}
         </div>
       </div>
     </section>
+
     ${newArrivals.length > 0 ? `
-    <section class="py-20 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-end justify-between mb-14">
-          <div><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Fresh Drops</p><h2 class="font-serif text-4xl md:text-5xl font-bold">New Arrivals</h2></div>
-          <a href="#/shop" class="hidden md:block text-accent-gold hover:underline text-sm font-medium">View All →</a>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">${newArrivals.map(p => renderProductCard(p)).join('')}</div>
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="flex items-end justify-between mb-10 md:mb-14 gap-6">
+        <h2 class="font-serif text-3xl md:text-4xl text-ink">New arrivals</h2>
+        <a href="#/shop" class="nav-link text-sm text-ink/70 hover:text-ink hidden sm:block whitespace-nowrap">View all</a>
       </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">${newArrivals.map(p => renderProductCard(p)).join('')}</div>
     </section>` : ''}
-    <section class="py-24 px-4 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-900 to-brand-950"></div>
-      <div class="relative max-w-4xl mx-auto text-center">
-        <p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-6">Our Philosophy</p>
-        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 leading-tight">Where <span class="text-gold-gradient">Boldness</span> Meets <span class="text-gold-gradient">Refinement</span></h2>
-        <p class="text-brand-300 text-lg leading-relaxed mb-10">SINISTER EXCLUSIVE embodies the modern gentleman — confident, sophisticated, and unapologetically unique. Each piece is crafted with meticulous attention to detail, using only the finest materials.</p>
-        <a href="#/about" class="btn-secondary px-10 py-4 rounded-full text-sm uppercase inline-block">Discover Our Story</a>
+
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-[4/3] bg-paper-200 border border-line order-2 md:order-1"></div>
+        <div class="order-1 md:order-2">
+          <h2 class="font-serif text-3xl md:text-4xl mb-6 leading-tight text-ink">Where boldness meets refinement</h2>
+          <p class="text-ink/60 text-base leading-relaxed mb-8 max-w-md">SINISTER EXCLUSIVE embodies the modern gentleman — confident, sophisticated, and unapologetically distinct. Every piece is made with meticulous attention to detail, using only considered materials.</p>
+          <a href="#/about" class="btn-outline px-9 py-4 text-sm inline-block">Our story</a>
+        </div>
       </div>
     </section>`;
 }
@@ -638,70 +564,63 @@ function renderProductCard(product) {
   const outOfStock = product.stock <= 0;
   return `
     <div class="product-card group cursor-pointer" onclick="navigate('#/product/${product.id}')">
-      <div class="relative aspect-[3/4] bg-brand-800 rounded-xl overflow-hidden mb-4">
-        <div class="product-image w-full h-full bg-gradient-to-br from-brand-700 to-brand-900 flex items-center justify-center">
-          ${product.images?.[0] ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">` : `
-            <div class="text-center p-6">
-              <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-brand-600/50 flex items-center justify-center">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
-              </div>
-              <p class="text-brand-400 text-sm">${product.name}</p>
-            </div>`}
+      <div class="product-frame relative aspect-[3/4] bg-paper-200 mb-4 border border-line">
+        <div class="product-image w-full h-full flex items-center justify-center">
+          ${product.images?.[0] ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">` : `<span class="font-serif text-ink/15 text-sm text-center px-4">${product.name}</span>`}
         </div>
-        <div class="absolute top-3 left-3 flex flex-col gap-2">
-          ${product.isNew ? '<span class="badge-new text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">New</span>' : ''}
-          ${hasDiscount ? '<span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sale</span>' : ''}
+        <div class="absolute top-3 left-3 flex flex-col gap-1.5">
+          ${product.isNew ? '<span class="bg-ink text-paper text-[10px] font-medium px-2.5 py-1 tracking-wide">New</span>' : ''}
+          ${hasDiscount ? '<span class="bg-accent text-paper text-[10px] font-medium px-2.5 py-1 tracking-wide">Sale</span>' : ''}
         </div>
-        <div class="product-overlay absolute inset-0 bg-black/40 flex items-center justify-center gap-3">
-          <button onclick="event.stopPropagation(); quickAddToCart(${product.id})" class="btn-primary px-5 py-2.5 rounded-full text-xs uppercase ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>${outOfStock ? 'Out of Stock' : 'Add to Cart'}</button>
+        <div class="quick-add absolute bottom-0 left-0 right-0 p-3">
+          <button onclick="event.stopPropagation(); quickAddToCart(${product.id})" class="btn-fill w-full py-2.5 text-xs ${outOfStock ? 'opacity-40 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>${outOfStock ? 'Out of stock' : 'Quick add'}</button>
         </div>
       </div>
-      <div class="space-y-2">
-        <p class="text-xs text-brand-500 uppercase tracking-wide">${product.category}</p>
-        <h3 class="font-medium text-brand-100 group-hover:text-accent-gold transition line-clamp-1">${product.name}</h3>
+      <div class="space-y-1.5">
+        <p class="text-[11px] text-ink/40 uppercase tracking-wide">${product.category}</p>
+        <h3 class="font-medium text-ink text-[15px] group-hover:text-accent transition line-clamp-1">${product.name}</h3>
         <div class="flex items-center gap-2">
-          <span class="text-accent-gold font-semibold">${formatPrice(price)}</span>
-          ${hasDiscount ? `<span class="text-brand-500 line-through text-sm">${formatPrice(product.price)}</span>` : ''}
+          <span class="text-ink font-medium text-sm">${formatPrice(price)}</span>
+          ${hasDiscount ? `<span class="text-ink/35 line-through text-xs">${formatPrice(product.price)}</span>` : ''}
         </div>
-        <div class="flex gap-1.5 pt-1">${product.colors.slice(0, 4).map(c => `<span class="w-3.5 h-3.5 rounded-full border border-brand-600" style="background: ${c.hex}"></span>`).join('')}</div>
+        <div class="flex gap-1.5 pt-0.5">${product.colors.slice(0, 4).map(c => `<span class="w-3 h-3 rounded-full border border-line" style="background: ${c.hex}"></span>`).join('')}</div>
       </div>
     </div>`;
 }
+
 function renderShopPage() {
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
   const categories = DB.get(DB.KEYS.CATEGORIES) || [];
   const enabledProducts = products.filter(p => p.enabled);
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="mb-10"><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-2">Collection</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Shop All Products</h1><p class="text-brand-400">${enabledProducts.length} products available</p></div>
-        <div class="flex flex-col lg:flex-row gap-8">
-          <aside class="lg:w-64 flex-shrink-0">
-            <div class="lg:sticky lg:top-24 space-y-8">
-              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Search</h3><input type="text" id="search-input" placeholder="Search products..." class="form-input w-full px-4 py-3 rounded-lg text-sm" oninput="filterProducts()"></div>
-              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Categories</h3><div class="space-y-2">
-                <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="filter-cat w-4 h-4 accent-accent-gold" value="all" checked onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">All Products</span></label>
-                ${categories.map(cat => `<label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="filter-cat w-4 h-4 accent-accent-gold" value="${cat.name}" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">${cat.name}</span></label>`).join('')}
-              </div></div>
-              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Price Range</h3><div class="space-y-2">
-                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="all" checked onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">All Prices</span></label>
-                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="0-50" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">Under $50</span></label>
-                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="50-100" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">$50 - $100</span></label>
-                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="100-200" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">$100 - $200</span></label>
-                <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-accent-gold" value="200-9999" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">$200+</span></label>
-              </div></div>
-              <div><h3 class="font-semibold mb-4 text-sm uppercase tracking-wide">Availability</h3><label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" id="in-stock-only" class="w-4 h-4 accent-accent-gold" onchange="filterProducts()"><span class="text-brand-300 group-hover:text-accent-gold transition">In Stock Only</span></label></div>
-            </div>
-          </aside>
-          <div class="flex-1">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-brand-800">
-              <p id="results-count" class="text-brand-400 text-sm">${enabledProducts.length} products</p>
-              <select id="sort-select" class="form-input px-4 py-2 rounded-lg text-sm w-full sm:w-auto" onchange="filterProducts()">
-                <option value="newest">Newest First</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="name">Name A-Z</option>
-              </select>
-            </div>
-            <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 gap-6">${enabledProducts.map(p => renderProductCard(p)).join('')}</div>
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-10 md:py-14">
+      <div class="mb-10 pb-8 border-b border-line"><h1 class="font-serif text-4xl md:text-5xl mb-3 text-ink">Shop all</h1><p class="text-ink/50 text-sm">${enabledProducts.length} products available</p></div>
+      <div class="flex flex-col lg:flex-row gap-10">
+        <aside class="lg:w-60 flex-shrink-0">
+          <div class="lg:sticky lg:top-24 space-y-8">
+            <div><h3 class="font-medium mb-3 text-sm text-ink">Search</h3><input type="text" id="search-input" placeholder="Search products..." class="form-input w-full px-3.5 py-2.5 text-sm" oninput="filterProducts()"></div>
+            <div><h3 class="font-medium mb-3 text-sm text-ink">Categories</h3><div class="space-y-2.5">
+              <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="filter-cat w-4 h-4 accent-ink" value="all" checked onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">All products</span></label>
+              ${categories.map(cat => `<label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="filter-cat w-4 h-4 accent-ink" value="${cat.name}" onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">${cat.name}</span></label>`).join('')}
+            </div></div>
+            <div><h3 class="font-medium mb-3 text-sm text-ink">Price</h3><div class="space-y-2.5">
+              <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-ink" value="all" checked onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">All prices</span></label>
+              <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-ink" value="0-50" onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">Under $50</span></label>
+              <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-ink" value="50-100" onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">$50 – $100</span></label>
+              <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-ink" value="100-200" onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">$100 – $200</span></label>
+              <label class="flex items-center gap-3 cursor-pointer group"><input type="radio" name="price-filter" class="w-4 h-4 accent-ink" value="200-9999" onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">$200+</span></label>
+            </div></div>
+            <div><h3 class="font-medium mb-3 text-sm text-ink">Availability</h3><label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" id="in-stock-only" class="w-4 h-4 accent-ink" onchange="filterProducts()"><span class="text-ink/70 text-sm group-hover:text-ink transition">In stock only</span></label></div>
           </div>
+        </aside>
+        <div class="flex-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-line">
+            <p id="results-count" class="text-ink/50 text-sm">${enabledProducts.length} products</p>
+            <select id="sort-select" class="form-input px-3.5 py-2 text-sm w-full sm:w-auto" onchange="filterProducts()">
+              <option value="newest">Newest first</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name A–Z</option>
+            </select>
+          </div>
+          <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12">${enabledProducts.map(p => renderProductCard(p)).join('')}</div>
         </div>
       </div>
     </section>`;
@@ -710,67 +629,64 @@ function renderShopPage() {
 function renderProductPage(productId) {
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
   const product = products.find(p => p.id == productId);
-  if (!product) { return `<div class="py-20 text-center"><h2 class="font-serif text-3xl mb-4">Product Not Found</h2><a href="#/shop" class="text-accent-gold hover:underline">Back to Shop</a></div>`; }
+  if (!product) { return `<div class="py-24 text-center"><h2 class="font-serif text-3xl mb-4 text-ink">Product not found</h2><a href="#/shop" class="text-accent hover:underline">Back to shop</a></div>`; }
   State.selectedSize = product.sizes[0]; State.selectedColor = product.colors[0]?.name; State.productQty = 1;
   const related = products.filter(p => p.category === product.category && p.id !== product.id && p.enabled).slice(0, 4);
   const price = product.discountPrice || product.price;
   const hasDiscount = product.discountPrice;
   const outOfStock = product.stock <= 0;
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-7xl mx-auto">
-        <nav class="text-sm text-brand-400 mb-8"><a href="#/" class="hover:text-accent-gold transition">Home</a> / <a href="#/shop" class="hover:text-accent-gold transition">Shop</a> / <span class="text-brand-200">${product.name}</span></nav>
-        <div class="grid lg:grid-cols-2 gap-12">
-          <div class="space-y-4">
-            <div class="aspect-[3/4] bg-brand-800 rounded-2xl overflow-hidden img-zoom-container">
-              ${product.images?.[0] ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-brand-700 to-brand-900"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div>`}
-            </div>
-          </div>
-          <div class="lg:py-8">
-            <div class="flex items-center gap-3 mb-4">
-              ${product.isNew ? '<span class="badge-new text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">New</span>' : ''}
-              ${hasDiscount ? '<span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sale</span>' : ''}
-              <span class="text-brand-500 text-sm uppercase tracking-wide">${product.category}</span>
-            </div>
-            <h1 class="font-serif text-3xl md:text-4xl font-bold mb-4">${product.name}</h1>
-            <div class="flex items-center gap-4 mb-6"><span class="text-3xl font-bold text-accent-gold">${formatPrice(price)}</span>${hasDiscount ? `<span class="text-xl text-brand-500 line-through">${formatPrice(product.price)}</span>` : ''}</div>
-            <p class="text-brand-300 leading-relaxed mb-8">${product.description}</p>
-            <div class="mb-6"><span class="text-sm ${outOfStock ? 'text-red-400' : 'text-emerald-400'} font-medium">${outOfStock ? '● Out of Stock' : `● In Stock (${product.stock} available)`}</span></div>
-            <div class="mb-6">
-              <div class="flex items-center justify-between mb-3"><h3 class="font-semibold text-sm uppercase tracking-wide">Size</h3><button class="text-accent-gold text-sm hover:underline">Size Guide</button></div>
-              <div class="flex flex-wrap gap-2" id="size-selector">${product.sizes.map((size, i) => `<button class="size-btn ${i === 0 ? 'active' : ''}" data-size="${size}" onclick="selectSize(this, '${size}')">${size}</button>`).join('')}</div>
-            </div>
-            <div class="mb-8">
-              <h3 class="font-semibold text-sm uppercase tracking-wide mb-3">Color</h3>
-              <div class="flex gap-3" id="color-selector">${product.colors.map((color, i) => `<button class="color-swatch ${i === 0 ? 'active' : ''}" data-color="${color.name}" style="background: ${color.hex}" onclick="selectColor(this, '${color.name}')" title="${color.name}"></button>`).join('')}</div>
-              <p class="text-brand-400 text-sm mt-2" id="selected-color-name">${product.colors[0]?.name || ''}</p>
-            </div>
-            <div class="space-y-4">
-              <div class="flex items-center gap-4">
-                <div class="flex items-center border border-brand-700 rounded-lg">
-                  <button onclick="changeProductQty(-1)" class="w-12 h-12 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">−</button>
-                  <span id="product-qty" class="w-12 text-center font-medium">1</span>
-                  <button onclick="changeProductQty(1)" class="w-12 h-12 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">+</button>
-                </div>
-              </div>
-              <div class="flex flex-col sm:flex-row gap-3">
-                <button onclick="addToCartFromPage(${product.id})" class="btn-primary flex-1 py-4 rounded-full text-sm uppercase font-semibold ${outOfStock ? 'opacity-50 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>Add to Cart</button>
-                <button onclick="orderViaWhatsApp(${product.id})" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold flex-1 py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                  Order via WhatsApp
-                </button>
-              </div>
-            </div>
-            <div class="mt-10 pt-8 border-t border-brand-800 grid grid-cols-2 gap-4">
-              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Free Shipping</div>
-              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M12 6v6l4 2"/></svg>Fast Delivery</div>
-              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Quality Guaranteed</div>
-              <div class="flex items-center gap-3 text-brand-300 text-sm"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>24/7 Support</div>
-            </div>
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-10 md:py-14">
+      <nav class="text-sm text-ink/40 mb-10"><a href="#/" class="hover:text-ink transition">Home</a> / <a href="#/shop" class="hover:text-ink transition">Shop</a> / <span class="text-ink/70">${product.name}</span></nav>
+      <div class="grid lg:grid-cols-2 gap-14">
+        <div>
+          <div class="aspect-[3/4] bg-paper-200 border border-line overflow-hidden">
+            ${product.images?.[0] ? `<img src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover">` : `<div class="w-full h-full flex items-center justify-center"><span class="font-serif text-ink/15 text-lg">${product.name}</span></div>`}
           </div>
         </div>
-        ${related.length > 0 ? `<div class="mt-20"><h2 class="font-serif text-3xl font-bold mb-8">You May Also Like</h2><div class="grid grid-cols-2 md:grid-cols-4 gap-6">${related.map(p => renderProductCard(p)).join('')}</div></div>` : ''}
+        <div class="lg:py-4">
+          <div class="flex items-center gap-3 mb-5">
+            ${product.isNew ? '<span class="bg-ink text-paper text-[10px] font-medium px-2.5 py-1 tracking-wide">New</span>' : ''}
+            ${hasDiscount ? '<span class="bg-accent text-paper text-[10px] font-medium px-2.5 py-1 tracking-wide">Sale</span>' : ''}
+            <span class="text-ink/40 text-xs uppercase tracking-wide">${product.category}</span>
+          </div>
+          <h1 class="font-serif text-3xl md:text-4xl mb-5 text-ink">${product.name}</h1>
+          <div class="flex items-center gap-4 mb-7"><span class="text-2xl font-medium text-ink">${formatPrice(price)}</span>${hasDiscount ? `<span class="text-lg text-ink/35 line-through">${formatPrice(product.price)}</span>` : ''}</div>
+          <p class="text-ink/60 leading-relaxed mb-8 max-w-md">${product.description}</p>
+          <div class="mb-7"><span class="text-sm ${outOfStock ? 'text-accent' : 'text-ink/70'} font-medium">${outOfStock ? 'Out of stock' : `In stock — ${product.stock} available`}</span></div>
+          <div class="mb-7">
+            <div class="flex items-center justify-between mb-3"><h3 class="font-medium text-sm text-ink">Size</h3><button class="text-ink/50 text-xs hover:text-ink hover:underline">Size guide</button></div>
+            <div class="flex flex-wrap gap-2" id="size-selector">${product.sizes.map((size, i) => `<button class="size-chip ${i === 0 ? 'active' : ''}" data-size="${size}" onclick="selectSize(this, '${size}')">${size}</button>`).join('')}</div>
+          </div>
+          <div class="mb-9">
+            <h3 class="font-medium text-sm mb-3 text-ink">Color — <span id="selected-color-name" class="text-ink/50 font-normal">${product.colors[0]?.name || ''}</span></h3>
+            <div class="flex gap-2.5" id="color-selector">${product.colors.map((color, i) => `<button class="color-swatch ${i === 0 ? 'active' : ''}" data-color="${color.name}" style="background: ${color.hex}" onclick="selectColor(this, '${color.name}')" title="${color.name}"></button>`).join('')}</div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center border border-line">
+                <button onclick="changeProductQty(-1)" class="w-11 h-12 flex items-center justify-center text-ink/60 hover:text-ink transition">−</button>
+                <span id="product-qty" class="w-10 text-center font-medium text-ink">1</span>
+                <button onclick="changeProductQty(1)" class="w-11 h-12 flex items-center justify-center text-ink/60 hover:text-ink transition">+</button>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button onclick="addToCartFromPage(${product.id})" class="btn-fill flex-1 py-4 text-sm font-medium ${outOfStock ? 'opacity-40 cursor-not-allowed' : ''}" ${outOfStock ? 'disabled' : ''}>Add to cart</button>
+              <button onclick="orderViaWhatsApp(${product.id})" class="bg-[#25D366] hover:opacity-90 text-white font-medium flex-1 py-4 text-sm transition flex items-center justify-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Order via WhatsApp
+              </button>
+            </div>
+          </div>
+          <div class="mt-10 pt-8 border-t border-line grid grid-cols-2 gap-4">
+            <div class="flex items-center gap-3 text-ink/60 text-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Free shipping</div>
+            <div class="flex items-center gap-3 text-ink/60 text-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Fast delivery</div>
+            <div class="flex items-center gap-3 text-ink/60 text-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Quality guaranteed</div>
+            <div class="flex items-center gap-3 text-ink/60 text-sm"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>24/7 support</div>
+          </div>
+        </div>
       </div>
+      ${related.length > 0 ? `<div class="mt-24"><h2 class="font-serif text-3xl mb-10 text-ink">You may also like</h2><div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">${related.map(p => renderProductCard(p)).join('')}</div></div>` : ''}
     </section>`;
 }
 
@@ -778,15 +694,17 @@ function renderCategoriesPage() {
   const categories = DB.get(DB.KEYS.CATEGORIES) || [];
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-14"><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-3">Browse</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Shop by Category</h1><div class="section-divider mx-auto mb-4"></div><p class="text-brand-400 max-w-xl mx-auto">Explore our curated collections designed for every occasion.</p></div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          ${categories.map((cat, i) => { const count = products.filter(p => p.category === cat.name && p.enabled).length; return `
-            <a href="#/category/${cat.slug}" class="category-card h-64 rounded-2xl bg-brand-800 flex items-end p-6 group cursor-pointer animate-fadeInUp" style="animation-delay: ${i * 0.05}s">
-              <div class="relative z-10"><p class="text-accent-gold text-sm mb-1">${count} Products</p><h3 class="font-serif text-2xl font-semibold mb-2 group-hover:text-accent-gold transition">${cat.name}</h3><p class="text-brand-400 text-sm">${cat.description}</p><p class="mt-3 text-sm text-brand-300 group-hover:text-accent-gold transition">Shop Collection →</p></div>
-            </a>`; }).join('')}
-        </div>
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-10 md:py-14">
+      <div class="mb-12 pb-8 border-b border-line"><h1 class="font-serif text-4xl md:text-5xl mb-3 text-ink">Shop by category</h1><p class="text-ink/50 text-sm max-w-lg">Explore our curated collections, organized by occasion.</p></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        ${categories.map((cat) => { const count = products.filter(p => p.category === cat.name && p.enabled).length; return `
+          <a href="#/category/${cat.slug}" class="category-tile group block">
+            <div class="aspect-[4/5] bg-paper-200 border border-line overflow-hidden mb-4 flex items-center justify-center">
+              <span class="font-serif text-ink/15 text-lg">${cat.name}</span>
+            </div>
+            <h3 class="font-serif text-xl text-ink group-hover:text-accent transition mb-1">${cat.name}</h3>
+            <p class="text-ink/50 text-sm">${count} products</p>
+          </a>`; }).join('')}
       </div>
     </section>`;
 }
@@ -795,64 +713,59 @@ function renderCategoryPage(slug) {
   const categories = DB.get(DB.KEYS.CATEGORIES) || [];
   const category = categories.find(c => c.slug === slug);
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
-  if (!category) { return `<div class="py-20 text-center"><h2 class="font-serif text-3xl mb-4">Category Not Found</h2><a href="#/categories" class="text-accent-gold hover:underline">All Categories</a></div>`; }
+  if (!category) { return `<div class="py-24 text-center"><h2 class="font-serif text-3xl mb-4 text-ink">Category not found</h2><a href="#/categories" class="text-accent hover:underline">All categories</a></div>`; }
   const categoryProducts = products.filter(p => p.category === category.name && p.enabled);
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-7xl mx-auto">
-        <nav class="text-sm text-brand-400 mb-8"><a href="#/" class="hover:text-accent-gold transition">Home</a> / <a href="#/categories" class="hover:text-accent-gold transition">Categories</a> / <span class="text-brand-200">${category.name}</span></nav>
-        <div class="mb-10"><p class="text-accent-gold text-sm tracking-[0.2em] uppercase mb-2">Category</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-2">${category.name}</h1><p class="text-brand-400">${category.description} · ${categoryProducts.length} products</p></div>
-        ${categoryProducts.length > 0 ? `<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">${categoryProducts.map(p => renderProductCard(p)).join('')}</div>` : `<div class="text-center py-20"><p class="text-brand-400 mb-4">No products in this category yet.</p><a href="#/shop" class="btn-secondary px-6 py-3 rounded-full text-sm uppercase inline-block">Browse All Products</a></div>`}
-      </div>
+    <section class="max-w-[1400px] mx-auto px-5 sm:px-8 py-10 md:py-14">
+      <nav class="text-sm text-ink/40 mb-8"><a href="#/" class="hover:text-ink transition">Home</a> / <a href="#/categories" class="hover:text-ink transition">Categories</a> / <span class="text-ink/70">${category.name}</span></nav>
+      <div class="mb-10 pb-8 border-b border-line"><h1 class="font-serif text-4xl md:text-5xl mb-2 text-ink">${category.name}</h1><p class="text-ink/50 text-sm">${category.description} · ${categoryProducts.length} products</p></div>
+      ${categoryProducts.length > 0 ? `<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">${categoryProducts.map(p => renderProductCard(p)).join('')}</div>` : `<div class="text-center py-24"><p class="text-ink/50 mb-6">No products in this category yet.</p><a href="#/shop" class="btn-outline px-8 py-3.5 text-sm inline-block">Browse all products</a></div>`}
     </section>`;
 }
 
 function renderAboutPage() {
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16"><p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-4">Our Story</p><h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">About <span class="text-gold-gradient">SINISTER EXCLUSIVE</span></h1><div class="section-divider mx-auto"></div></div>
-        <div class="space-y-8 text-brand-300 leading-relaxed">
-          <p class="text-xl text-brand-200 leading-relaxed">SINISTER EXCLUSIVE was born from a simple belief: true style is not about following trends—it's about setting them. We create premium menswear for the modern gentleman who values quality, craftsmanship, and individuality.</p>
-          <div class="grid md:grid-cols-2 gap-8 py-8">
-            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Premium Quality</h3><p>Every garment is crafted from the finest materials, sourced from trusted suppliers worldwide. We never compromise on quality.</p></div>
-            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Exclusive Designs</h3><p>Our pieces are designed in-house, ensuring exclusivity. You won't find our designs anywhere else.</p></div>
-            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Built to Last</h3><p>Timeless designs and superior construction mean our pieces become wardrobe staples for years to come.</p></div>
-            <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800"><div class="w-12 h-12 bg-accent-gold/10 rounded-xl flex items-center justify-center mb-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="font-serif text-xl font-bold mb-2 text-brand-100">Customer First</h3><p>We're committed to exceptional service. From browsing to delivery, your satisfaction is our priority.</p></div>
-          </div>
-          <div class="text-center py-8"><h2 class="font-serif text-3xl font-bold mb-4 text-brand-100">Our Mission</h2><p class="text-lg text-brand-300 max-w-2xl mx-auto">To empower men worldwide with clothing that exudes confidence, sophistication, and individuality. Every piece tells a story—make yours unforgettable.</p></div>
+    <section class="max-w-[1000px] mx-auto px-5 sm:px-8 py-10 md:py-16">
+      <div class="mb-14"><h1 class="font-serif text-4xl md:text-6xl mb-6 leading-tight text-ink">About SINISTER EXCLUSIVE</h1><div class="w-16 h-px bg-ink"></div></div>
+      <div class="space-y-8 text-ink/65 leading-relaxed">
+        <p class="text-xl text-ink/80 leading-relaxed max-w-2xl">SINISTER EXCLUSIVE was born from a simple belief: true style is not about following trends — it's about setting them. We create premium menswear for the modern gentleman who values quality, craftsmanship, and individuality.</p>
+        <div class="grid md:grid-cols-2 gap-x-10 gap-y-10 py-10">
+          <div class="border-t border-line pt-5"><h3 class="font-serif text-xl mb-2 text-ink">Premium quality</h3><p>Every garment is crafted from considered materials, sourced from trusted suppliers worldwide. We never compromise on quality.</p></div>
+          <div class="border-t border-line pt-5"><h3 class="font-serif text-xl mb-2 text-ink">Exclusive designs</h3><p>Our pieces are designed in-house, ensuring exclusivity. You won't find our designs anywhere else.</p></div>
+          <div class="border-t border-line pt-5"><h3 class="font-serif text-xl mb-2 text-ink">Built to last</h3><p>Timeless designs and superior construction mean our pieces become wardrobe staples for years to come.</p></div>
+          <div class="border-t border-line pt-5"><h3 class="font-serif text-xl mb-2 text-ink">Customer first</h3><p>We're committed to exceptional service. From browsing to delivery, your satisfaction is our priority.</p></div>
         </div>
+        <div class="border-t border-line pt-10"><h2 class="font-serif text-3xl mb-4 text-ink">Our mission</h2><p class="text-lg text-ink/65 max-w-2xl">To equip men worldwide with clothing that carries confidence, sophistication, and individuality. Every piece tells a story — make yours unforgettable.</p></div>
       </div>
     </section>`;
 }
+
 function renderContactPage() {
   const settings = DB.get(DB.KEYS.SETTINGS) || {};
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16"><p class="text-accent-gold text-sm tracking-[0.3em] uppercase mb-4">Get In Touch</p><h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Contact Us</h1><div class="section-divider mx-auto mb-4"></div><p class="text-brand-400 max-w-xl mx-auto">Have questions? We'd love to hear from you. Reach out through any of the channels below.</p></div>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="space-y-4">
-            <a href="https://wa.me/${settings?.whatsapp}" target="_blank" class="flex items-center gap-4 p-6 bg-brand-900 rounded-2xl border border-brand-800 hover:border-accent-gold/50 transition group">
-              <div class="w-14 h-14 bg-[#25D366]/20 rounded-xl flex items-center justify-center flex-shrink-0"><svg width="28" height="28" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
-              <div><h3 class="font-semibold text-brand-100 group-hover:text-accent-gold transition">WhatsApp</h3><p class="text-brand-400 text-sm">Quick chat with our team</p></div>
-            </a>
-            <a href="mailto:${settings?.email}" class="flex items-center gap-4 p-6 bg-brand-900 rounded-2xl border border-brand-800 hover:border-accent-gold/50 transition group">
-              <div class="w-14 h-14 bg-accent-gold/10 rounded-xl flex items-center justify-center flex-shrink-0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-              <div><h3 class="font-semibold text-brand-100 group-hover:text-accent-gold transition">Email</h3><p class="text-brand-400 text-sm">${settings?.email}</p></div>
-            </a>
-            <a href="${settings?.instagramLink}" target="_blank" class="flex items-center gap-4 p-6 bg-brand-900 rounded-2xl border border-brand-800 hover:border-accent-gold/50 transition group">
-              <div class="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
-              <div><h3 class="font-semibold text-brand-100 group-hover:text-accent-gold transition">Instagram</h3><p class="text-brand-400 text-sm">@${settings?.instagram}</p></div>
-            </a>
-          </div>
-          <div class="bg-brand-900 p-8 rounded-2xl border border-brand-800">
-            <h3 class="font-serif text-2xl font-bold mb-6">Store Information</h3>
-            <div class="space-y-6">
-              <div><p class="text-accent-gold text-sm uppercase tracking-wide mb-1">Address</p><p class="text-brand-200">${settings?.address || 'Coming Soon'}</p></div>
-              <div><p class="text-accent-gold text-sm uppercase tracking-wide mb-1">Business Hours</p><p class="text-brand-200">${settings?.businessHours || 'Contact us for hours'}</p></div>
-              <div><p class="text-accent-gold text-sm uppercase tracking-wide mb-1">Email</p><p class="text-brand-200">${settings?.email}</p></div>
-            </div>
+    <section class="max-w-[1000px] mx-auto px-5 sm:px-8 py-10 md:py-16">
+      <div class="mb-14"><h1 class="font-serif text-4xl md:text-5xl mb-4 text-ink">Get in touch</h1><p class="text-ink/50 max-w-lg">Have questions? Reach out through any of the channels below.</p></div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="space-y-3">
+          <a href="https://wa.me/${settings?.whatsapp}" target="_blank" class="flex items-center gap-4 p-5 border border-line hover:border-ink transition group">
+            <div class="w-12 h-12 bg-[#25D366]/10 flex items-center justify-center flex-shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><h3 class="font-medium text-ink group-hover:text-accent transition">WhatsApp</h3><p class="text-ink/50 text-sm">Quick chat with our team</p></div>
+          </a>
+          <a href="mailto:${settings?.email}" class="flex items-center gap-4 p-5 border border-line hover:border-ink transition group">
+            <div class="w-12 h-12 bg-ink/5 flex items-center justify-center flex-shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><h3 class="font-medium text-ink group-hover:text-accent transition">Email</h3><p class="text-ink/50 text-sm">${settings?.email}</p></div>
+          </a>
+          <a href="${settings?.instagramLink}" target="_blank" class="flex items-center gap-4 p-5 border border-line hover:border-ink transition group">
+            <div class="w-12 h-12 bg-ink/5 flex items-center justify-center flex-shrink-0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+            <div><h3 class="font-medium text-ink group-hover:text-accent transition">Instagram</h3><p class="text-ink/50 text-sm">@${settings?.instagram}</p></div>
+          </a>
+        </div>
+        <div class="border border-line p-7">
+          <h3 class="font-serif text-2xl mb-6 text-ink">Store information</h3>
+          <div class="space-y-5">
+            <div><p class="text-ink/40 text-xs uppercase tracking-wide mb-1">Address</p><p class="text-ink/75">${settings?.address || 'Coming soon'}</p></div>
+            <div><p class="text-ink/40 text-xs uppercase tracking-wide mb-1">Business hours</p><p class="text-ink/75">${settings?.businessHours || 'Contact us for hours'}</p></div>
+            <div><p class="text-ink/40 text-xs uppercase tracking-wide mb-1">Email</p><p class="text-ink/75">${settings?.email}</p></div>
           </div>
         </div>
       </div>
@@ -863,51 +776,46 @@ function renderCartPage() {
   const items = State.cart;
   const subtotal = State.getCartTotal();
   if (items.length === 0) {
-    return `<section class="py-20 px-4"><div class="max-w-2xl mx-auto text-center"><div class="w-20 h-20 mx-auto mb-6 bg-brand-800 rounded-full flex items-center justify-center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div><h1 class="font-serif text-3xl font-bold mb-4">Your Cart is Empty</h1><p class="text-brand-400 mb-8">Looks like you haven't added anything yet. Start shopping to fill your cart with premium pieces.</p><a href="#/shop" class="btn-primary px-8 py-3 rounded-full text-sm uppercase inline-block">Start Shopping</a></div></section>`;
+    return `<section class="py-24 px-5"><div class="max-w-lg mx-auto text-center"><div class="w-16 h-16 mx-auto mb-6 border border-line flex items-center justify-center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.4"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div><h1 class="font-serif text-3xl mb-4 text-ink">Your cart is empty</h1><p class="text-ink/50 mb-8">Looks like you haven't added anything yet.</p><a href="#/shop" class="btn-fill px-8 py-3.5 text-sm inline-block">Start shopping</a></div></section>`;
   }
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-6xl mx-auto">
-        <h1 class="font-serif text-4xl font-bold mb-10">Shopping Cart</h1>
-        <div class="grid lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2 space-y-4">
-            ${items.map((item, index) => `
-              <div class="flex gap-4 p-4 bg-brand-900 rounded-xl border border-brand-800">
-                <div class="w-24 h-32 bg-brand-800 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  ${item.image ? `<img src="${item.image}" class="w-full h-full object-cover rounded-lg">` : `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`}
-                </div>
-                <div class="flex-1 min-w-0">
-                  <div class="flex justify-between items-start">
-                    <div><h3 class="font-medium text-brand-100 truncate">${item.name}</h3><p class="text-sm text-brand-400 mt-1">Size: ${item.size} · Color: ${item.color}</p></div>
-                    <button onclick="State.removeFromCart(${index}); renderCurrentPage();" class="text-brand-500 hover:text-red-400 transition p-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
-                  </div>
-                  <div class="flex items-center justify-between mt-4">
-                    <div class="flex items-center border border-brand-700 rounded-lg">
-                      <button onclick="State.updateQuantity(${index}, -1); renderCurrentPage();" class="w-8 h-8 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">−</button>
-                      <span class="w-8 text-center text-sm">${item.quantity}</span>
-                      <button onclick="State.updateQuantity(${index}, 1); renderCurrentPage();" class="w-8 h-8 flex items-center justify-center text-brand-300 hover:text-accent-gold transition">+</button>
-                    </div>
-                    <span class="text-accent-gold font-semibold">${formatPrice(item.price * item.quantity)}</span>
-                  </div>
-                </div>
-              </div>`).join('')}
-          </div>
-          <div class="lg:col-span-1">
-            <div class="bg-brand-900 rounded-2xl border border-brand-800 p-6 lg:sticky lg:top-24">
-              <h3 class="font-serif text-xl font-bold mb-6">Order Summary</h3>
-              <div class="space-y-3 mb-6 pb-6 border-b border-brand-800">
-                <div class="flex justify-between text-brand-300"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
-                <div class="flex justify-between text-brand-300"><span>Shipping</span><span class="text-emerald-400">Free</span></div>
+    <section class="max-w-[1200px] mx-auto px-5 sm:px-8 py-10 md:py-14">
+      <h1 class="font-serif text-4xl mb-10 text-ink">Shopping cart</h1>
+      <div class="grid lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-2 space-y-4">
+          ${items.map((item, index) => `
+            <div class="flex gap-4 p-4 border border-line">
+              <div class="w-20 h-28 bg-paper-200 flex-shrink-0 flex items-center justify-center border border-line">
+                ${item.image ? `<img src="${item.image}" class="w-full h-full object-cover">` : `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.3"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/></svg>`}
               </div>
-              <div class="flex justify-between text-lg font-bold mb-6"><span>Total</span><span class="text-accent-gold">${formatPrice(subtotal)}</span></div>
-              <div class="space-y-3">
-                <button onclick="navigate('#/checkout')" class="btn-primary w-full py-4 rounded-full text-sm uppercase font-semibold">Proceed to Order</button>
-                <a href="#/shop" class="btn-secondary w-full py-4 rounded-full text-sm uppercase font-semibold text-center block">Continue Shopping</a>
-                <button onclick="sendCartViaWhatsApp()" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white font-semibold w-full py-4 rounded-full text-sm uppercase transition flex items-center justify-center gap-2">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                  Order via WhatsApp
-                </button>
+              <div class="flex-1 min-w-0">
+                <div class="flex justify-between items-start">
+                  <div><h3 class="font-medium text-ink truncate">${item.name}</h3><p class="text-sm text-ink/45 mt-1">Size: ${item.size} · Color: ${item.color}</p></div>
+                  <button onclick="State.removeFromCart(${index}); renderCurrentPage();" class="text-ink/40 hover:text-accent transition p-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                  <div class="flex items-center border border-line">
+                    <button onclick="State.updateQuantity(${index}, -1); renderCurrentPage();" class="w-8 h-8 flex items-center justify-center text-ink/60 hover:text-ink transition">−</button>
+                    <span class="w-8 text-center text-sm">${item.quantity}</span>
+                    <button onclick="State.updateQuantity(${index}, 1); renderCurrentPage();" class="w-8 h-8 flex items-center justify-center text-ink/60 hover:text-ink transition">+</button>
+                  </div>
+                  <span class="text-ink font-medium">${formatPrice(item.price * item.quantity)}</span>
+                </div>
               </div>
+            </div>`).join('')}
+        </div>
+        <div class="lg:col-span-1">
+          <div class="border border-line p-6 lg:sticky lg:top-24">
+            <h3 class="font-serif text-xl mb-6 text-ink">Order summary</h3>
+            <div class="space-y-3 mb-6 pb-6 border-b border-line">
+              <div class="flex justify-between text-ink/65"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
+              <div class="flex justify-between text-ink/65"><span>Shipping</span><span class="text-ink">Free</span></div>
+            </div>
+            <div class="flex justify-between text-lg font-medium mb-6 text-ink"><span>Total</span><span>${formatPrice(subtotal)}</span></div>
+            <div class="space-y-3">
+              <button onclick="navigate('#/checkout')" class="btn-fill w-full py-4 text-sm font-medium">Proceed to order</button>
+              <a href="#/shop" class="btn-outline w-full py-4 text-sm font-medium text-center block">Continue shopping</a>
+              <button onclick="sendCartViaWhatsApp()" class="bg-[#25D366] hover:opacity-90 text-white font-medium w-full py-4 text-sm transition">Order via WhatsApp</button>
             </div>
           </div>
         </div>
@@ -920,64 +828,65 @@ function renderCheckoutPage() {
   const subtotal = State.getCartTotal();
   if (items.length === 0) { navigate('#/cart'); return ''; }
   return `
-    <section class="py-12 px-4">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="font-serif text-4xl font-bold mb-10">Checkout</h1>
-        <div class="grid lg:grid-cols-2 gap-8">
-          <div class="bg-brand-900 rounded-2xl border border-brand-800 p-8">
-            <h2 class="font-serif text-xl font-bold mb-6">Your Information</h2>
-            <div class="space-y-4">
-              <div><label class="block text-sm font-medium text-brand-300 mb-2">Full Name *</label><input type="text" id="customer-name" class="form-input w-full px-4 py-3 rounded-lg" placeholder="John Doe"></div>
-              <div><label class="block text-sm font-medium text-brand-300 mb-2">WhatsApp Number *</label><input type="tel" id="customer-phone" class="form-input w-full px-4 py-3 rounded-lg" placeholder="+1 234 567 890"></div>
-              <div><label class="block text-sm font-medium text-brand-300 mb-2">Email</label><input type="email" id="customer-email" class="form-input w-full px-4 py-3 rounded-lg" placeholder="john@example.com"></div>
-              <div><label class="block text-sm font-medium text-brand-300 mb-2">Shipping Address *</label><textarea id="customer-address" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="Enter your full address"></textarea></div>
-              <div><label class="block text-sm font-medium text-brand-300 mb-2">Notes (Optional)</label><textarea id="customer-notes" rows="2" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="Any special instructions..."></textarea></div>
+    <section class="max-w-[1000px] mx-auto px-5 sm:px-8 py-10 md:py-14">
+      <h1 class="font-serif text-4xl mb-10 text-ink">Checkout</h1>
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="border border-line p-7">
+          <h2 class="font-serif text-xl mb-6 text-ink">Your information</h2>
+          <div class="space-y-4">
+            <div><label class="block text-sm font-medium text-ink/70 mb-2">Full name *</label><input type="text" id="customer-name" class="form-input w-full px-4 py-3 text-sm" placeholder="John Doe"></div>
+            <div><label class="block text-sm font-medium text-ink/70 mb-2">WhatsApp number *</label><input type="tel" id="customer-phone" class="form-input w-full px-4 py-3 text-sm" placeholder="+1 234 567 890"></div>
+            <div><label class="block text-sm font-medium text-ink/70 mb-2">Email</label><input type="email" id="customer-email" class="form-input w-full px-4 py-3 text-sm" placeholder="john@example.com"></div>
+            <div><label class="block text-sm font-medium text-ink/70 mb-2">Shipping address *</label><textarea id="customer-address" rows="3" class="form-input w-full px-4 py-3 text-sm resize-none" placeholder="Enter your full address"></textarea></div>
+            <div><label class="block text-sm font-medium text-ink/70 mb-2">Notes (optional)</label><textarea id="customer-notes" rows="2" class="form-input w-full px-4 py-3 text-sm resize-none" placeholder="Any special instructions..."></textarea></div>
+          </div>
+        </div>
+        <div>
+          <div class="border border-line p-6 mb-6">
+            <h3 class="font-serif text-xl mb-4 text-ink">Order items</h3>
+            <div class="space-y-3 mb-4">${items.map(item => `<div class="flex justify-between text-sm"><span class="text-ink/65 truncate flex-1">${item.name} (${item.size}/${item.color}) × ${item.quantity}</span><span class="text-ink ml-4">${formatPrice(item.price * item.quantity)}</span></div>`).join('')}</div>
+            <div class="pt-4 border-t border-line space-y-2">
+              <div class="flex justify-between text-ink/65"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
+              <div class="flex justify-between text-ink/65"><span>Shipping</span><span class="text-ink">Free</span></div>
+              <div class="flex justify-between text-lg font-medium pt-2 border-t border-line text-ink"><span>Total</span><span>${formatPrice(subtotal)}</span></div>
             </div>
           </div>
-          <div>
-            <div class="bg-brand-900 rounded-2xl border border-brand-800 p-6 mb-6">
-              <h3 class="font-serif text-xl font-bold mb-4">Order Items</h3>
-              <div class="space-y-3 mb-4">${items.map(item => `<div class="flex justify-between text-sm"><span class="text-brand-300 truncate flex-1">${item.name} (${item.size}/${item.color}) × ${item.quantity}</span><span class="text-brand-100 ml-4">${formatPrice(item.price * item.quantity)}</span></div>`).join('')}</div>
-              <div class="pt-4 border-t border-brand-800 space-y-2">
-                <div class="flex justify-between text-brand-300"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
-                <div class="flex justify-between text-brand-300"><span>Shipping</span><span class="text-emerald-400">Free</span></div>
-                <div class="flex justify-between text-lg font-bold pt-2 border-t border-brand-800"><span>Total</span><span class="text-accent-gold">${formatPrice(subtotal)}</span></div>
-              </div>
-            </div>
-            <button onclick="placeOrder()" class="btn-primary w-full py-4 rounded-full text-sm uppercase font-semibold mb-3">Place Order via WhatsApp</button>
-            <a href="#/cart" class="btn-secondary w-full py-4 rounded-full text-sm uppercase font-semibold text-center block">Back to Cart</a>
-          </div>
+          <button onclick="placeOrder()" class="btn-fill w-full py-4 text-sm font-medium mb-3">Place order via WhatsApp</button>
+          <a href="#/cart" class="btn-outline w-full py-4 text-sm font-medium text-center block">Back to cart</a>
         </div>
       </div>
     </section>`;
 }
 
 function render404() {
-  return `<div class="py-20 text-center"><h1 class="font-serif text-6xl font-bold text-gold-gradient mb-4">404</h1><p class="text-brand-400 mb-8">Page not found</p><a href="#/" class="btn-primary px-8 py-3 rounded-full text-sm uppercase inline-block">Go Home</a></div>`;
+  return `<div class="py-24 text-center"><h1 class="font-serif text-7xl text-ink mb-4">404</h1><p class="text-ink/50 mb-8">Page not found</p><a href="#/" class="btn-fill px-8 py-3.5 text-sm inline-block">Go home</a></div>`;
 }
 
 function renderFooter(settings) {
   const categories = DB.get(DB.KEYS.CATEGORIES) || [];
   return `
-    <footer class="bg-brand-950 border-t border-brand-800 mt-20">
-      <div class="max-w-7xl mx-auto px-4 py-16">
+    <footer class="bg-ink text-paper mt-16">
+      <div class="max-w-[1400px] mx-auto px-5 sm:px-8 py-16">
         <div class="grid md:grid-cols-4 gap-10">
           <div class="md:col-span-1">
-            <div class="flex items-center gap-3 mb-6"><img src="${settings?.logo}" alt="${settings?.storeName}" class="w-12 h-12 rounded-full object-cover border border-brand-700"><span class="font-serif text-lg font-bold tracking-wider">${settings?.storeName}</span></div>
-            <p class="text-brand-400 text-sm leading-relaxed mb-6">${settings?.storeDescription}</p>
+            <div class="flex items-center gap-3 mb-5">
+              ${settings?.logo ? `<img src="${settings.logo}" alt="${settings?.storeName}" class="w-9 h-9 object-cover">` : ''}
+              <span class="font-serif text-lg">${settings?.storeName}</span>
+            </div>
+            <p class="text-paper/50 text-sm leading-relaxed mb-6 max-w-xs">${settings?.storeDescription || ''}</p>
             <div class="flex gap-3">
-              <a href="${settings?.instagramLink || '#'}" target="_blank" class="w-10 h-10 bg-brand-800 rounded-full flex items-center justify-center hover:bg-accent-gold hover:text-brand-950 transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-              <a href="https://wa.me/${settings?.whatsapp}" target="_blank" class="w-10 h-10 bg-brand-800 rounded-full flex items-center justify-center hover:bg-[#25D366] hover:text-white transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-              <a href="mailto:${settings?.email}" class="w-10 h-10 bg-brand-800 rounded-full flex items-center justify-center hover:bg-accent-gold hover:text-brand-950 transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+              <a href="${settings?.instagramLink || '#'}" target="_blank" class="w-9 h-9 border border-paper/20 flex items-center justify-center hover:border-paper transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+              <a href="https://wa.me/${settings?.whatsapp}" target="_blank" class="w-9 h-9 border border-paper/20 flex items-center justify-center hover:border-paper transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+              <a href="mailto:${settings?.email}" class="w-9 h-9 border border-paper/20 flex items-center justify-center hover:border-paper transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
             </div>
           </div>
-          <div><h4 class="font-semibold text-brand-100 mb-4 uppercase tracking-wide text-sm">Quick Links</h4><ul class="space-y-3 text-sm"><li><a href="#/" class="text-brand-400 hover:text-accent-gold transition">Home</a></li><li><a href="#/shop" class="text-brand-400 hover:text-accent-gold transition">Shop All</a></li><li><a href="#/categories" class="text-brand-400 hover:text-accent-gold transition">Categories</a></li><li><a href="#/about" class="text-brand-400 hover:text-accent-gold transition">About Us</a></li><li><a href="#/contact" class="text-brand-400 hover:text-accent-gold transition">Contact</a></li></ul></div>
-          <div><h4 class="font-semibold text-brand-100 mb-4 uppercase tracking-wide text-sm">Categories</h4><ul class="space-y-3 text-sm">${categories.slice(0, 6).map(cat => `<li><a href="#/category/${cat.slug}" class="text-brand-400 hover:text-accent-gold transition">${cat.name}</a></li>`).join('')}</ul></div>
-          <div><h4 class="font-semibold text-brand-100 mb-4 uppercase tracking-wide text-sm">Contact</h4><ul class="space-y-3 text-sm text-brand-400"><li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${settings?.address || 'Contact us'}</li><li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>${settings?.email}</li><li class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>${settings?.businessHours || 'Contact us'}</li></ul></div>
+          <div><h4 class="font-medium text-paper mb-4 text-sm">Quick links</h4><ul class="space-y-3 text-sm"><li><a href="#/" class="text-paper/50 hover:text-paper transition">Home</a></li><li><a href="#/shop" class="text-paper/50 hover:text-paper transition">Shop all</a></li><li><a href="#/categories" class="text-paper/50 hover:text-paper transition">Categories</a></li><li><a href="#/about" class="text-paper/50 hover:text-paper transition">About us</a></li><li><a href="#/contact" class="text-paper/50 hover:text-paper transition">Contact</a></li></ul></div>
+          <div><h4 class="font-medium text-paper mb-4 text-sm">Categories</h4><ul class="space-y-3 text-sm">${categories.slice(0, 6).map(cat => `<li><a href="#/category/${cat.slug}" class="text-paper/50 hover:text-paper transition">${cat.name}</a></li>`).join('')}</ul></div>
+          <div><h4 class="font-medium text-paper mb-4 text-sm">Contact</h4><ul class="space-y-3 text-sm text-paper/50"><li>${settings?.address || 'Contact us'}</li><li>${settings?.email}</li><li>${settings?.businessHours || 'Contact us'}</li></ul></div>
         </div>
-        <div class="mt-12 pt-8 border-t border-brand-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-brand-500 text-sm">© 2026 ${settings?.storeName}. All rights reserved.</p>
-          <p class="text-brand-500 text-sm">Crafted with precision for the modern gentleman.</p>
+        <div class="mt-12 pt-8 border-t border-paper/10 flex flex-col md:flex-row justify-between items-center gap-4 text-paper/40 text-sm">
+          <p>© 2026 ${settings?.storeName}. All rights reserved.</p>
+          <p>Crafted with precision for the modern gentleman.</p>
         </div>
       </div>
     </footer>`;
@@ -987,64 +896,63 @@ function renderCartSidebar() {
   const items = State.cart;
   const subtotal = State.getCartTotal();
   return `
-    <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 ${State.cartOpen ? '' : 'hidden'}" onclick="toggleCart()"></div>
-    <div id="cart-sidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full max-w-md bg-brand-950 z-50 shadow-2xl flex flex-col ${State.cartOpen ? '' : 'translate-x-full'}">
-      <div class="flex items-center justify-between p-6 border-b border-brand-800">
-        <h2 class="font-serif text-xl font-bold">Your Cart (${State.getCartCount()})</h2>
-        <button onclick="toggleCart()" class="p-2 hover:bg-brand-800 rounded-lg transition"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div id="cart-overlay" class="fixed inset-0 bg-ink/50 z-50 ${State.cartOpen ? '' : 'hidden'}" onclick="toggleCart()"></div>
+    <div id="cart-sidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full max-w-md bg-paper z-50 shadow-2xl flex flex-col ${State.cartOpen ? '' : 'translate-x-full'}">
+      <div class="flex items-center justify-between p-6 border-b border-line">
+        <h2 class="font-serif text-xl text-ink">Your cart (${State.getCartCount()})</h2>
+        <button onclick="toggleCart()" class="p-2 hover:bg-paper-200 transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <div class="flex-1 overflow-y-auto p-6">
-        ${items.length === 0 ? `<div class="text-center py-12"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5" class="mx-auto mb-4 opacity-50"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p class="text-brand-400">Your cart is empty</p><a href="#/shop" onclick="toggleCart()" class="btn-primary px-6 py-2 rounded-full text-xs uppercase inline-block mt-4">Start Shopping</a></div>` : items.map((item, index) => `
-          <div class="flex gap-3 mb-4 pb-4 border-b border-brand-800">
-            <div class="w-16 h-20 bg-brand-800 rounded-lg flex-shrink-0 flex items-center justify-center">${item.image ? `<img src="${item.image}" class="w-full h-full object-cover rounded-lg">` : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`}</div>
+        ${items.length === 0 ? `<div class="text-center py-12"><p class="text-ink/50">Your cart is empty</p><a href="#/shop" onclick="toggleCart()" class="btn-fill px-6 py-2.5 text-xs inline-block mt-4">Start shopping</a></div>` : items.map((item, index) => `
+          <div class="flex gap-3 mb-4 pb-4 border-b border-line">
+            <div class="w-16 h-20 bg-paper-200 border border-line flex-shrink-0 flex items-center justify-center">${item.image ? `<img src="${item.image}" class="w-full h-full object-cover">` : ''}</div>
             <div class="flex-1 min-w-0">
-              <h4 class="font-medium text-sm text-brand-100 truncate">${item.name}</h4>
-              <p class="text-xs text-brand-400 mt-0.5">${item.size} / ${item.color}</p>
+              <h4 class="font-medium text-sm text-ink truncate">${item.name}</h4>
+              <p class="text-xs text-ink/45 mt-0.5">${item.size} / ${item.color}</p>
               <div class="flex items-center justify-between mt-2">
-                <div class="flex items-center border border-brand-700 rounded">
-                  <button onclick="State.updateQuantity(${index}, -1); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="w-6 h-6 flex items-center justify-center text-brand-300 hover:text-accent-gold text-xs">−</button>
+                <div class="flex items-center border border-line">
+                  <button onclick="State.updateQuantity(${index}, -1); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="w-6 h-6 flex items-center justify-center text-ink/60 hover:text-ink text-xs">−</button>
                   <span class="w-6 text-center text-xs">${item.quantity}</span>
-                  <button onclick="State.updateQuantity(${index}, 1); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="w-6 h-6 flex items-center justify-center text-brand-300 hover:text-accent-gold text-xs">+</button>
+                  <button onclick="State.updateQuantity(${index}, 1); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="w-6 h-6 flex items-center justify-center text-ink/60 hover:text-ink text-xs">+</button>
                 </div>
-                <span class="text-accent-gold font-semibold text-sm">${formatPrice(item.price * item.quantity)}</span>
+                <span class="text-ink font-medium text-sm">${formatPrice(item.price * item.quantity)}</span>
               </div>
             </div>
-            <button onclick="State.removeFromCart(${index}); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="text-brand-500 hover:text-red-400 p-1 self-start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+            <button onclick="State.removeFromCart(${index}); toggleCart(); setTimeout(()=>{toggleCart();renderCurrentPage();},100);" class="text-ink/40 hover:text-accent p-1 self-start"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>`).join('')}
       </div>
-      ${items.length > 0 ? `<div class="p-6 border-t border-brand-800">
-        <div class="flex justify-between mb-4"><span class="text-brand-300">Total</span><span class="text-xl font-bold text-accent-gold">${formatPrice(subtotal)}</span></div>
-        <button onclick="navigate('#/checkout'); toggleCart();" class="btn-primary w-full py-3 rounded-full text-sm uppercase font-semibold mb-2">Checkout</button>
-        <button onclick="sendCartViaWhatsApp()" class="bg-[#25D366] hover:bg-[#1ebe5a] text-white w-full py-3 rounded-full text-sm uppercase font-semibold transition">Order via WhatsApp</button>
+      ${items.length > 0 ? `<div class="p-6 border-t border-line">
+        <div class="flex justify-between mb-4"><span class="text-ink/65">Total</span><span class="text-xl font-medium text-ink">${formatPrice(subtotal)}</span></div>
+        <button onclick="navigate('#/checkout'); toggleCart();" class="btn-fill w-full py-3.5 text-sm font-medium mb-2">Checkout</button>
+        <button onclick="sendCartViaWhatsApp()" class="bg-[#25D366] hover:opacity-90 text-white w-full py-3.5 text-sm font-medium transition">Order via WhatsApp</button>
       </div>` : ''}
     </div>`;
 }
 
 function renderMobileMenu() {
   const route = parseRoute().path;
-  const isActive = (p) => route === p ? 'text-accent-gold' : '';
+  const isActive = (p) => route === p ? 'text-accent' : '';
   return `
-    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 ${State.mobileMenuOpen ? '' : 'hidden'}" onclick="toggleMobileMenu()"></div>
-    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-72 bg-brand-950 z-50 shadow-2xl ${State.mobileMenuOpen ? '' : '-translate-x-full'}">
-      <div class="p-6 border-b border-brand-800 flex items-center justify-between">
-        <span class="font-serif text-lg font-bold">Menu</span>
-        <button onclick="toggleMobileMenu()" class="p-2 hover:bg-brand-800 rounded-lg transition"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div id="mobile-overlay" class="fixed inset-0 bg-ink/50 z-50 ${State.mobileMenuOpen ? '' : 'hidden'}" onclick="toggleMobileMenu()"></div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-72 bg-paper z-50 shadow-2xl ${State.mobileMenuOpen ? '' : '-translate-x-full'}">
+      <div class="p-6 border-b border-line flex items-center justify-between">
+        <span class="font-serif text-lg text-ink">Menu</span>
+        <button onclick="toggleMobileMenu()" class="p-2 hover:bg-paper-200 transition"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
       <nav class="p-4 space-y-1">
-        <a href="#/" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/')}">Home</a>
-        <a href="#/shop" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/shop')}">Shop</a>
-        <a href="#/categories" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/categories')}">Categories</a>
-        <a href="#/about" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/about')}">About</a>
-        <a href="#/contact" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-lg text-brand-200 hover:bg-brand-800 hover:text-accent-gold transition ${isActive('/contact')}">Contact</a>
-        <div class="pt-4 mt-4 border-t border-brand-800">
-          <a href="#/admin/login" class="block px-4 py-3 rounded-lg text-brand-500 hover:text-accent-gold transition text-sm">Admin Dashboard</a>
+        <a href="#/" onclick="toggleMobileMenu()" class="block px-4 py-3 text-ink/70 hover:bg-paper-200 hover:text-ink transition ${isActive('/')}">Home</a>
+        <a href="#/shop" onclick="toggleMobileMenu()" class="block px-4 py-3 text-ink/70 hover:bg-paper-200 hover:text-ink transition ${isActive('/shop')}">Shop</a>
+        <a href="#/categories" onclick="toggleMobileMenu()" class="block px-4 py-3 text-ink/70 hover:bg-paper-200 hover:text-ink transition ${isActive('/categories')}">Categories</a>
+        <a href="#/about" onclick="toggleMobileMenu()" class="block px-4 py-3 text-ink/70 hover:bg-paper-200 hover:text-ink transition ${isActive('/about')}">About</a>
+        <a href="#/contact" onclick="toggleMobileMenu()" class="block px-4 py-3 text-ink/70 hover:bg-paper-200 hover:text-ink transition ${isActive('/contact')}">Contact</a>
+        <div class="pt-4 mt-4 border-t border-line">
+          <a href="#/admin/login" class="block px-4 py-3 text-ink/35 hover:text-ink transition text-sm">Admin dashboard</a>
         </div>
       </nav>
     </div>`;
 }
-function initPageScripts(path, params) {
-  // Any page-specific initialization
-}
+
+function initPageScripts(path, params) {}
 
 function toggleCart() {
   State.cartOpen = !State.cartOpen;
@@ -1064,7 +972,7 @@ function toggleMobileMenu() {
 
 function selectSize(btn, size) {
   State.selectedSize = size;
-  document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.size-chip').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 
@@ -1104,7 +1012,7 @@ function orderViaWhatsApp(productId) {
   const settings = DB.get(DB.KEYS.SETTINGS) || {};
   if (!product || !settings?.whatsapp) return;
   const price = product.discountPrice || product.price;
-  const message = `Hello! I'm interested in ordering:\n\n📦 Product: ${product.name}\n📏 Size: ${State.selectedSize || product.sizes[0]}\n🎨 Color: ${State.selectedColor || product.colors[0]?.name}\n🔢 Quantity: ${State.productQty}\n💰 Price: ${formatPrice(price * State.productQty)}\n\nPlease confirm availability. Thank you!`;
+  const message = `Hello! I'm interested in ordering:\n\nProduct: ${product.name}\nSize: ${State.selectedSize || product.sizes[0]}\nColor: ${State.selectedColor || product.colors[0]?.name}\nQuantity: ${State.productQty}\nPrice: ${formatPrice(price * State.productQty)}\n\nPlease confirm availability. Thank you!`;
   window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
@@ -1115,7 +1023,7 @@ function sendCartViaWhatsApp() {
   State.cart.forEach((item, i) => {
     message += `${i+1}. ${item.name}\n   Size: ${item.size} | Color: ${item.color}\n   Qty: ${item.quantity} | ${formatPrice(item.price * item.quantity)}\n\n`;
   });
-  message += `💰 TOTAL: ${formatPrice(State.getCartTotal())}\n\nPlease confirm and send payment details. Thank you!`;
+  message += `TOTAL: ${formatPrice(State.getCartTotal())}\n\nPlease confirm and send payment details. Thank you!`;
   window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
@@ -1144,14 +1052,13 @@ function placeOrder() {
   orders.unshift(order);
   DB.set(DB.KEYS.ORDERS, orders);
 
-  // Send WhatsApp
   if (settings?.whatsapp) {
-    let message = `🛍️ NEW ORDER - ${order.id.slice(0,8)}\n\n👤 Customer: ${name}\n📱 Phone: ${phone}\n${email ? `📧 Email: ${email}\n` : ''}📍 Address: ${address}\n\n📦 Items:\n`;
+    let message = `NEW ORDER - ${order.id.slice(0,8)}\n\nCustomer: ${name}\nPhone: ${phone}\n${email ? `Email: ${email}\n` : ''}Address: ${address}\n\nItems:\n`;
     State.cart.forEach((item, i) => {
       message += `${i+1}. ${item.name} (${item.size}/${item.color}) × ${item.quantity} = ${formatPrice(item.price * item.quantity)}\n`;
     });
-    message += `\n💰 TOTAL: ${formatPrice(State.getCartTotal())}`;
-    if (notes) message += `\n\n📝 Notes: ${notes}`;
+    message += `\nTOTAL: ${formatPrice(State.getCartTotal())}`;
+    if (notes) message += `\n\nNotes: ${notes}`;
     window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
   }
 
@@ -1163,24 +1070,24 @@ function placeOrder() {
 function filterProducts() {
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
   let filtered = products.filter(p => p.enabled);
-  
+
   const searchTerm = document.getElementById('search-input')?.value.toLowerCase() || '';
   if (searchTerm) filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm) || p.category.toLowerCase().includes(searchTerm));
-  
+
   const selectedCats = Array.from(document.querySelectorAll('.filter-cat:checked')).map(c => c.value);
   if (selectedCats.length > 0 && !selectedCats.includes('all')) {
     filtered = filtered.filter(p => selectedCats.includes(p.category));
   }
-  
+
   const priceFilter = document.querySelector('input[name="price-filter"]:checked')?.value || 'all';
   if (priceFilter !== 'all') {
     const [min, max] = priceFilter.split('-').map(Number);
     filtered = filtered.filter(p => { const price = p.discountPrice || p.price; return price >= min && price <= max; });
   }
-  
+
   const inStockOnly = document.getElementById('in-stock-only')?.checked;
   if (inStockOnly) filtered = filtered.filter(p => p.stock > 0);
-  
+
   const sortBy = document.getElementById('sort-select')?.value || 'newest';
   switch(sortBy) {
     case 'price-low': filtered.sort((a,b) => (a.discountPrice||a.price) - (b.discountPrice||b.price)); break;
@@ -1188,10 +1095,10 @@ function filterProducts() {
     case 'name': filtered.sort((a,b) => a.name.localeCompare(b.name)); break;
     default: filtered.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt));
   }
-  
+
   const grid = document.getElementById('products-grid');
   const count = document.getElementById('results-count');
-  if (grid) grid.innerHTML = filtered.length > 0 ? filtered.map(p => renderProductCard(p)).join('') : '<p class="col-span-full text-center text-brand-400 py-12">No products found matching your criteria.</p>';
+  if (grid) grid.innerHTML = filtered.length > 0 ? filtered.map(p => renderProductCard(p)).join('') : '<p class="col-span-full text-center text-ink/50 py-12">No products found matching your criteria.</p>';
   if (count) count.textContent = `${filtered.length} products`;
 }
 
@@ -1205,27 +1112,27 @@ let adminCurrentTab = 'products';
 
 function renderAdminLogin() {
   return `
-    <div class="min-h-screen flex items-center justify-center px-4" style="background: linear-gradient(135deg, #09090b 0%, #18181b 100%);">
+    <div class="min-h-screen flex items-center justify-center px-4 admin-shell">
       <div class="w-full max-w-md">
         <div class="text-center mb-8">
-          <img src="${(DB.get(DB.KEYS.SETTINGS) || {}).logo || ''}" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-accent-gold/30 object-cover">
-          <h1 class="font-serif text-3xl font-bold mb-2">Admin Dashboard</h1>
-          <p class="text-brand-400 text-sm">${(DB.get(DB.KEYS.SETTINGS) || {}).storeName || ''}</p>
+          ${(DB.get(DB.KEYS.SETTINGS) || {}).logo ? `<img src="${(DB.get(DB.KEYS.SETTINGS) || {}).logo}" class="w-16 h-16 mx-auto mb-5 border border-paper/15 object-cover">` : ''}
+          <h1 class="font-serif text-3xl mb-2">Admin dashboard</h1>
+          <p class="text-paper/40 text-sm">${(DB.get(DB.KEYS.SETTINGS) || {}).storeName || ''}</p>
         </div>
-        <div class="bg-brand-900 rounded-2xl border border-brand-800 p-8">
+        <div class="border border-paper/15 p-8">
           <form onsubmit="handleAdminLogin(event)">
             <div class="mb-4">
-              <label class="block text-sm font-medium text-brand-300 mb-2">Username or Email</label>
-              <input type="text" id="admin-username" class="form-input w-full px-4 py-3 rounded-lg" placeholder="admin" required>
+              <label class="block text-sm font-medium text-paper/60 mb-2">Username or email</label>
+              <input type="text" id="admin-username" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" placeholder="admin" required>
             </div>
             <div class="mb-6">
-              <label class="block text-sm font-medium text-brand-300 mb-2">Password</label>
-              <input type="password" id="admin-password" class="form-input w-full px-4 py-3 rounded-lg" placeholder="••••••••" required>
+              <label class="block text-sm font-medium text-paper/60 mb-2">Password</label>
+              <input type="password" id="admin-password" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" placeholder="••••••••" required>
             </div>
-            <button type="submit" class="btn-primary w-full py-3 rounded-full text-sm uppercase font-semibold">Sign In</button>
+            <button type="submit" class="w-full py-3.5 bg-paper text-ink text-sm font-medium hover:bg-accent-light hover:text-paper transition">Sign in</button>
           </form>
-          <p class="text-center text-brand-500 text-xs mt-6">Default: admin / admin123</p>
-          <div class="mt-4 text-center"><a href="#/" class="text-accent-gold text-sm hover:underline">← Back to Store</a></div>
+          <p class="text-center text-paper/30 text-xs mt-6">Default: admin / admin123</p>
+          <div class="mt-4 text-center"><a href="#/" class="text-paper/50 text-sm hover:text-paper transition">← Back to store</a></div>
         </div>
       </div>
     </div>`;
@@ -1247,43 +1154,43 @@ function renderAdminLayout(path, params) {
   const tab = params[0] || 'products';
   adminCurrentTab = tab;
   return `
-    <div class="min-h-screen flex bg-brand-950">
-      <aside class="w-64 bg-brand-900 border-r border-brand-800 flex-shrink-0 hidden lg:block">
-        <div class="p-6 border-b border-brand-800">
+    <div class="min-h-screen flex admin-shell">
+      <aside class="w-64 border-r border-paper/10 flex-shrink-0 hidden lg:block relative">
+        <div class="p-6 border-b border-paper/10">
           <a href="#/" class="flex items-center gap-3">
-            <img src="${(DB.get(DB.KEYS.SETTINGS) || {}).logo || ''}" class="w-10 h-10 rounded-full object-cover border border-brand-700">
-            <div><p class="font-serif font-bold text-sm">${DB.get(DB.KEYS.SETTINGS)?.storeName}</p><p class="text-xs text-brand-500">Admin Panel</p></div>
+            ${(DB.get(DB.KEYS.SETTINGS) || {}).logo ? `<img src="${(DB.get(DB.KEYS.SETTINGS) || {}).logo}" class="w-9 h-9 object-cover border border-paper/15">` : ''}
+            <div><p class="font-serif text-sm">${DB.get(DB.KEYS.SETTINGS)?.storeName}</p><p class="text-xs text-paper/40">Admin panel</p></div>
           </a>
         </div>
         <nav class="p-4 space-y-1">
-          ${renderAdminNavItem('products', '📦', 'Products')}
-          ${renderAdminNavItem('categories', '📁', 'Categories')}
-          ${renderAdminNavItem('orders', '🛒', 'Orders')}
-          ${renderAdminNavItem('settings', '⚙️', 'Settings')}
+          ${renderAdminNavItem('products', 'Products')}
+          ${renderAdminNavItem('categories', 'Categories')}
+          ${renderAdminNavItem('orders', 'Orders')}
+          ${renderAdminNavItem('settings', 'Settings')}
         </nav>
-        <div class="absolute bottom-0 left-0 w-64 p-4 border-t border-brand-800">
-          <button onclick="State.logout()" class="w-full text-left px-4 py-3 rounded-lg text-brand-300 hover:bg-brand-800 hover:text-red-400 transition text-sm">🚪 Logout</button>
+        <div class="absolute bottom-0 left-0 w-64 p-4 border-t border-paper/10">
+          <button onclick="State.logout()" class="w-full text-left px-4 py-3 text-paper/60 hover:bg-paper/5 hover:text-accent-light transition text-sm">Logout</button>
         </div>
       </aside>
       <div class="flex-1 flex flex-col min-w-0">
-        <header class="bg-brand-900 border-b border-brand-800 px-6 py-4 flex items-center justify-between lg:hidden">
-          <span class="font-semibold">Admin Dashboard</span>
-          <button onclick="State.logout()" class="text-sm text-red-400 hover:underline">Logout</button>
+        <header class="border-b border-paper/10 px-6 py-4 flex items-center justify-between lg:hidden">
+          <span class="font-medium text-sm">Admin dashboard</span>
+          <button onclick="State.logout()" class="text-sm text-accent-light hover:underline">Logout</button>
         </header>
-        <div class="lg:hidden flex overflow-x-auto border-b border-brand-800 bg-brand-900 p-2 gap-1">
-          <a href="#/admin/products" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='products'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Products</a>
-          <a href="#/admin/categories" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='categories'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Categories</a>
-          <a href="#/admin/orders" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='orders'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Orders</a>
-          <a href="#/admin/settings" class="px-4 py-2 rounded-lg text-sm whitespace-nowrap ${tab==='settings'?'bg-accent-gold/10 text-accent-gold':'text-brand-300'}">Settings</a>
+        <div class="lg:hidden flex overflow-x-auto border-b border-paper/10 p-2 gap-1">
+          <a href="#/admin/products" class="px-4 py-2 text-sm whitespace-nowrap ${tab==='products'?'text-paper border-b-2 border-paper':'text-paper/40'}">Products</a>
+          <a href="#/admin/categories" class="px-4 py-2 text-sm whitespace-nowrap ${tab==='categories'?'text-paper border-b-2 border-paper':'text-paper/40'}">Categories</a>
+          <a href="#/admin/orders" class="px-4 py-2 text-sm whitespace-nowrap ${tab==='orders'?'text-paper border-b-2 border-paper':'text-paper/40'}">Orders</a>
+          <a href="#/admin/settings" class="px-4 py-2 text-sm whitespace-nowrap ${tab==='settings'?'text-paper border-b-2 border-paper':'text-paper/40'}">Settings</a>
         </div>
         <main class="flex-1 p-6 overflow-auto">${renderAdminContent(tab, params.slice(1))}</main>
       </div>
     </div>`;
 }
 
-function renderAdminNavItem(tab, icon, label) {
+function renderAdminNavItem(tab, label) {
   const isActive = adminCurrentTab === tab;
-  return `<a href="#/admin/${tab}" class="admin-sidebar-item ${isActive ? 'active' : ''} flex items-center gap-3 px-4 py-3 rounded-lg text-brand-300 transition text-sm"><span>${icon}</span>${label}</a>`;
+  return `<a href="#/admin/${tab}" class="admin-sidebar-item ${isActive ? 'active' : ''} flex items-center gap-3 px-4 py-3 text-paper/70 transition text-sm">${label}</a>`;
 }
 
 function renderAdminContent(tab, params) {
@@ -1301,32 +1208,32 @@ function renderAdminProducts() {
   const categories = DB.get(DB.KEYS.CATEGORIES) || [];
   return `
     <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div><h1 class="font-serif text-2xl font-bold">Products</h1><p class="text-brand-400 text-sm mt-1">${products.length} total products</p></div>
-      <button onclick="openProductModal()" class="btn-primary px-6 py-2.5 rounded-full text-sm uppercase font-semibold inline-flex items-center gap-2"><span>+</span> Add Product</button>
+      <div><h1 class="font-serif text-2xl">Products</h1><p class="text-paper/40 text-sm mt-1">${products.length} total products</p></div>
+      <button onclick="openProductModal()" class="bg-paper text-ink px-6 py-2.5 text-sm font-medium hover:bg-accent-light hover:text-paper transition inline-flex items-center gap-2">+ Add product</button>
     </div>
-    <div class="bg-brand-900 rounded-2xl border border-brand-800 overflow-hidden">
+    <div class="border border-paper/10 overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full admin-table">
           <thead><tr><th class="text-left px-6 py-4">Product</th><th class="text-left px-6 py-4">Category</th><th class="text-left px-6 py-4">Price</th><th class="text-left px-6 py-4">Stock</th><th class="text-left px-6 py-4">Status</th><th class="text-left px-6 py-4">Actions</th></tr></thead>
           <tbody>
-            ${products.length === 0 ? `<tr><td colspan="6" class="px-6 py-12 text-center text-brand-400">No products yet. Click "Add Product" to get started.</td></tr>` : products.map(p => `
-              <tr class="border-t border-brand-800">
+            ${products.length === 0 ? `<tr><td colspan="6" class="px-6 py-12 text-center text-paper/40">No products yet. Click "Add product" to get started.</td></tr>` : products.map(p => `
+              <tr class="border-t border-paper/10">
                 <td class="px-6 py-4">
                   <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-brand-800 rounded-lg flex items-center justify-center flex-shrink-0">${p.images?.[0] ? `<img src="${p.images[0]}" class="w-full h-full object-cover rounded-lg">` : `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a961" stroke-width="1.5"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>`}</div>
-                    <div><p class="font-medium text-brand-100">${p.name}</p><div class="flex gap-1 mt-1">${p.isNew?'<span class="text-xs bg-accent-gold/20 text-accent-gold px-2 py-0.5 rounded">NEW</span>':''}${p.featured?'<span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded ml-1">FEATURED</span>':''}</div></div>
+                    <div class="w-11 h-11 bg-paper/5 flex items-center justify-center flex-shrink-0 border border-paper/10">${p.images?.[0] ? `<img src="${p.images[0]}" class="w-full h-full object-cover">` : ''}</div>
+                    <div><p class="font-medium">${p.name}</p><div class="flex gap-1 mt-1">${p.isNew?'<span class="text-[10px] bg-paper/10 px-2 py-0.5">NEW</span>':''}${p.featured?'<span class="text-[10px] bg-accent/20 text-accent-light px-2 py-0.5 ml-1">FEATURED</span>':''}</div></div>
                   </div>
                 </td>
-                <td class="px-6 py-4 text-brand-300 text-sm">${p.category}</td>
-                <td class="px-6 py-4"><span class="text-accent-gold font-medium">${formatPrice(p.discountPrice||p.price)}</span>${p.discountPrice?`<span class="text-brand-500 line-through text-xs ml-2">${formatPrice(p.price)}</span>`:''}</td>
-                <td class="px-6 py-4 text-sm ${p.stock>0?'text-emerald-400':'text-red-400'}">${p.stock}</td>
-                <td class="px-6 py-4"><span class="text-xs px-2 py-1 rounded-full ${p.enabled?'bg-emerald-500/15 text-emerald-400':'bg-red-500/15 text-red-400'}">${p.enabled?'Enabled':'Disabled'}</span></td>
+                <td class="px-6 py-4 text-paper/60 text-sm">${p.category}</td>
+                <td class="px-6 py-4"><span class="text-paper font-medium">${formatPrice(p.discountPrice||p.price)}</span>${p.discountPrice?`<span class="text-paper/30 line-through text-xs ml-2">${formatPrice(p.price)}</span>`:''}</td>
+                <td class="px-6 py-4 text-sm ${p.stock>0?'text-paper/70':'text-accent-light'}">${p.stock}</td>
+                <td class="px-6 py-4"><span class="text-xs px-2 py-1 ${p.enabled?'bg-paper/10 text-paper':'bg-accent/20 text-accent-light'}">${p.enabled?'Enabled':'Disabled'}</span></td>
                 <td class="px-6 py-4">
                   <div class="flex gap-2">
-                    <button onclick="editProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-accent-gold transition" title="Edit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
-                    <button onclick="duplicateProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-blue-400 transition" title="Duplicate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-                    <button onclick="toggleProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-amber-400 transition" title="${p.enabled?'Disable':'Enable'}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
-                    <button onclick="deleteProduct(${p.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-red-400 transition" title="Delete"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
+                    <button onclick="editProduct(${p.id})" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-paper transition" title="Edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                    <button onclick="duplicateProduct(${p.id})" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-paper transition" title="Duplicate"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+                    <button onclick="toggleProduct(${p.id})" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-paper transition" title="${p.enabled?'Disable':'Enable'}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></button>
+                    <button onclick="deleteProduct(${p.id})" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-accent-light transition" title="Delete"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
                   </div>
                 </td>
               </tr>`).join('')}
@@ -1336,34 +1243,34 @@ function renderAdminProducts() {
     </div>
     <div id="product-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
       <div class="modal-backdrop absolute inset-0" onclick="closeProductModal()"></div>
-      <div class="relative bg-brand-900 rounded-2xl border border-brand-800 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-        <div class="sticky top-0 bg-brand-900 border-b border-brand-800 px-6 py-4 flex items-center justify-between">
-          <h2 id="modal-title" class="font-serif text-xl font-bold">Add Product</h2>
-          <button onclick="closeProductModal()" class="p-2 hover:bg-brand-800 rounded-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="relative admin-shell border border-paper/15 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 admin-shell border-b border-paper/10 px-6 py-4 flex items-center justify-between">
+          <h2 id="modal-title" class="font-serif text-xl">Add product</h2>
+          <button onclick="closeProductModal()" class="p-2 hover:bg-paper/5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
         <form id="product-form" class="p-6 space-y-4" onsubmit="saveProduct(event)">
           <input type="hidden" id="product-id">
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Product Name *</label><input type="text" id="pf-name" class="form-input w-full px-4 py-3 rounded-lg" required></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Product name *</label><input type="text" id="pf-name" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" required></div>
           <div class="grid grid-cols-2 gap-4">
-            <div><label class="block text-sm font-medium text-brand-300 mb-2">Category *</label><select id="pf-category" class="form-input w-full px-4 py-3 rounded-lg" required>${categories.map(c=>`<option value="${c.name}">${c.name}</option>`).join('')}</select></div>
-            <div><label class="block text-sm font-medium text-brand-300 mb-2">Stock *</label><input type="number" id="pf-stock" class="form-input w-full px-4 py-3 rounded-lg" min="0" value="10" required></div>
+            <div><label class="block text-sm font-medium text-paper/60 mb-2">Category *</label><select id="pf-category" class="w-full px-4 py-3 bg-[#17140F] border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" required>${categories.map(c=>`<option value="${c.name}">${c.name}</option>`).join('')}</select></div>
+            <div><label class="block text-sm font-medium text-paper/60 mb-2">Stock *</label><input type="number" id="pf-stock" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" min="0" value="10" required></div>
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <div><label class="block text-sm font-medium text-brand-300 mb-2">Price *</label><input type="number" id="pf-price" class="form-input w-full px-4 py-3 rounded-lg" step="0.01" min="0" required></div>
-            <div><label class="block text-sm font-medium text-brand-300 mb-2">Discount Price</label><input type="number" id="pf-discount" class="form-input w-full px-4 py-3 rounded-lg" step="0.01" min="0" placeholder="Optional"></div>
+            <div><label class="block text-sm font-medium text-paper/60 mb-2">Price *</label><input type="number" id="pf-price" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" step="0.01" min="0" required></div>
+            <div><label class="block text-sm font-medium text-paper/60 mb-2">Discount price</label><input type="number" id="pf-discount" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" step="0.01" min="0" placeholder="Optional"></div>
           </div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Description</label><textarea id="pf-description" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none"></textarea></div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Sizes (comma separated) *</label><input type="text" id="pf-sizes" class="form-input w-full px-4 py-3 rounded-lg" placeholder="S, M, L, XL, XXL" required></div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Colors (format: Name:#hex, Name:#hex) *</label><input type="text" id="pf-colors" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Black:#09090b, White:#fafafa" required></div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Image URLs (one per line)</label><textarea id="pf-images" rows="2" class="form-input w-full px-4 py-3 rounded-lg resize-none" placeholder="https://..."></textarea></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Description</label><textarea id="pf-description" rows="3" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm resize-none"></textarea></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Sizes (comma separated) *</label><input type="text" id="pf-sizes" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" placeholder="S, M, L, XL, XXL" required></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Colors (format: Name:#hex, Name:#hex) *</label><input type="text" id="pf-colors" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" placeholder="Black:#09090b, White:#fafafa" required></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Image URLs (one per line)</label><textarea id="pf-images" rows="2" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm resize-none" placeholder="https://..."></textarea></div>
           <div class="flex gap-6">
-            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-new" class="w-4 h-4 accent-accent-gold"><span class="text-sm text-brand-300">Mark as New</span></label>
-            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-featured" class="w-4 h-4 accent-accent-gold"><span class="text-sm text-brand-300">Featured</span></label>
-            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-enabled" class="w-4 h-4 accent-accent-gold" checked><span class="text-sm text-brand-300">Enabled</span></label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-new" class="w-4 h-4 accent-paper"><span class="text-sm text-paper/70">Mark as new</span></label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-featured" class="w-4 h-4 accent-paper"><span class="text-sm text-paper/70">Featured</span></label>
+            <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" id="pf-enabled" class="w-4 h-4 accent-paper" checked><span class="text-sm text-paper/70">Enabled</span></label>
           </div>
           <div class="flex gap-3 pt-4">
-            <button type="submit" class="btn-primary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Save Product</button>
-            <button type="button" onclick="closeProductModal()" class="btn-secondary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Cancel</button>
+            <button type="submit" class="bg-paper text-ink flex-1 py-3 text-sm font-medium hover:bg-accent-light hover:text-paper transition">Save product</button>
+            <button type="button" onclick="closeProductModal()" class="border border-paper/20 text-paper flex-1 py-3 text-sm font-medium hover:border-paper transition">Cancel</button>
           </div>
         </form>
       </div>
@@ -1371,7 +1278,7 @@ function renderAdminProducts() {
 }
 
 function openProductModal() {
-  document.getElementById('modal-title').textContent = 'Add Product';
+  document.getElementById('modal-title').textContent = 'Add product';
   document.getElementById('product-form').reset();
   document.getElementById('product-id').value = '';
   document.getElementById('pf-enabled').checked = true;
@@ -1384,7 +1291,7 @@ function editProduct(id) {
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
   const p = products.find(x => x.id === id);
   if (!p) return;
-  document.getElementById('modal-title').textContent = 'Edit Product';
+  document.getElementById('modal-title').textContent = 'Edit product';
   document.getElementById('product-id').value = p.id;
   document.getElementById('pf-name').value = p.name;
   document.getElementById('pf-category').value = p.category;
@@ -1409,7 +1316,7 @@ function saveProduct(e) {
     const [name, hex] = c.trim().split(':');
     return { name: name?.trim() || 'Color', hex: hex?.trim() || '#000000' };
   }).filter(c => c.name && c.hex);
-  
+
   const productData = {
     name: document.getElementById('pf-name').value,
     category: document.getElementById('pf-category').value,
@@ -1472,40 +1379,40 @@ function renderAdminCategories() {
   const products = DB.get(DB.KEYS.PRODUCTS) || [];
   return `
     <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div><h1 class="font-serif text-2xl font-bold">Categories</h1><p class="text-brand-400 text-sm mt-1">${categories.length} categories</p></div>
-      <button onclick="openCategoryModal()" class="btn-primary px-6 py-2.5 rounded-full text-sm uppercase font-semibold inline-flex items-center gap-2"><span>+</span> Add Category</button>
+      <div><h1 class="font-serif text-2xl">Categories</h1><p class="text-paper/40 text-sm mt-1">${categories.length} categories</p></div>
+      <button onclick="openCategoryModal()" class="bg-paper text-ink px-6 py-2.5 text-sm font-medium hover:bg-accent-light hover:text-paper transition inline-flex items-center gap-2">+ Add category</button>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
       ${categories.map(cat => {
         const count = products.filter(p => p.category === cat.name).length;
         return `
-          <div class="bg-brand-900 rounded-2xl border border-brand-800 p-6">
+          <div class="border border-paper/10 p-6">
             <div class="flex items-start justify-between mb-4">
-              <div><h3 class="font-semibold text-lg">${cat.name}</h3><p class="text-brand-400 text-sm mt-1">${cat.description}</p><p class="text-accent-gold text-sm mt-2">${count} products</p></div>
+              <div><h3 class="font-medium text-lg">${cat.name}</h3><p class="text-paper/40 text-sm mt-1">${cat.description}</p><p class="text-paper/60 text-sm mt-2">${count} products</p></div>
               <div class="flex gap-1">
-                <button onclick="editCategory(${cat.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-accent-gold transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
-                <button onclick="deleteCategory(${cat.id})" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-red-400 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
+                <button onclick="editCategory(${cat.id})" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-paper transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                <button onclick="deleteCategory(${cat.id})" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-accent-light transition"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg></button>
               </div>
             </div>
-            <p class="text-xs text-brand-500">Slug: ${cat.slug} · Order: ${cat.order}</p>
+            <p class="text-xs text-paper/30">Slug: ${cat.slug} · Order: ${cat.order}</p>
           </div>`;
       }).join('')}
     </div>
     <div id="category-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
       <div class="modal-backdrop absolute inset-0" onclick="closeCategoryModal()"></div>
-      <div class="relative bg-brand-900 rounded-2xl border border-brand-800 w-full max-w-md">
-        <div class="border-b border-brand-800 px-6 py-4 flex items-center justify-between">
-          <h2 id="cat-modal-title" class="font-serif text-xl font-bold">Add Category</h2>
-          <button onclick="closeCategoryModal()" class="p-2 hover:bg-brand-800 rounded-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <div class="relative admin-shell border border-paper/15 w-full max-w-md">
+        <div class="border-b border-paper/10 px-6 py-4 flex items-center justify-between">
+          <h2 id="cat-modal-title" class="font-serif text-xl">Add category</h2>
+          <button onclick="closeCategoryModal()" class="p-2 hover:bg-paper/5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
         <form id="category-form" class="p-6 space-y-4" onsubmit="saveCategory(event)">
           <input type="hidden" id="cat-id">
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Name *</label><input type="text" id="cat-name" class="form-input w-full px-4 py-3 rounded-lg" required></div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Description</label><input type="text" id="cat-desc" class="form-input w-full px-4 py-3 rounded-lg"></div>
-          <div><label class="block text-sm font-medium text-brand-300 mb-2">Order</label><input type="number" id="cat-order" class="form-input w-full px-4 py-3 rounded-lg" value="1"></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Name *</label><input type="text" id="cat-name" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" required></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Description</label><input type="text" id="cat-desc" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm"></div>
+          <div><label class="block text-sm font-medium text-paper/60 mb-2">Order</label><input type="number" id="cat-order" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="1"></div>
           <div class="flex gap-3 pt-2">
-            <button type="submit" class="btn-primary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Save</button>
-            <button type="button" onclick="closeCategoryModal()" class="btn-secondary flex-1 py-3 rounded-full text-sm uppercase font-semibold">Cancel</button>
+            <button type="submit" class="bg-paper text-ink flex-1 py-3 text-sm font-medium hover:bg-accent-light hover:text-paper transition">Save</button>
+            <button type="button" onclick="closeCategoryModal()" class="border border-paper/20 text-paper flex-1 py-3 text-sm font-medium hover:border-paper transition">Cancel</button>
           </div>
         </form>
       </div>
@@ -1513,7 +1420,7 @@ function renderAdminCategories() {
 }
 
 function openCategoryModal() {
-  document.getElementById('cat-modal-title').textContent = 'Add Category';
+  document.getElementById('cat-modal-title').textContent = 'Add category';
   document.getElementById('category-form').reset();
   document.getElementById('cat-id').value = '';
   document.getElementById('cat-order').value = '1';
@@ -1525,7 +1432,7 @@ function editCategory(id) {
   const categories = DB.get(DB.KEYS.CATEGORIES) || [];
   const cat = categories.find(c => c.id === id);
   if (!cat) return;
-  document.getElementById('cat-modal-title').textContent = 'Edit Category';
+  document.getElementById('cat-modal-title').textContent = 'Edit category';
   document.getElementById('cat-id').value = cat.id;
   document.getElementById('cat-name').value = cat.name;
   document.getElementById('cat-desc').value = cat.description;
@@ -1565,26 +1472,26 @@ function renderAdminOrders() {
   const orders = DB.get(DB.KEYS.ORDERS) || [];
   const statuses = ['new', 'confirmed', 'preparing', 'shipped', 'completed', 'cancelled'];
   return `
-    <div class="mb-6"><h1 class="font-serif text-2xl font-bold">Orders</h1><p class="text-brand-400 text-sm mt-1">${orders.length} total orders</p></div>
-    <div class="bg-brand-900 rounded-2xl border border-brand-800 overflow-hidden">
+    <div class="mb-6"><h1 class="font-serif text-2xl">Orders</h1><p class="text-paper/40 text-sm mt-1">${orders.length} total orders</p></div>
+    <div class="border border-paper/10 overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full admin-table">
           <thead><tr><th class="text-left px-6 py-4">Order ID</th><th class="text-left px-6 py-4">Customer</th><th class="text-left px-6 py-4">Items</th><th class="text-left px-6 py-4">Total</th><th class="text-left px-6 py-4">Date</th><th class="text-left px-6 py-4">Status</th><th class="text-left px-6 py-4">Actions</th></tr></thead>
           <tbody>
-            ${orders.length === 0 ? `<tr><td colspan="7" class="px-6 py-12 text-center text-brand-400">No orders yet. Orders placed via WhatsApp will appear here.</td></tr>` : orders.map(order => `
-              <tr class="border-t border-brand-800">
-                <td class="px-6 py-4 font-mono text-xs text-brand-300">#${order.id.slice(0, 8)}</td>
-                <td class="px-6 py-4"><p class="font-medium text-brand-100">${order.customerName}</p><p class="text-xs text-brand-400">${order.customerPhone}</p></td>
-                <td class="px-6 py-4 text-sm text-brand-300">${order.items.length} item(s)</td>
-                <td class="px-6 py-4 text-accent-gold font-semibold">${formatPrice(order.subtotal)}</td>
-                <td class="px-6 py-4 text-sm text-brand-400">${new Date(order.createdAt).toLocaleDateString()}</td>
+            ${orders.length === 0 ? `<tr><td colspan="7" class="px-6 py-12 text-center text-paper/40">No orders yet. Orders placed via WhatsApp will appear here.</td></tr>` : orders.map(order => `
+              <tr class="border-t border-paper/10">
+                <td class="px-6 py-4 font-mono text-xs text-paper/60">#${order.id.slice(0, 8)}</td>
+                <td class="px-6 py-4"><p class="font-medium">${order.customerName}</p><p class="text-xs text-paper/40">${order.customerPhone}</p></td>
+                <td class="px-6 py-4 text-sm text-paper/60">${order.items.length} item(s)</td>
+                <td class="px-6 py-4 text-paper font-medium">${formatPrice(order.subtotal)}</td>
+                <td class="px-6 py-4 text-sm text-paper/40">${new Date(order.createdAt).toLocaleDateString()}</td>
                 <td class="px-6 py-4">
-                  <select onchange="updateOrderStatus('${order.id}', this.value)" class="form-input px-2 py-1 rounded text-xs status-${order.status}">
-                    ${statuses.map(s => `<option value="${s}" ${order.status===s?'selected':''} class="bg-brand-900">${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
+                  <select onchange="updateOrderStatus('${order.id}', this.value)" class="bg-[#17140F] border border-paper/20 px-2 py-1.5 text-xs status-${order.status}">
+                    ${statuses.map(s => `<option value="${s}" ${order.status===s?'selected':''} class="bg-[#17140F] text-paper">${s.charAt(0).toUpperCase()+s.slice(1)}</option>`).join('')}
                   </select>
                 </td>
                 <td class="px-6 py-4">
-                  <button onclick="viewOrderDetails('${order.id}')" class="p-2 hover:bg-brand-800 rounded-lg text-brand-300 hover:text-accent-gold transition" title="View Details"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button onclick="viewOrderDetails('${order.id}')" class="p-2 hover:bg-paper/5 text-paper/60 hover:text-paper transition" title="View details"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
                 </td>
               </tr>`).join('')}
           </tbody>
@@ -1593,7 +1500,7 @@ function renderAdminOrders() {
     </div>
     <div id="order-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
       <div class="modal-backdrop absolute inset-0" onclick="closeOrderModal()"></div>
-      <div id="order-modal-content" class="relative bg-brand-900 rounded-2xl border border-brand-800 w-full max-w-lg max-h-[90vh] overflow-y-auto"></div>
+      <div id="order-modal-content" class="relative admin-shell border border-paper/15 w-full max-w-lg max-h-[90vh] overflow-y-auto"></div>
     </div>`;
 }
 
@@ -1609,16 +1516,16 @@ function viewOrderDetails(orderId) {
   if (!order) return;
   const content = document.getElementById('order-modal-content');
   content.innerHTML = `
-    <div class="border-b border-brand-800 px-6 py-4 flex items-center justify-between">
-      <h2 class="font-serif text-xl font-bold">Order #${order.id.slice(0, 8)}</h2>
-      <button onclick="closeOrderModal()" class="p-2 hover:bg-brand-800 rounded-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="border-b border-paper/10 px-6 py-4 flex items-center justify-between">
+      <h2 class="font-serif text-xl">Order #${order.id.slice(0, 8)}</h2>
+      <button onclick="closeOrderModal()" class="p-2 hover:bg-paper/5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="p-6 space-y-6">
-      <div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Customer</h3><p class="font-medium">${order.customerName}</p><p class="text-brand-400 text-sm">${order.customerPhone}</p>${order.customerEmail?`<p class="text-brand-400 text-sm">${order.customerEmail}</p>`:''}</div>
-      <div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Shipping Address</h3><p class="text-brand-300">${order.shippingAddress}</p></div>
-      <div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Items</h3><div class="space-y-2">${order.items.map(item => `<div class="flex justify-between text-sm py-2 border-b border-brand-800"><span>${item.name} (${item.size}/${item.color}) × ${item.quantity}</span><span class="text-accent-gold">${formatPrice(item.price * item.quantity)}</span></div>`).join('')}</div></div>
-      ${order.notes?`<div><h3 class="text-sm uppercase tracking-wide text-brand-500 mb-2">Notes</h3><p class="text-brand-300">${order.notes}</p></div>`:''}
-      <div class="pt-4 border-t border-brand-800 flex justify-between text-lg font-bold"><span>Total</span><span class="text-accent-gold">${formatPrice(order.subtotal)}</span></div>
+      <div><h3 class="text-sm text-paper/40 mb-2">Customer</h3><p class="font-medium">${order.customerName}</p><p class="text-paper/50 text-sm">${order.customerPhone}</p>${order.customerEmail?`<p class="text-paper/50 text-sm">${order.customerEmail}</p>`:''}</div>
+      <div><h3 class="text-sm text-paper/40 mb-2">Shipping address</h3><p class="text-paper/70">${order.shippingAddress}</p></div>
+      <div><h3 class="text-sm text-paper/40 mb-2">Items</h3><div class="space-y-2">${order.items.map(item => `<div class="flex justify-between text-sm py-2 border-b border-paper/10"><span>${item.name} (${item.size}/${item.color}) × ${item.quantity}</span><span class="text-paper">${formatPrice(item.price * item.quantity)}</span></div>`).join('')}</div></div>
+      ${order.notes?`<div><h3 class="text-sm text-paper/40 mb-2">Notes</h3><p class="text-paper/70">${order.notes}</p></div>`:''}
+      <div class="pt-4 border-t border-paper/10 flex justify-between text-lg font-medium"><span>Total</span><span>${formatPrice(order.subtotal)}</span></div>
     </div>`;
   document.getElementById('order-modal').classList.remove('hidden');
 }
@@ -1627,28 +1534,28 @@ function closeOrderModal() { document.getElementById('order-modal').classList.ad
 function renderAdminSettings() {
   const s = DB.get(DB.KEYS.SETTINGS) || {};
   return `
-    <div class="mb-6"><h1 class="font-serif text-2xl font-bold">Settings</h1><p class="text-brand-400 text-sm mt-1">Manage your store information</p></div>
-    <form id="settings-form" class="bg-brand-900 rounded-2xl border border-brand-800 p-6 space-y-6" onsubmit="saveSettings(event)">
+    <div class="mb-6"><h1 class="font-serif text-2xl">Settings</h1><p class="text-paper/40 text-sm mt-1">Manage your store information</p></div>
+    <form id="settings-form" class="border border-paper/10 p-6 space-y-6" onsubmit="saveSettings(event)">
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="md:col-span-2"><h3 class="font-semibold text-accent-gold uppercase tracking-wide text-sm border-b border-brand-800 pb-2">Store Information</h3></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Store Name</label><input type="text" id="set-storeName" class="form-input w-full px-4 py-3 rounded-lg" value="${s.storeName||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Currency Symbol</label><input type="text" id="set-currencySymbol" class="form-input w-full px-4 py-3 rounded-lg" value="${s.currencySymbol||'$'}"></div>
-        <div class="md:col-span-2"><label class="block text-sm font-medium text-brand-300 mb-2">Store Description</label><textarea id="set-storeDescription" rows="3" class="form-input w-full px-4 py-3 rounded-lg resize-none">${s.storeDescription||''}</textarea></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Logo URL</label><input type="text" id="set-logo" class="form-input w-full px-4 py-3 rounded-lg" value="${s.logo||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Address</label><input type="text" id="set-address" class="form-input w-full px-4 py-3 rounded-lg" value="${s.address||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Business Hours</label><input type="text" id="set-businessHours" class="form-input w-full px-4 py-3 rounded-lg" value="${s.businessHours||''}"></div>
-        
-        <div class="md:col-span-2 mt-4"><h3 class="font-semibold text-accent-gold uppercase tracking-wide text-sm border-b border-brand-800 pb-2">Contact Information</h3></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">WhatsApp Number</label><input type="text" id="set-whatsapp" class="form-input w-full px-4 py-3 rounded-lg" value="${s.whatsapp||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Email</label><input type="email" id="set-email" class="form-input w-full px-4 py-3 rounded-lg" value="${s.email||''}"></div>
-        
-        <div class="md:col-span-2 mt-4"><h3 class="font-semibold text-accent-gold uppercase tracking-wide text-sm border-b border-brand-800 pb-2">Social Media</h3></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Instagram Username</label><input type="text" id="set-instagram" class="form-input w-full px-4 py-3 rounded-lg" value="${s.instagram||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">Instagram Link</label><input type="text" id="set-instagramLink" class="form-input w-full px-4 py-3 rounded-lg" value="${s.instagramLink||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">TikTok Username</label><input type="text" id="set-tiktok" class="form-input w-full px-4 py-3 rounded-lg" value="${s.tiktok||''}"></div>
-        <div><label class="block text-sm font-medium text-brand-300 mb-2">TikTok Link</label><input type="text" id="set-tiktokLink" class="form-input w-full px-4 py-3 rounded-lg" value="${s.tiktokLink||''}"></div>
+        <div class="md:col-span-2"><h3 class="font-medium text-paper/50 text-sm border-b border-paper/10 pb-2">Store information</h3></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Store name</label><input type="text" id="set-storeName" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.storeName||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Currency symbol</label><input type="text" id="set-currencySymbol" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.currencySymbol||'$'}"></div>
+        <div class="md:col-span-2"><label class="block text-sm font-medium text-paper/60 mb-2">Store description</label><textarea id="set-storeDescription" rows="3" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm resize-none">${s.storeDescription||''}</textarea></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Logo URL</label><input type="text" id="set-logo" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.logo||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Address</label><input type="text" id="set-address" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.address||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Business hours</label><input type="text" id="set-businessHours" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.businessHours||''}"></div>
+
+        <div class="md:col-span-2 mt-4"><h3 class="font-medium text-paper/50 text-sm border-b border-paper/10 pb-2">Contact information</h3></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">WhatsApp number</label><input type="text" id="set-whatsapp" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.whatsapp||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Email</label><input type="email" id="set-email" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.email||''}"></div>
+
+        <div class="md:col-span-2 mt-4"><h3 class="font-medium text-paper/50 text-sm border-b border-paper/10 pb-2">Social media</h3></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Instagram username</label><input type="text" id="set-instagram" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.instagram||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">Instagram link</label><input type="text" id="set-instagramLink" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.instagramLink||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">TikTok username</label><input type="text" id="set-tiktok" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.tiktok||''}"></div>
+        <div><label class="block text-sm font-medium text-paper/60 mb-2">TikTok link</label><input type="text" id="set-tiktokLink" class="w-full px-4 py-3 bg-transparent border border-paper/20 text-paper focus:outline-none focus:border-paper text-sm" value="${s.tiktokLink||''}"></div>
       </div>
-      <div class="pt-4"><button type="submit" class="btn-primary px-8 py-3 rounded-full text-sm uppercase font-semibold">Save Settings</button></div>
+      <div class="pt-4"><button type="submit" class="bg-paper text-ink px-8 py-3 text-sm font-medium hover:bg-accent-light hover:text-paper transition">Save settings</button></div>
     </form>`;
 }
 
@@ -1673,29 +1580,22 @@ function saveSettings(e) {
   showToast('Settings saved successfully', 'success');
 }
 
-function initAdminScripts(path, params) {
-  // Admin-specific initialization
-}
+function initAdminScripts(path, params) {}
 
-// Initialize - ensure hash is present
-if (!window.location.hash) {
-  window.location.hash = '#/';
-}
-// Small delay to ensure hash is processed
+if (!window.location.hash) { window.location.hash = '#/'; }
 setTimeout(function() {
   DB.ready.then(function() {
     try {
       renderCurrentPage();
     } catch(e) {
-    console.error("Initial render failed:", e);
-    var ed = document.getElementById('error-display');
-    var em = document.getElementById('error-message');
+      console.error("Initial render failed:", e);
+      var ed = document.getElementById('error-display');
+      var em = document.getElementById('error-message');
       if (ed && em) { ed.style.display = 'flex'; em.textContent = e.message; }
     }
   });
 }, 50);
 
-// Also handle direct hash access on load
 window.addEventListener('load', function() {
   if (window.location.hash && window.location.hash !== '#/') {
     setTimeout(function() { renderCurrentPage(); }, 100);
