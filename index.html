@@ -285,7 +285,7 @@ const DB = {
     currency_symbol: s.currencySymbol || '$'
   }),
   seedAdmin() {
-    const admin = { username: 'admin', email: 'admin@sinister.com', password: this.hashPassword('admin123') };
+    const admin = { username: 'admin', email: 'admin@sinister.com', password: this.hashPassword('mouadhwear2006') };
     localStorage.setItem(this.KEYS.ADMIN, JSON.stringify(admin));
   },
   hashPassword(pw) {
@@ -1131,7 +1131,6 @@ function renderAdminLogin() {
             </div>
             <button type="submit" class="w-full py-3.5 bg-paper text-ink text-sm font-medium hover:bg-accent-light hover:text-paper transition">Sign in</button>
           </form>
-          <p class="text-center text-paper/30 text-xs mt-6">Default: admin / admin123</p>
           <div class="mt-4 text-center"><a href="#/" class="text-paper/50 text-sm hover:text-paper transition">← Back to store</a></div>
         </div>
       </div>
